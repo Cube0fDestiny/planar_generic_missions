@@ -22,8 +22,6 @@ feyrealm_kobolds_missions = {
 					duration = -1
 				}
 			}
-			hidden_effect = {
-			}
 		}
 	}
 	
@@ -45,9 +43,7 @@ feyrealm_kobolds_missions = {
 				duration = 9125 #25 years
 			}
 			hidden_effect = {
-				every_owned_province = {
-					remove_province_modifier = feyrealm_meagre_hoard
-				}
+				every_owned_province = { remove_province_modifier = feyrealm_meagre_hoard }
 			}
 		}
 	}
@@ -73,9 +69,7 @@ feyrealm_kobolds_missions = {
 				}
 			}
 			hidden_effect = {
-				every_owned_province = {
-					remove_province_modifier = feyrealm_refilled_hoard
-				}
+				every_owned_province = { remove_province_modifier = feyrealm_refilled_hoard }
 			}
 		}
 	}
@@ -84,14 +78,10 @@ feyrealm_kobolds_missions = {
 		icon = mission_scholar_officials
 		required_missions = { gold_for_the_hoard_mission }
 		trigger = {
-			capital_scope = {
-				development = 40
-			}
+			capital_scope = { development = 40 }
 		}
 		effect = {
-			country_event = {
-				id = planar_generic_missions_events.20
-			}
+			country_event = { id = planar_generic_missions_events.20 }
 			capital_scope = {
 				add_province_modifier = {
 					name = feyrealm_city_hoard
@@ -99,9 +89,7 @@ feyrealm_kobolds_missions = {
 				}
 			}
 			hidden_effect = {
-				every_owned_province = {
-					remove_province_modifier = feyrealm_expanded_hoard
-				}
+				every_owned_province = { remove_province_modifier = feyrealm_expanded_hoard }
 			}
 		}
 
@@ -127,11 +115,8 @@ feyrealm_kobolds_missions = {
 				}
 			}
 			hidden_effect = {
-				every_owned_province = {
-					remove_province_modifier = feyrealm_city_hoard
-				}
+				every_owned_province = { remove_province_modifier = feyrealm_city_hoard }
 			}
 		}
 	}
-	
 }

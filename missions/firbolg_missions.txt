@@ -28,6 +28,7 @@ firbolg_missions = {
 				province_id = 10358
 				province_id = 10420
 			}
+			NOT = { owned_by = ROOT }
 		}
 		trigger = {
 			custom_trigger_tooltip = {
@@ -100,8 +101,6 @@ firbolg_missions = {
 				duration = -1
 			}
 			add_mil_power = 200
-			hidden_effect = {
-			}
 		}
 	}
 	
@@ -124,6 +123,7 @@ firbolg_missions = {
 				province_id = 10358
 				province_id = 10420
 			}
+			NOT = { owned_by = ROOT }
 		}
 		trigger = {
 			custom_trigger_tooltip = {
@@ -172,17 +172,13 @@ firbolg_missions = {
 		}
 		effect = {
 			set_country_flag = has_firbolg_bottomless_bags
-			#remove_government_reform = anbennar_T5_generic_bottomless_bags
 			add_government_reform = generic_planar_missions_firbolg_bottomless_bags
 			define_advisor = {
 				type = army_organiser
 				skill = 3
 				cost_multiplier = 0.1
 			}
-			hidden_effect = {
-			}
 		}
-
 	}
 	
 	firbolg_glory_of_giants_mission = {
@@ -203,9 +199,6 @@ firbolg_missions = {
 					duration = -1
 				}
 			}
-			hidden_effect = {
-			}
 		}
 	}
-	
 }

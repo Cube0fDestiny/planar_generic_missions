@@ -22,14 +22,27 @@ korbarid_minor_missions = {
 				name = "creating_korbarid_league"
 				duration = 3650 #10 years
 			}
-			hidden_effect = {
-			}
+			hidden_effect = { }
 		}
 	}
 	
 	korbarid_pact_mission = {
 		icon = mission_the_sudebnik
 		required_missions = { korbarid_league_mission }
+		provinces_to_highlight = {
+			owner = {
+				primary_culture = korbarid
+				NOT = {
+					has_opinion = {
+						who = root
+						value = 150
+					}
+					alliance_with = ROOT
+				}
+				NOT = { tag = ROOT }
+				NOT = { humiliated_by = ROOT }
+			}
+		}
 		trigger = {
 			custom_trigger_tooltip = {
 				tooltip = korbarid_pact_mission_tooltip_trigger
@@ -43,10 +56,7 @@ korbarid_minor_missions = {
 							}
 							alliance_with = ROOT
 						}
-						AND = {
-							humiliated_by = ROOT
-							#is_rival = ROOT
-						}
+						humiliated_by = ROOT
 						tag = ROOT
 					}
 				}
@@ -57,16 +67,10 @@ korbarid_minor_missions = {
 				limit = {
 					primary_culture = korbarid
 				}
-				country_event = {
-					id = planar_generic_missions_events.10
-					#tooltip = korbarid_pact_mission_tooltip_event
-				}
+				country_event = { id = planar_generic_missions_events.10 }
 			}
-			10415 = {
-				add_core = ROOT
-			}
-			hidden_effect = {
-			}
+			10415 = { add_core = ROOT }
+			hidden_effect = { }
 		}
 	}
 	
@@ -80,6 +84,7 @@ korbarid_minor_missions = {
 				area = northern_myna_tyrnnghul_area
 				area = southern_myna_tyrnnghul_area
 			}
+			NOT = { owned_by = ROOT }
 		}
 		trigger = {
 			eastern_myna_tyrnnghul_area = {
@@ -104,7 +109,6 @@ korbarid_minor_missions = {
 				name = "korbarid_conversions"
 				duration = -1 
 			}
-			
 			custom_tooltip = push_back_the_fey_mission_culture
 			hidden_effect = {
 				every_owned_province = {
@@ -137,15 +141,9 @@ korbarid_minor_missions = {
 			}
 		}
 		trigger = {
-			10578 = {
-				fort_level = 2
-			}
-			10422 = {
-				fort_level = 2
-			}
-			10413 = {
-				fort_level = 2
-			}
+			10578 = { fort_level = 2 }
+			10422 = { fort_level = 2 }
+			10413 = { fort_level = 2 }
 		}
 		effect = {
 			10578 = {
@@ -169,8 +167,7 @@ korbarid_minor_missions = {
 					duration = -1
 				}
 			}
-			hidden_effect = {
-			}
+			hidden_effect = { }
 		}
 
 	}
@@ -190,9 +187,7 @@ korbarid_minor_missions = {
 				name = "korbarid_supremacy"
 				duration = -1
 			}
-			
-			hidden_effect = {
-			}
+			hidden_effect = { }
 		}
 	}
 	
