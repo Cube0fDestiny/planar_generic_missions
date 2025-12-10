@@ -9,8 +9,7 @@ country_event = {
 
 	is_triggered_only = yes
 
-	trigger = {
-	}
+	trigger = { }
 
 	option = {
 		name = planar_generic_missions_events.10.a
@@ -18,9 +17,7 @@ country_event = {
 	}
 	option = {
 		name = planar_generic_missions_events.10.b
-		trigger = {
-			ai = no
-		}
+		trigger = { ai = no }
 	}
 }
 
@@ -33,22 +30,17 @@ country_event = {
 
 	is_triggered_only = yes
 
-	trigger = {
-	}
+	trigger = { }
 
 	option = {
 		name = planar_generic_missions_events.20.a
 		add_adm_power = 100
-		capital_scope = {
-			add_base_production = 3
-		}
+		capital_scope = { add_base_production = 3 }
 	}
 	option = {
 		name = planar_generic_missions_events.20.b
 		add_mil_power = 100
-		capital_scope = {
-			change_trade_goods = iron
-		}
+		capital_scope = { change_trade_goods = iron }
 	}
 	option = {
 		name = planar_generic_missions_events.20.c
@@ -61,7 +53,6 @@ country_event = {
 }
 
 #feyrealm goblins
-
 country_event = {
 	id = planar_generic_missions_events.30
 	title = planar_generic_missions_events.30.t
@@ -70,8 +61,7 @@ country_event = {
 
 	is_triggered_only = yes
 
-	trigger = {
-	}
+	trigger = { }
 
 	option = {
 		name = planar_generic_missions_events.30.a

@@ -1,146 +1,73 @@
-# Province Triggered modifiers are here.
-# These are added to provinces through the add_province_triggered_modifier effect
-#
-# Effects are fully scriptable here.
-
-
-###########################################
-# Just random test modifier
-###########################################
-test_modifier = {
-	potential = {
-		always = yes
-	}
-
-	trigger = {
-		owner = {
-			stability = 0
-		}
-	}
-
-	local_build_cost = 0.05	
-	
-	#Province scope
-	on_activation = {
-	
-	}
-	
-	on_deactivation = {
-	
-	}
-	
-}
-
 #feyrealm goblins
 feyrealm_goblins_exploit_tropical_wood = {
-	potential = {
-		always = yes
-	}
-
-	trigger = {
-		has_province_modifier = feyrealm_goblins_exploit_tropical_wood_temp
-	}
+	potential = { always = yes }
+	trigger = { has_province_modifier = feyrealm_goblins_exploit_tropical_wood_temp }
 	
 	hidden = yes
 	
-	#Province scope
-	on_activation = {
-	
-	}
+	on_activation = { }
 	
 	on_deactivation = {
 		random_list = {
-			10 = {
-				change_trade_goods = iron
-			}
-			10 = {
-				change_trade_goods = copper
-			}
-			13 = {
-				change_trade_goods = cotton
-			}
-			13 = {
-				change_trade_goods = sugar
-			}
-			13 = {
-				change_trade_goods = wine
-			}
-			10 = {
-				change_trade_goods = grain
-			}
-			10 = {
-				change_trade_goods = livestock
-			}
-			10 = {
-				change_trade_goods = wool
-			}
-			3 = {
-				change_trade_goods = gems
-			}
-			3 = {
-				change_trade_goods = glass
-			}
-			3 = {
-				change_trade_goods = paper
-			}
-			2 = {
-				change_trade_goods = cloth
-			}
+			10 = { change_trade_goods = iron }
+			10 = { change_trade_goods = copper }
+			13 = { change_trade_goods = cotton }
+			13 = { change_trade_goods = sugar }
+			13 = { change_trade_goods = wine }
+			10 = { change_trade_goods = grain }
+			10 = { change_trade_goods = livestock }
+			10 = { change_trade_goods = wool }
+			3 = { change_trade_goods = gems }
+			3 = { change_trade_goods = glass }
+			3 = { change_trade_goods = paper }
+			2 = { change_trade_goods = cloth }
 		}
 		remove_province_triggered_modifier = feyrealm_goblins_exploit_tropical_wood
 	}
 }
 
 feyrealm_goblins_clear_cut_modifier = {
-	potential = {
-		always = yes
-	}
-
-	trigger = {
-		has_province_modifier = feyrealm_goblins_clear_cut_modifier_temp
-	}
+	potential = { always = yes }
+	trigger = { has_province_modifier = feyrealm_goblins_clear_cut_modifier_temp }
 	
 	hidden = yes
 	
-	#Province scope
-	on_activation = {
-	
-	}
+	on_activation = { }
 	
 	on_deactivation = {
 		trigger_switch = {
 			on_trigger = has_terrain
 			ancient_forest = {
-				add_permanent_province_modifier = {
+				add_province_modifier = {
 					name = cleared_ancient_forest_terrain
 					duration = -1
 					hidden = yes
 				}
-				add_permanent_province_modifier = {
+				add_province_modifier = {
 					name = clear_cut_wasteland
 					duration = -1
 					hidden = yes
 				}
 			}
 			forest = {
-				add_permanent_province_modifier = {
+				add_province_modifier = {
 					name = cleared_forest_terrain
 					duration = -1
 					hidden = yes
 				}
-				add_permanent_province_modifier = {
+				add_province_modifier = {
 					name = clear_cut_wasteland
 					duration = -1
 					hidden = yes
 				}
 			}
 			woods = {
-				add_permanent_province_modifier = {
+				add_province_modifier = {
 					name = cleared_woods_terrain
 					duration = -1
 					hidden = yes
 				}
-				add_permanent_province_modifier = {
+				add_province_modifier = {
 					name = clear_cut_wasteland
 					duration = -1
 					hidden = yes

@@ -1933,19 +1933,19 @@ custom_button = {
 			add_province_triggered_modifier = feyrealm_goblins_clear_cut_modifier
 			random_list = {
 				40 = {
-					add_nationalism = 5
-					create_revolt = 10
+					add_unrest = 5
+					ashentree_pact_rebels = 2
 				}
 				20 = {
-					create_revolt = 5
+					ashentree_pact_rebels = 1
 				}
 				30 = {
-					add_nationalism = 10
-					create_revolt = 15
+					add_unrest = 10
+					ashentree_pact_rebels = 3
 				}
 				10 = {
-					add_nationalism = 15
-					create_revolt = 20
+					add_unrest = 15
+					ashentree_pact_rebels = 4
 				}
 			}
 		}

@@ -25,11 +25,7 @@ feyrealm_goblins_military_missions = {
 			change_government = republic
 			add_government_reform = technocracy_republic_reform
 			add_stability = -1
-			country_event = {
-				id = planar_generic_missions_events.30
-			}
-			hidden_effect = {
-			}
+			country_event = { id = planar_generic_missions_events.30 }
 		}
 	}
 	
@@ -37,9 +33,7 @@ feyrealm_goblins_military_missions = {
 		icon = mission_pf_soldier
 		required_missions = { feyrealm_goblins_technocratic_coup_mission }
 		trigger = {
-			employed_advisor = {
-				category = MIL
-			}
+			employed_advisor = { category = MIL }
 			num_of_rajput = 5
 		}
 		effect = {
@@ -48,14 +42,15 @@ feyrealm_goblins_military_missions = {
 				name = "feyrealm_goblins_army_of_the_republic"
 				duration = -1
 			}
-			hidden_effect = {
-			}
 		}
 	}
 	
 	feyrealm_goblins_harness_pixie_dust_mission = {
 		icon = mission_dominate_persian_gulf
 		required_missions = { feyrealm_goblins_army_of_the_republic_mission }
+		provinces_to_highlight = {
+			trade_goods = pixie_dust
+		}
 		trigger = {
 			any_owned_province = {
 				trade_goods = pixie_dust
@@ -73,12 +68,8 @@ feyrealm_goblins_military_missions = {
 				duration = -1
 			}
 			every_owned_province = {
-				limit = {
-					trade_goods = pixie_dust
-				}
+				limit = { trade_goods = pixie_dust }
 				add_base_production = 2
-			}
-			hidden_effect = {
 			}
 		}
 	}
@@ -86,6 +77,14 @@ feyrealm_goblins_military_missions = {
 	feyrealm_goblins_study_the_dragons_mission = {
 		icon =  mission_kobold
 		required_missions = { feyrealm_goblins_harness_pixie_dust_mission }
+		provinces_to_highlight = {
+			OR = {
+				owned_by = XZG
+				area = greenwyrm_fen_area
+				area = whitewyrm_barrow_area
+			}
+			NOT = { owned_by = ROOT }
+		}
 		trigger = {
 			OR = {
 				AND = {
@@ -111,38 +110,20 @@ feyrealm_goblins_military_missions = {
 		}
 		effect = {
 			if = {
-				limit = {
-					XZG = {
-						alliance_with = ROOT
-					}
-				}
+				limit = { XZG = { alliance_with = ROOT } }
 				vassalize = XZG
 			}
 			else_if = {
-				limit = {
-					XZG = {
-						is_subject_of = ROOT
-					}
-				}
+				limit = { XZG = { is_subject_of = ROOT } }
 				add_country_modifier = {
 					name = "feyrealm_goblins_integrate_dragons"
 					duration = 9125 #25 years
 				}
 			}
-			else = {
-				# limit = {
-					# AND = {
-						# greenwyrn_fen_area = { type = all owned_by = ROOT }
-						# whitewyrm_barrow_area = { type = all owned_by = ROOT }
-					# }
-				# }
-				add_adm_power = 100
-			}
+			else = { add_adm_power = 100 }
 			add_country_modifier = {
 				name = "feyrealm_goblin_study_dragons"
 				duration = -1
-			}
-			hidden_effect = {
 			}
 		}
 
@@ -168,11 +149,8 @@ feyrealm_goblins_military_missions = {
 				skill = 3
 				cost_multiplier = 0.1
 			}
-			hidden_effect = {
-			}
 		}
 	}
-	
 }
 
 feyrealm_goblins_economic_missions = {
@@ -221,8 +199,6 @@ feyrealm_goblins_economic_missions = {
 				name = "feyrealm_goblins_early_industrialisation"
 				duration = -1
 			}
-			hidden_effect = {
-			}
 		}
 	}
 	
@@ -251,8 +227,6 @@ feyrealm_goblins_economic_missions = {
 				}
 				add_province_triggered_modifier = feyrealm_goblins_exploit_tropical_wood
 				set_province_flag = exploited_by_goblins
-			}
-			hidden_effect = {
 			}
 		}
 	}
@@ -288,30 +262,29 @@ feyrealm_goblins_economic_missions = {
 					name = feyrealm_goblins_clear_cut_modifier_temp
 					duration = 3650 #10 years
 				}
-				set_province_flag = clearcut_by_goblins
-				add_province_triggered_modifier = feyrealm_goblins_clear_cut_modifier
+				set_province_flag = 
+				hidden_effect = {
+					add_province_triggered_modifier = feyrealm_goblins_clear_cut_modifier
+				}
 				random_list = {
 					40 = {
-						add_nationalism = 5
-						create_revolt = 10
+						add_unrest = 5
+						ashentree_pact_rebels = 2
 					}
 					20 = {
-						create_revolt = 5
+						ashentree_pact_rebels = 1
 					}
 					30 = {
-						add_nationalism = 10
-						create_revolt = 15
+						add_unrest = 10
+						ashentree_pact_rebels = 3
 					}
 					10 = {
-						add_nationalism = 15
-						create_revolt = 20
+						add_unrest = 15
+						ashentree_pact_rebels = 4
 					}
 				}
 			}
-			hidden_effect = {
-			}
 		}
-
 	}
 	
 	feyrealm_goblins_charcoal_in_cinderglades_mission = {
@@ -343,9 +316,7 @@ feyrealm_goblins_economic_missions = {
 				name = "feyrealm_goblins_advanced_industrialisation"
 				duration = -1
 			}
-			hidden_effect = {
-				remove_country_modifier = feyrealm_goblins_early_industrialisation
-			}
+			hidden_effect = { remove_country_modifier = feyrealm_goblins_early_industrialisation }
 		}
 	}
 	
@@ -372,9 +343,6 @@ feyrealm_goblins_economic_missions = {
 				name = "feyrealm_goblins_masters_of_fire"
 				duration = -1
 			}
-			hidden_effect = {
-			}
 		}
 	}
-	
 }
