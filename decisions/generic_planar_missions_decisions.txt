@@ -1,0 +1,184 @@
+country_decisions = {
+
+#ai verions of buttons
+	cultivate_simple = {
+		potential = {
+			mission_completed = cultivate_woods
+			NOT = { mission_completed = organised_plantations }
+			ai = yes
+		}
+		allow = {
+			treasury = 200
+			any_owned_province = {
+				base_production = 5
+				trade_goods = tropical_wood
+				has_building = workshop
+				continent = feyrealm_continent
+				NOT = { has_province_modifier = simple_cultivated_woods }
+			}
+		}
+		effect = {
+			add_treasury = -200
+			random_owned_province = {
+				limit = {
+					base_production = 5
+					trade_goods = tropical_wood
+					has_building = workshop
+					continent = feyrealm_continent
+					NOT = { has_province_modifier = simple_cultivated_woods }
+				}
+				add_permanent_province_modifier = {
+					name = simple_cultivated_woods
+					duration = -1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+	cultivate_advanced = {
+		potential = {
+			mission_completed = organised_plantations
+			ai = yes
+		}
+		allow = {
+			treasury = 150
+			any_owned_province = {
+				base_production = 5
+				trade_goods = tropical_wood
+				has_building = workshop
+				continent = feyrealm_continent
+				NOT = { has_province_modifier = advanced_cultivated_woods }
+				NOT = { has_province_modifier = simple_cultivated_woods }
+			}
+		}
+		effect = {
+			add_treasury = -150
+			random_owned_province = {
+				limit = {
+					base_production = 5
+					trade_goods = tropical_wood
+					has_building = workshop
+					continent = feyrealm_continent
+					NOT = { has_province_modifier = advanced_cultivated_woods }
+					NOT = { has_province_modifier = simple_cultivated_woods }
+				}
+				add_base_production = 1
+				add_permanent_province_modifier = {
+					name = advanced_cultivated_woods
+					duration = -1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	cultivate_advanced = {
+		potential = {
+			mission_completed = organised_plantations
+			ai = yes
+		}
+		allow = {
+			treasury = 50
+			any_owned_province = {
+				base_production = 5
+				trade_goods = tropical_wood
+				has_building = workshop
+				continent = feyrealm_continent
+				has_province_modifier = simple_cultivated_woods
+				NOT = { has_province_modifier = advanced_cultivated_woods }
+			}
+		}
+		effect = {
+			add_treasury = -50
+			random_owned_province = {
+				limit = {
+					base_production = 5
+					trade_goods = tropical_wood
+					has_building = workshop
+					continent = feyrealm_continent
+					has_province_modifier = simple_cultivated_woods
+					NOT = { has_province_modifier = advanced_cultivated_woods }
+				}
+				add_base_production = 1
+				remove_province_modifier = simple_cultivated_woods
+				add_permanent_province_modifier = {
+					name = advanced_cultivated_woods
+					duration = -1
+				}
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	create_centers_of_trade_in_feyrealm = {
+		potential = {
+			mission_completed = invest_in_trade
+			ai = yes
+			NOT = { mission_completed = expand_trade_hubs }
+		}
+		allow = {
+			treasury = 400
+			any_owned_province = {
+				development = 20
+				has_building = marketplace
+				NOT = { province_has_center_of_trade_of_level = 1 }
+				province_group = feyrealm_potencial_trade_hubs
+			}
+		}
+		effect = {
+			add_treasury = -400
+			random_owned_province = {
+				limit = {
+					development = 20
+					has_building = marketplace
+					NOT = { province_has_center_of_trade_of_level = 1 }
+					province_group = feyrealm_potencial_trade_hubs
+				}
+				center_of_trade = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+	
+	create_centers_of_trade_in_feyrealm_efficiently = {
+		potential = {
+			mission_completed = expand_trade_hubs
+			ai = yes
+			NOT = { mission_completed = invest_in_trade }
+		}
+		allow = {
+			treasury = 200
+			any_owned_province = {
+				development = 15
+				has_building = marketplace
+				NOT = { province_has_center_of_trade_of_level = 1 }
+				province_group = feyrealm_potencial_trade_hubs
+			}
+		}
+		effect = {
+			add_treasury = -200
+			random_owned_province = {
+				limit = {
+					development = 15
+					has_building = marketplace
+					NOT = { province_has_center_of_trade_of_level = 1 }
+					province_group = feyrealm_potencial_trade_hubs
+				}
+				center_of_trade = 1
+			}
+		}
+		ai_will_do = {
+			factor = 1
+		}
+	}
+
+}

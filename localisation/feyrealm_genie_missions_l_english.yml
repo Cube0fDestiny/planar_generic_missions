@@ -1,0 +1,28 @@
+﻿ l_english:
+
+ genie_conscribtion:0 "Genie Conscribtion"
+ genie_court_small:0 "New Genie Court"
+ genie_court_medium:0 "Expanded Genie Court"
+ genie_court_big:0 "Great Genie Court"
+ genie_cultural_acceptance:0 "Genie Cultural Acceptance"
+ 
+ feyrealm_genie_a_new_court_mission_title:0 "A new court"
+ feyrealm_genie_a_new_court_mission_desc:0 "A proper Sultanate requires a proper court."
+ 
+ feyrealm_genie_diverse_conscription_mission_title:0 "Genie Conscribtion"
+ feyrealm_genie_diverse_conscription_mission_desc:0 "With most of our population belonging to different culture groups, we must reorganize our conscribtion system to make full use it."
+ 
+ feyrealm_genie_expanded_court_mission_title:0 "Expand the Court"
+ feyrealm_genie_expanded_court_mission_desc:0 "Traditionally Genie courts are very proficient and diverse, we can't let empires of old outshine us."
+ feyrealm_genie_expanded_court_tooltip_0:0 "Administrative advisor of skill 2 is currently emplpyed."
+ feyrealm_genie_expanded_court_tooltip_1:0 "Diplomatic advisor of skill 2 is currently emplpyed."
+ feyrealm_genie_expanded_court_tooltip_2:0 "Military advisor of skill 2 is currently emplpyed."
+ 
+ feyrealm_genie_diverse_realm_mission_title:0 "Diverse realm"
+ feyrealm_genie_diverse_realm_mission_desc:0 "As more and more of our population is of non genie cultures, it falls to them to work the land and develop our state."
+ 
+ feyrealm_genie_great_court_mission_title:0 "Court to rival the old empires"
+ feyrealm_genie_great_court_mission_desc:0 "Our meticolous work to expand and improve our court finally bears fruit, after decades §Y[Root.GetAdjective]§! court stands as equal to those of empires of old."
+ feyrealm_genie_great_court_mission_tooltip_0:0 "Administrative advisor of skill 3 is currently emplpyed."
+ feyrealm_genie_great_court_mission_tooltip_1:0 "Diplomatic advisor of skill 3 is currently emplpyed."
+ feyrealm_genie_great_court_mission_tooltip_2:0 "Military advisor of skill 3 is currently emplpyed."

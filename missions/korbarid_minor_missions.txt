@@ -1,0 +1,199 @@
+
+
+korbarid_minor_missions = {
+	slot = 1
+	generic = no
+	has_country_shield = yes
+	potential = {
+		primary_culture = korbarid
+	}
+
+	korbarid_league_mission = {
+		icon = mission_diplomatic_relation
+		required_missions = {  }
+		trigger = {
+			OR = {
+				employed_advisor = { type = diplomat }
+				employed_advisor = { type = statesman }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "creating_korbarid_league"
+				duration = 3650 #10 years
+			}
+			hidden_effect = {
+			}
+		}
+	}
+	
+	korbarid_pact_mission = {
+		icon = mission_the_sudebnik
+		required_missions = { korbarid_league_mission }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = korbarid_pact_mission_tooltip_trigger
+				all_known_country = {
+					OR = {
+						NOT = { primary_culture = korbarid }
+						AND = {
+							has_opinion = {
+								who = root
+								value = 150
+							}
+							alliance_with = ROOT
+						}
+						AND = {
+							humiliated_by = ROOT
+							#is_rival = ROOT
+						}
+						tag = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			every_known_country = {
+				limit = {
+					primary_culture = korbarid
+				}
+				country_event = {
+					id = planar_generic_missions_events.10
+					#tooltip = korbarid_pact_mission_tooltip_event
+				}
+			}
+			10415 = {
+				add_core = ROOT
+			}
+			hidden_effect = {
+			}
+		}
+	}
+	
+	push_back_the_fey_mission = {
+		icon = mission_crusade_for_varna
+		required_missions = { korbarid_pact_mission }
+		provinces_to_highlight = {
+			OR = {
+				area = eastern_myna_tyrnnghul_area
+				area = western_myna_tyrnnghul_area
+				area = northern_myna_tyrnnghul_area
+				area = southern_myna_tyrnnghul_area
+			}
+		}
+		trigger = {
+			eastern_myna_tyrnnghul_area = {
+				type = all
+				owned_by = ROOT
+			}
+			western_myna_tyrnnghul_area = {
+				type = all
+				owned_by = ROOT
+			}
+			northern_myna_tyrnnghul_area = {
+				type = all
+				owned_by = ROOT
+			}
+			southern_myna_tyrnnghul_area = {
+				type = all
+				owned_by = ROOT
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "korbarid_conversions"
+				duration = -1 
+			}
+			
+			custom_tooltip = push_back_the_fey_mission_culture
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						OR = {
+							area = eastern_myna_tyrnnghul_area
+							area = western_myna_tyrnnghul_area
+							area = northern_myna_tyrnnghul_area
+							area = southern_myna_tyrnnghul_area
+						}
+						NOT = { culture = korbarid }
+					}
+					add_culture_construction = {
+						speed = 0.5
+						cost = 0.1
+					}
+				}
+			}
+		}
+	}
+	
+	fortify_myna_tyrnnghul_mission = {
+		icon = mission_dansk_ostindia
+		required_missions = { push_back_the_fey_mission }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 10578
+				province_id = 10422
+				province_id = 10413
+			}
+		}
+		trigger = {
+			10578 = {
+				fort_level = 2
+			}
+			10422 = {
+				fort_level = 2
+			}
+			10413 = {
+				fort_level = 2
+			}
+		}
+		effect = {
+			10578 = {
+				add_base_manpower = 2
+				add_province_modifier = {
+					name = korbarid_fort
+					duration = -1
+				}
+			}
+			10422 = {
+				add_base_manpower = 2
+				add_province_modifier = {
+					name = korbarid_fort
+					duration = -1
+				}
+			}
+			10413 = {
+				add_base_manpower = 2
+				add_province_modifier = {
+					name = korbarid_fort
+					duration = -1
+				}
+			}
+			hidden_effect = {
+			}
+		}
+
+	}
+	
+	korbarid_supremacy_mission = {
+		icon = mission_empire
+		required_missions = { fortify_myna_tyrnnghul_mission }
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				culture = korbarid
+			}
+		}
+		effect = {
+			add_prestige = 100
+			add_country_modifier = {
+				name = "korbarid_supremacy"
+				duration = -1
+			}
+			
+			hidden_effect = {
+			}
+		}
+	}
+	
+}

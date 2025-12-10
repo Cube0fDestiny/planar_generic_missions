@@ -1,0 +1,29 @@
+﻿ l_english:
+
+ creating_korbarid_league:0 "Creating Korbarid League"
+ korbarid_conversions:0 "Korbarid Conversions"
+ korbarid_fort_title:0 "Korbarid Fortress"
+ korbarid_fort_desc:0 "A mighty fortress guards the entry to Korbarid heartlands."
+ korbarid_supremacy:0 "Korbarid Supremacy"
+ 
+ korbarid_league_mission_title:0 "Korbarid League"
+ korbarid_league_mission_desc:0 "For countless years Korbarid people has been fractured, but with fey encoaching ever closer on our teritory, perhaps it is possible to unite?"
+ 
+ korbarid_pact_mission_title:0 "Treaty of $CAPITAL_CITY$"
+ korbarid_pact_mission_desc:0 "At last be it by diplomacy or by force, all of Korbarid fiefdoms stand united and debate a formal union."
+ korbarid_pact_mission_tooltip_trigger:0 "All Korbarid culture countries must either:\n Be §Y[Root.GetAdjective]§! rival and humiliated by §Y[Root.GetName]§!\n Be §Y[Root.GetAdjective]§! ally and have at least 150 opinion of §Y[Root.GetName]§!"
+ 
+ push_back_the_fey_mission_title:0 "Push back the fey"
+ push_back_the_fey_mission_desc:0 "We have been huddling against the mountains for too long, it is time to strike back against the fey!"
+ push_back_the_fey_mission_culture:0 "All provinces in Myla Tyrnnghul not of Korbalid culture will be converted at 10% of the cost and 50% of the time."
+ 
+ fortify_myna_tyrnnghul_mission_title:0 "Fortify the Heartlands"
+ fortify_myna_tyrnnghul_mission_desc:0 "There are very few pathways into Myla Tyrnnghúl, just three forts would be enough to guard against any inncursion."
+ 
+ korbarid_supremacy_mission_title:0 "Korbarid Supremacy"
+ korbarid_supremacy_mission_desc:0 "We have taken back our lands and then some, settling and integrating wild feyrealm, the Korbarid people stand supreme above the feyrealm."
+ 
+ planar_generic_missions_events.10.t:0 "Formalisation of the Korbalid League?"
+ planar_generic_missions_events.10.d:0 "Do we join the Korbalid League?"
+ planar_generic_missions_events.10.a:0 "yes (§Rit will result in annexation!§!)"
+ planar_generic_missions_events.10.b:0 "nah"

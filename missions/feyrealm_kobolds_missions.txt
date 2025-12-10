@@ -1,0 +1,137 @@
+
+
+feyrealm_kobolds_missions = {
+	slot = 1
+	generic = no
+	has_country_shield = yes
+	potential = {
+		primary_culture = chromescale_kobold
+	}
+
+	inspect_the_hoard_mission = {
+		icon = mission_noble_council
+		required_missions = {  }
+		trigger = {
+			treasury = 50
+		}
+		effect = {
+			add_treasury = -50
+			capital_scope = {
+				add_province_modifier = {
+					name = feyrealm_meagre_hoard
+					duration = -1
+				}
+			}
+			hidden_effect = {
+			}
+		}
+	}
+	
+	refill_the_hoard_mission = {
+		icon = mission_non-western_cavalry_raid
+		required_missions = { inspect_the_hoard_mission }
+		trigger = {
+			num_of_times_used_pillage_capital = 5
+		}
+		effect = {
+			capital_scope = {
+				add_province_modifier = {
+					name = feyrealm_refilled_hoard
+					duration = -1
+				}
+			}
+			add_country_modifier = {
+				name = "feyrealm_refilling_the_hoard"
+				duration = 9125 #25 years
+			}
+			hidden_effect = {
+				every_owned_province = {
+					remove_province_modifier = feyrealm_meagre_hoard
+				}
+			}
+		}
+	}
+	
+	gold_for_the_hoard_mission = {
+		icon = mission_dalaskogen
+		required_missions = { refill_the_hoard_mission }
+		trigger = {
+			trade_goods_produced_amount = {
+				trade_goods = gold
+				amount = 5
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "feyrealm_gold_digging"
+				duration = 9125 #25 years
+			}
+			capital_scope = {
+				add_province_modifier = {
+					name = feyrealm_expanded_hoard
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					remove_province_modifier = feyrealm_refilled_hoard
+				}
+			}
+		}
+	}
+	
+	develop_our_hoard_mission = {
+		icon = mission_scholar_officials
+		required_missions = { gold_for_the_hoard_mission }
+		trigger = {
+			capital_scope = {
+				development = 40
+			}
+		}
+		effect = {
+			country_event = {
+				id = planar_generic_missions_events.20
+			}
+			capital_scope = {
+				add_province_modifier = {
+					name = feyrealm_city_hoard
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					remove_province_modifier = feyrealm_expanded_hoard
+				}
+			}
+		}
+
+	}
+	
+	greatest_hold_mission = {
+		icon = mam_city_thousand_minarets
+		required_missions = { develop_our_hoard_mission }
+		trigger = {
+			treasury = 1000
+			monthly_income = 100
+		}
+		effect = {
+			add_treasury = -1000
+			add_prestige = 100
+			capital_scope = {
+				add_base_tax = 5
+				add_base_production = 5
+				add_base_manpower = 5
+				add_province_modifier = {
+					name = feyrealm_great_hoard
+					duration = -1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					remove_province_modifier = feyrealm_city_hoard
+				}
+			}
+		}
+	}
+	
+}

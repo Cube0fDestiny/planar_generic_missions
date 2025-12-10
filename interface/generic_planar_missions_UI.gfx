@@ -1,0 +1,33 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_feyrealm_goblins_clearcut_wasteland_terrain"
+		texturefile = "gfx/colony_terrain_clearcut_wasteland.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_feyrealm_goblins_clearcut_feywoods_button"
+		texturefile = "gfx/clearcut_forests_button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_feyrealm_goblins_charcoal_in_cinderglades_button"
+		texturefile = "gfx/expand_coal_button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_feyrealm_goblins_exploit_tropical_wood_button"
+		texturefile = "gfx/exploit_tropical_wood_button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_feyrealm_cultivate_tropical_wood_button"
+		texturefile = "gfx/cultivate_tropical_wood_button.dds"
+	}
+	
+	spriteType = {
+		name = "GFX_feyrealm_create_certer_of_trade_button"
+		texturefile = "gfx/create_certer_of_trade_button.dds"
+	}
+	
+}
+

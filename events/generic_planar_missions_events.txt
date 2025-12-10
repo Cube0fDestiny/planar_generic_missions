@@ -1,0 +1,88 @@
+namespace = planar_generic_missions_events
+
+#Korbarid minors
+country_event = {
+	id = planar_generic_missions_events.10
+	title = planar_generic_missions_events.10.t
+	picture = NOBLE_ESTATE_DEMANDS_eventPicture
+	desc = planar_generic_missions_events.10.d
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	option = {
+		name = planar_generic_missions_events.10.a
+		FROM = { inherit = ROOT }
+	}
+	option = {
+		name = planar_generic_missions_events.10.b
+		trigger = {
+			ai = no
+		}
+	}
+}
+
+#feyrealm kobolds
+country_event = {
+	id = planar_generic_missions_events.20
+	title = planar_generic_missions_events.20.t
+	picture = TRADE_GOODS_METALS_AND_MINING_EQUIPENT_eventPicture
+	desc = planar_generic_missions_events.20.d
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	option = {
+		name = planar_generic_missions_events.20.a
+		add_adm_power = 100
+		capital_scope = {
+			add_base_production = 3
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.20.b
+		add_mil_power = 100
+		capital_scope = {
+			change_trade_goods = iron
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.20.c
+		add_dip_power = 100
+		capital_scope = {
+			add_base_production = -5
+			change_trade_goods = gold
+		}
+	}
+}
+
+#feyrealm goblins
+
+country_event = {
+	id = planar_generic_missions_events.30
+	title = planar_generic_missions_events.30.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.30.d
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	option = {
+		name = planar_generic_missions_events.30.a
+		add_stability = 1
+	}
+	option = {
+		name = planar_generic_missions_events.30.b
+		change_religion = goblinic_shamanism
+	}
+	option = {
+		name = planar_generic_missions_events.30.c
+		change_religion = the_thought
+	}
+}

@@ -1,0 +1,211 @@
+
+
+firbolg_missions = {
+	slot = 1
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	potential = {
+		primary_culture = firbolg
+	}
+
+	firbolg_secure_cities_mission = {
+		icon = mission_develop_visby
+		required_missions = {  }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 10361
+				province_id = 10362
+				province_id = 10363
+				province_id = 10356
+				province_id = 10353
+				province_id = 10321
+				province_id = 10359
+				province_id = 10419
+				province_id = 10352
+				province_id = 10570
+				province_id = 10357
+				province_id = 10358
+				province_id = 10420
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = firbolg_secure_cities_tooltip_trigger
+				OR = {
+					AND = {
+						titancrown_mounds_area = { owned_by = ROOT is_core = ROOT }
+						10361 = { owned_by = ROOT is_core = ROOT }
+						10362 = { owned_by = ROOT is_core = ROOT }
+						10363 = { owned_by = ROOT is_core = ROOT }
+						10356 = { owned_by = ROOT is_core = ROOT }
+					}
+					AND = {
+						10419 = { owned_by = ROOT is_core = ROOT }
+						10420 = { owned_by = ROOT is_core = ROOT }
+						10352 = { owned_by = ROOT is_core = ROOT }
+						10570 = { owned_by = ROOT is_core = ROOT }
+					}
+				}
+			}
+		}
+		effect = {
+			custom_tooltip = firbolg_secure_cities_tooltip_effect
+			hidden_effect = {
+				if = {
+					limit = {
+						titancrown_mounds_area = { owned_by = ROOT is_core = ROOT }
+						10361 = { owned_by = ROOT is_core = ROOT }
+						10362 = { owned_by = ROOT is_core = ROOT }
+						10363 = { owned_by = ROOT is_core = ROOT }
+						10356 = { owned_by = ROOT is_core = ROOT }
+					}
+					10357 = { add_province_modifier = { name = city_of_firbolgs duration = -1 } }
+					10358 = { add_province_modifier = { name = city_of_firbolgs duration = -1 } }
+					10361 = { add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+					10362 = { add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+					10363 = { add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+					10356 = { add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+					10353 = { add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+					10321 = { add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+					10359 = { add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				}
+				else_if = {
+					limit = {
+						10419 = { owned_by = ROOT is_core = ROOT }
+						10420 = { owned_by = ROOT is_core = ROOT }
+						10352 = { owned_by = ROOT is_core = ROOT }
+						10570 = { owned_by = ROOT is_core = ROOT }
+					}
+					10420 = { add_province_modifier = { name = city_of_firbolgs duration = -1 } }
+					10419 = { add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+					10352 = { add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+					10570 = { add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				}
+			}
+		}
+	}
+	
+	firbolg_professional_army_mission = {
+		icon = mission_pf_soldier
+		required_missions = { firbolg_secure_cities_mission }
+		trigger = {
+			num_of_generals = 3
+			army_professionalism = 0.10
+			employed_advisor = { category = MIL }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "firbolg_professional_army"
+				duration = -1
+			}
+			add_mil_power = 200
+			hidden_effect = {
+			}
+		}
+	}
+	
+	firbolgs_unite_mission = {
+		icon = mission_indian_stateman
+		required_missions = { firbolg_professional_army_mission }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 10361
+				province_id = 10362
+				province_id = 10363
+				province_id = 10356
+				province_id = 10353
+				province_id = 10321
+				province_id = 10359
+				province_id = 10419
+				province_id = 10352
+				province_id = 10570
+				province_id = 10357
+				province_id = 10358
+				province_id = 10420
+			}
+		}
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = firbolgs_unite_tooltip_trigger
+				titancrown_mounds_area = { owned_by = ROOT is_core = ROOT }
+				10361 = { owned_by = ROOT is_core = ROOT }
+				10362 = { owned_by = ROOT is_core = ROOT }
+				10363 = { owned_by = ROOT is_core = ROOT }
+				10356 = { owned_by = ROOT is_core = ROOT }
+				10419 = { owned_by = ROOT is_core = ROOT }
+				10420 = { owned_by = ROOT is_core = ROOT }
+				10352 = { owned_by = ROOT is_core = ROOT }
+				10570 = { owned_by = ROOT is_core = ROOT }
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = firbolg_united_firbolgs
+				duration = -1
+			}
+			custom_tooltip = firbolgs_unite_tooltip_effect
+			hidden_effect = {
+				10361 = { limit = { NOT = { has_province_modifier = firbolg_suburbs } } add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				10362 = { limit = { NOT = { has_province_modifier = firbolg_suburbs } } add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				10363 = { limit = { NOT = { has_province_modifier = firbolg_suburbs } } add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				10356 = { limit = { NOT = { has_province_modifier = firbolg_suburbs } } add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				10353 = { limit = { NOT = { has_province_modifier = firbolg_suburbs } } add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				10321 = { limit = { NOT = { has_province_modifier = firbolg_suburbs } } add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				10359 = { limit = { NOT = { has_province_modifier = firbolg_suburbs } } add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				10419 = { limit = { NOT = { has_province_modifier = firbolg_suburbs } } add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				10352 = { limit = { NOT = { has_province_modifier = firbolg_suburbs } } add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				10570 = { limit = { NOT = { has_province_modifier = firbolg_suburbs } } add_province_modifier = { name = firbolg_suburbs duration = -1 } }
+				10357 = { remove_province_modifier = city_of_firbolgs add_province_modifier = { name = expanded_firbolg_city duration = -1 } }
+				10358 = { remove_province_modifier = city_of_firbolgs add_province_modifier = { name = expanded_firbolg_city duration = -1 } }
+				10420 = { remove_province_modifier = city_of_firbolgs add_province_modifier = { name = expanded_firbolg_city duration = -1 } }
+			}
+		}
+	}
+	
+	firbolg_second_army_reform_mission = {
+		icon = ven_standing_army_mission_2
+		required_missions = { firbolgs_unite_mission }
+		trigger = {
+			army_professionalism = 0.5
+			has_reform = anbennar_T5_generic_bottomless_bags
+		}
+		effect = {
+			set_country_flag = has_firbolg_bottomless_bags
+			#remove_government_reform = anbennar_T5_generic_bottomless_bags
+			add_government_reform = generic_planar_missions_firbolg_bottomless_bags
+			define_advisor = {
+				type = army_organiser
+				skill = 3
+				cost_multiplier = 0.1
+			}
+			hidden_effect = {
+			}
+		}
+
+	}
+	
+	firbolg_glory_of_giants_mission = {
+		icon = mission_empire
+		required_missions = { firbolg_second_army_reform_mission }
+		trigger = {
+			10357 = { owned_by = ROOT development = 50 num_of_buildings_in_province = 8}
+			10358 = { owned_by = ROOT development = 50 num_of_buildings_in_province = 8}
+			10420 = { owned_by = ROOT development = 50 num_of_buildings_in_province = 8}
+		}
+		effect = {
+			10357 = { remove_province_modifier = expanded_firbolg_city add_province_modifier = { name = firbolg_city_of_giants duration = -1 } }
+			10358 = { remove_province_modifier = expanded_firbolg_city add_province_modifier = { name = firbolg_city_of_giants duration = -1 } }
+			10420 = { remove_province_modifier = expanded_firbolg_city add_province_modifier = { name = firbolg_city_of_giants duration = -1 } }
+			capital_scope = {
+				add_province_modifier = {
+					name = firbolg_imperial_capital
+					duration = -1
+				}
+			}
+			hidden_effect = {
+			}
+		}
+	}
+	
+}

@@ -1,0 +1,58 @@
+﻿ l_english:
+ feyrealm_potencial_trade_hubs:0 "Potential trade hubs."
+ 
+ cultivate_simple_title:0 "Cultivate feywoods"
+ cultivate_simple_desc:0 "Tap into feyrealm's potencial for exotic wood production."
+ cultivate_advanced_title:0 "Cultivate feywoods"
+ cultivate_advanced_desc:0 "Tap into feyrealm's potencial for exotic wood production."
+ 
+ create_centers_of_trade_in_feyrealm_title:0 "Create a new centre of trade"
+ create_centers_of_trade_in_feyrealm_desc:0 "Will enough effort and investment some of the potential hubs of commerce may bloom into great marketowns."
+ create_centers_of_trade_in_feyrealm_efficiently_title:0 "Create a new centre of trade"
+ create_centers_of_trade_in_feyrealm_efficiently_desc:0 "Will enough effort and investment some of the potential hubs of commerce may bloom into great marketowns."
+ 
+ planar_hegemony:0 "Planar Hegemon"
+ invasion_of_mortal_plane:0 "Invasion of the mortal plane"
+ simple_cultivated_woods:0 "Cultivated Woods"
+ simple_cultivated_woods_desc:0 "Local wood production is improved through cooperation with the fey."
+ advanced_cultivated_woods:0 "Cultivated Woods"
+ advanced_cultivated_woods_desc:0 "Local wood production is greatly improved through cooperation with the fey."
+ tropical_wood_dominance:0 "Exotic Wood Monopoly."
+ expanded_trade_hubs:0 "Revitilised trade and commerce"
+ feyrealm_economic_hegemon:0 "Feyrealm Economic Hegemon"
+ 
+ unite_home_region_feyrealm_title:0 "Unite Home Region"
+ unite_home_region_feyrealm_desc:0 "A stepping stone towards greater goal."
+ unite_home_region_feyrealm_tooltip:0 "§Y[Root.GetName]§! gains permanent claims on §YFeyrealm§! continent."
+ 
+ feyrealm_hegemony_title:0 "Feyrealm Dominance"
+ feyrealm_hegemony_desc:0 "At last all of Feyrealm is united under one flag."
+ feyrealm_hegemony_tooltip: "§Y[Root.GetName]§! loses 10 years of separatism in every province on §YFeyrealm§! continent."
+ 
+ invade_material_plane_title:0 "Invade the Material Plane"
+ invade_material_plane_desc:0 "With entire Feyrealm firmly under our control it's time to expand outside of it."
+ 
+ invest_in_trade_title:0 "Invest in trade"
+ invest_in_trade_desc:0 "Feyrealm's trade hubs are sparse and underdeveloped, but with enough investment they may revitalise trade across the plane."
+ invest_in_trade_tooltip:0 "Unlocks ability to create new trade centres across the feyrealm."
+ 
+ expand_trade_hubs_title:0 "Revitilise Trade."
+ expand_trade_hubs_desc:0 "With new market towns and trade routes build commerce can flourish across the realm."
+ expand_trade_hubs_tooltip:0 "Improves our ability to create new centres of trade."
+ expanded_trade_hubs_trader_tooltip:0 "Is emplying a level 3 trader advisor."
+ 
+ economic_hegemony_title:0 "Economic Hegemony"
+ economic_hegemony_desc:0 "With all of the hubs of trade in feyrealm developed and under our control, we hold complete dominance over the planar commerce."
+ 
+ cultivate_woods_title:0 "Cultive feywoods"
+ cultivate_woods_desc:0 "The magical forrests of the feyrealm are uniquely suited for mass production of exotic wood."
+ cultivate_woods_tooltip:0 "Unlocks ability to cultivate exotic woods across the feyrealm."
+ 
+ organised_plantations_title:0 "Organised Plantations"
+ organised_plantations_desc:0 "Cooperation between many exotic wood plantations allows for even more efficient exploitation of feyrealm's resources."
+ organised_plantations_tooltip:0 "Improves our ability to cultivate exotic woods."
+ 
+ dominate_the_market_title:0 "Dominate the Market"
+ dominate_the_market_desc:0 "Thanks to our great plantations we managed to acquire control over most of exotic wood market."
+ EXOTIC_WOOD_PRODUCTION_DESC:0 "Add one year of production income from exotic wood."
+ 

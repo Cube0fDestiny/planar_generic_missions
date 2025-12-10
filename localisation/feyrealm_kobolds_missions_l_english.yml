@@ -1,0 +1,40 @@
+﻿ l_english:
+
+ feyrealm_meagre_hoard:0 "Meagre Hoard"
+ feyrealm_meagre_hoard_desc:0 "Our once great hoard has dwindled and diminished over the years, it's pityfull state installs doubt in the state among our people."
+ 
+ feyrealm_refilled_hoard:0 "Refilled Hoard"
+ feyrealm_refilled_hoard_desc:0 "With our recent plunders our hoard is back to acceptable size."
+ 
+ feyrealm_expanded_hoard:0 "Expanded Hoard"
+ feyrealm_expanded_hoard_desc:0 "Cart after cart come to our capital bringing precious metals from far off mines, expanding our hoard far beyond what it ever has been in the past."
+ 
+ feyrealm_city_hoard:0 "City Hoard"
+ feyrealm_city_hoard_desc:0 "There are countless jewelers, clerks, prists and government officials contantly tending to hoard, a veritable city grew around what used to be a simple pile of gold."
+ 
+ feyrealm_great_hoard:0 "Great Hoard"
+ feyrealm_great_hoard_desc:0 "There is no greater collection of treasure in the world."
+ 
+ feyrealm_refilling_the_hoard:0 "Refilling the Hoard"
+ feyrealm_gold_digging:0 "Gold digging expertise"
+ 
+ inspect_the_hoard_mission_title:0 "Inspect the Hoard"
+ inspect_the_hoard_mission_desc:0 "For many years, our hoard has been neglected and ignored, it's high time we actually given it proper attencion."
+ 
+ refill_the_hoard_mission_title:0 "Refill our Hoard"
+ refill_the_hoard_mission_desc:0 "Our hoard dismal state is an embarrassment, luckily our neighbours will hapily "donate" to it."
+ 
+ gold_for_the_hoard_mission_title:0 "A steady source of gold"
+ gold_for_the_hoard_mission_desc:0 "Occasional looting and pillaging is proving insufficient at maintaining our hoard, we must secure a continuous source of gold."
+ 
+ develop_our_hoard_mission_title:0 "Managing the Hoard"
+ develop_our_hoard_mission_desc:0 "Workers to carry the gold and gems, jewelers to cut and polish them, priests and clarks to oversee everything, our hoard requires more and more people to mange, a small settlement already grows around and within it, but now it's time to develop it into a fully fledged city."
+ 
+ greatest_hold_mission_title:0 "Greatest Hoard"
+ greatest_hold_mission_desc:0 "Coin after coin is added onto the hoard, but it's immense size makes it impossible to even see any change."
+ 
+ planar_generic_missions_events.20.t:0 "Production in our capital"
+ planar_generic_missions_events.20.d:0 "As our workers dig deeper into the mountaing beneth our hold, they find new deposits of valueable ore, both glitering silver and sturdy iron, perhaps with increased workforce drawn to our great hoard we may exploit those deposits?"
+ planar_generic_missions_events.20.a:0 "It's a fool's errand, better focus on existing production."
+ planar_generic_missions_events.20.b:0 "We need iron and steel for our armies, start digging at once!"
+ planar_generic_missions_events.20.c:0 "Silver you say?"

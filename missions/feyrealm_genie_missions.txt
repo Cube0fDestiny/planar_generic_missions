@@ -1,0 +1,165 @@
+
+
+feyrealm_genie_missions = {
+	slot = 1
+	generic = no
+	has_country_shield = yes
+	potential = {
+		OR = {
+			primary_culture = silat
+			primary_culture = orisha
+		}
+	}
+	
+	feyrealm_genie_a_new_court_mission = {
+		icon = mission_indian_stateman
+		required_missions = {  }
+		trigger = {
+			num_of_different_cultures_in_court = 3
+			employed_advisor = {
+				category = ADM
+			}
+			employed_advisor = {
+				category = DIP
+			}
+			employed_advisor = {
+				category = MIL
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_dip_power = 50
+			add_mil_power = 50
+			add_country_modifier = {
+				name = "genie_court_small"
+				duration = -1
+			}
+			hidden_effect = {
+			}
+		}
+	}
+	
+	feyrealm_genie_diverse_conscription_mission = {
+		icon = mission_modern_knight_army
+		required_missions = { feyrealm_genie_a_new_court_mission }
+		trigger = {
+			NOT = { dominant_culture = orisha }
+			NOT = { dominant_culture = silat }
+		}
+		effect = {
+			add_country_modifier = {
+				name = "genie_conscribtion"
+				duration = -1
+			}
+			add_owned_provinces_development_manpower = {
+				multiplier = 0.1
+				age_multiplier = 1
+				trigger = { 
+					NOT = { culture_group = genie }
+				}
+			}
+			hidden_effect = {
+			}
+		}
+	}
+	
+	feyrealm_genie_expanded_court_mission = {
+		icon = mission_noble_council
+		required_missions = { feyrealm_genie_diverse_conscription_mission }
+		trigger = {
+			num_of_different_cultures_in_court = 4
+			custom_trigger_tooltip = {
+				tooltip = feyrealm_genie_expanded_court_tooltip_0
+				employed_advisor = {
+					category = ADM
+					skill = 3
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = feyrealm_genie_expanded_court_tooltip_1
+				employed_advisor = {
+					category = DIP
+					skill = 3
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = feyrealm_genie_expanded_court_tooltip_2
+				employed_advisor = {
+					category = MIL
+					skill = 3
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_country_modifier = {
+				name = "genie_court_medium"
+				duration = -1
+			}
+			hidden_effect = {
+				remove_country_modifier = genie_court_small
+			}
+		}
+	}
+	
+	feyrealm_genie_diverse_realm_mission = {
+		icon = mission_peasantry
+		required_missions = { feyrealm_genie_expanded_court_mission }
+		trigger = {
+			num_accepted_cultures = 8
+		}
+		effect = {
+			add_country_modifier = {
+				name = "genie_cultural_acceptance"
+				duration = -1
+			}
+			hidden_effect = {
+			}
+		}
+
+	}
+	
+	feyrealm_genie_great_court_mission = {
+		icon = per_expand_our_influence
+		required_missions = { feyrealm_genie_diverse_realm_mission }
+		trigger = {
+			num_of_different_cultures_in_court = 5
+			custom_trigger_tooltip = {
+				tooltip = feyrealm_genie_great_court_mission_tooltip_0
+				employed_advisor = {
+					category = ADM
+					skill = 3
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = feyrealm_genie_great_court_mission_tooltip_1
+				employed_advisor = {
+					category = DIP
+					skill = 3
+				}
+			}
+			custom_trigger_tooltip = {
+				tooltip = feyrealm_genie_great_court_mission_tooltip_2
+				employed_advisor = {
+					category = MIL
+					skill = 3
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 200
+			add_dip_power = 200
+			add_mil_power = 200
+			add_country_modifier = {
+				name = "genie_court_big"
+				duration = -1
+			}
+			hidden_effect = {
+				remove_country_modifier = genie_court_medium
+			}
+		}
+	}
+	
+}

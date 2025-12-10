@@ -1,0 +1,491 @@
+
+
+feyrealm_military_missions = {
+	slot = 2
+	generic = yes
+	ai = yes
+
+	potential = {
+		capital_scope = { continent = feyrealm_continent }
+	}
+
+	build_army_mission = {
+		icon = mission_build_up_to_force_limit
+		required_missions = {  }
+		trigger = {
+			army_size_percentage = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "thriving_arms_industry"
+				duration = 9125 #25 years
+			}
+			custom_tooltip = claim_neighbor_province
+			hidden_effect = {
+				every_owned_province = {
+					every_neighbor_province = {
+						limit = {
+							NOT = { owned_by = ROOT }
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_claim = ROOT
+					}
+				}
+			}
+		}
+		ai_weight = {
+			factor = 10
+		}
+	}
+	
+	expand_country_mission = {
+		icon = mission_conquer_50_development
+		required_missions = { build_army_mission }
+		trigger = { grown_by_development = 50 }
+		effect = {
+			capital_scope = {
+				region = {
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { owned_by_subject_of = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+			capital_scope = {
+				add_base_tax = 1
+				add_base_production = 1
+				add_base_manpower = 1
+				area = {
+					limit = { owned_by = ROOT }
+					add_province_modifier = {
+						name = "growth_of_capital"
+						duration = 9125 #25 years
+					}
+				}
+			}
+			hidden_effect = {
+			}
+		}
+	}
+	
+	unite_home_region_feyrealm = {
+		icon = mission_unite_home_region
+		required_missions = { expand_country_mission }
+		provinces_to_highlight = {
+			region_for_scope_province = {
+				is_capital_of = ROOT
+			}
+			NOT = { owned_by = ROOT }
+			NOT = { owned_by_subject_of = ROOT }
+		}
+		trigger = {
+			capital_scope = {
+				region_for_scope_province = {
+					type = all
+					OR = {
+						owned_by = ROOT
+						owned_by_subject_of = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			add_power_projection = {
+				type = mission_rewards_power_projection
+				amount = 25
+			}
+			add_country_modifier = {
+				name = "hegemonic_ambition"
+				duration = 9125 #25 years
+			}
+			custom_tooltip = unite_home_region_feyrealm_tooltip
+			hidden_effect = {
+				feyrealm_continent = {
+					type = all
+					limit = {
+						NOT = { owned_by = ROOT }
+						NOT = { is_permanent_claim = ROOT	}
+						NOT = { is_core = ROOT	}
+						NOT = { owned_by_subject_of = ROOT }
+					}
+					add_permanent_claim = ROOT
+				}
+			}
+		}
+	}
+	
+	feyrealm_hegemony = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { unite_home_region_feyrealm }
+		provinces_to_highlight = {
+			continent = feyrealm_continent
+			NOT = { owned_by = ROOT }
+			NOT = { owned_by_subject_of = ROOT }
+		}
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 100
+				continent = feyrealm_continent
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "planar_hegemony"
+				duration = -1 
+			}
+			add_power_projection = { 
+				type = 10_permanent_power_projection
+				amount = 10
+			}
+			custom_tooltip = feyrealm_hegemony_tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						continent = feyrealm_continent
+					}
+					add_nationalism = -10
+				}
+			}
+		}
+
+	}
+	
+	invade_material_plane = {
+		icon = mission_assemble_an_army
+		required_missions = { feyrealm_hegemony }
+		provinces_to_highlight = {
+			province_id = 10271
+		}
+		trigger = {
+			army_size = 100 
+			has_great_project = {
+				type = feyqueen_tunnel
+				tier = 3
+			}
+		}
+		effect = {
+			add_splendor = 1000
+			add_country_modifier = {
+				name = "invasion_of_mortal_plane"
+				duration = -1
+			}
+			east_deepwoods_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			west_deepwoods_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			hidden_effect = {
+			}
+		}
+	}
+	
+}
+
+feyrealm_diplomatic_missions = {
+	slot = 3
+	
+	generic = yes
+	ai = yes
+	
+	potential = {
+		capital_scope = { continent = feyrealm_continent }
+	}
+	
+	building_alliances = {
+		icon = mission_alliances
+		required_missions = {  } #none
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = building_alliances.tooltip
+				num_of_allies = 2
+				calc_true_if = {
+					all_ally = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "influential_diplomacy"
+				duration = 9125 #25 years
+			}
+			define_advisor = {
+				type = diplomat
+				skill = 1
+				culture = ROOT
+				religion = ROOT
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	have_two_subjects = {
+		icon = mission_have_two_subjects
+		required_missions = { building_alliances }
+		trigger = { num_of_non_tributary_subjects = 2 }
+		effect = {
+			add_dip_power = 100
+			add_country_modifier = {
+				name = "obedient_subjects"
+				duration = 9125 #25 years
+			}
+			every_subject_country = {
+				add_liberty_desire = -10
+			}
+		}
+	}
+	
+	invest_in_trade = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { have_two_subjects }
+		provinces_to_highlight = {
+			province_group = feyrealm_potencial_trade_hubs
+		}
+		trigger = {
+			treasury = 400
+			any_owned_province = {
+				development = 20
+				has_building = marketplace
+				NOT = { province_has_center_of_trade_of_level = 1 }
+				province_group = feyrealm_potencial_trade_hubs
+			}
+		}
+		effect = {
+			add_treasury = -400
+			custom_tooltip = invest_in_trade_tooltip
+			random_owned_province = {
+				limit = {
+					development = 20
+					has_building = marketplace
+					NOT = { province_has_center_of_trade_of_level = 1 }
+					province_group = feyrealm_potencial_trade_hubs
+				}
+				center_of_trade = 1
+			}
+		}
+	}
+	
+	expand_trade_hubs = {
+		icon = mission_african_gold
+		required_missions = { invest_in_trade }
+		trigger = {
+			employed_advisor = {
+				type = trader
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				province_has_center_of_trade_of_level = 1
+			}
+		}
+		effect = {
+			custom_tooltip = expand_trade_hubs_tooltip
+			add_country_modifier = {
+				name = expanded_trade_hubs
+				duration = -1
+			}
+		}
+	}
+	
+	economic_hegemony = {
+		icon = mission_war_chest
+		required_missions = { expand_trade_hubs }
+		provinces_to_highlight = {
+			AND = {
+				province_group = feyrealm_potencial_trade_hubs
+				NOT = { province_has_center_of_trade_of_level = 1 }
+			}
+		}
+		trigger = {
+			feyrealm_potencial_trade_hubs = {
+				type = all
+				AND = {
+					province_has_center_of_trade_of_level = 1
+					owned_by = ROOT
+				}
+			}
+			num_of_owned_provinces_with = {
+				value = 3
+				province_has_center_of_trade_of_level = 3
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = feyrealm_economic_hegemon
+				duration = -1
+			}
+			remove_country_modifier = expanded_trade_hubs
+		}
+	}
+	
+}
+
+feyrealm_administrative_missions = {
+	slot = 4
+	
+	generic = yes
+	ai = yes
+	
+	potential = {
+		capital_scope = { continent = feyrealm_continent }
+	}
+	
+	high_income_mission = {
+		icon = mission_high_income
+		required_missions = {  } #None
+		trigger = { share_of_starting_income = 1.5 }
+		effect = {
+			add_country_modifier = {
+				name = "growing_economy"
+				duration = 9125 #25 years
+			}
+			define_advisor = {
+				type = treasurer
+				skill = 1
+				culture = ROOT
+				religion = ROOT
+				cost_multiplier = 0.5
+			}
+		}
+	}
+	
+	build_temples = {
+		icon = mission_early_game_buildings
+		required_missions = { high_income_mission }
+		trigger = {
+			num_of_owned_provinces_with = {
+				has_tax_building_trigger = yes
+				value = 5
+			}
+			num_of_owned_provinces_with = {
+				has_production_building_trigger = yes
+				value = 5
+			}
+		}
+		effect = {
+			add_adm_power = 50
+			add_country_modifier = {
+				name = "building_spree"
+				duration = 9125
+			}
+		}
+	}
+	
+	cultivate_woods = {
+		icon = mission_che_botanical_exports
+		required_missions = { build_temples }
+		trigger = {
+			treasury = 200
+			any_owned_province = {
+				base_production = 5
+				trade_goods = tropical_wood
+				has_building = workshop
+			}
+		}
+		effect = {
+			add_treasury = -200
+			custom_tooltip = cultivate_woods_tooltip
+			random_owned_province = {
+				limit = {
+					base_production = 5
+					trade_goods = tropical_wood
+					has_building = workshop
+					NOT = { has_province_modifier = simple_cultivated_woods}
+				}
+				add_permanent_province_modifier = {
+					name = simple_cultivated_woods
+					duration = -1
+				}
+			}
+		}
+	}
+	
+	organised_plantations = {
+		icon = mission_pol_develop_countryside
+		required_missions = { cultivate_woods }
+		trigger = {
+			treasury = 1000
+			num_of_owned_provinces_with = {
+				value = 10
+				has_province_modifier = simple_cultivated_woods
+			}
+		}
+		effect = {
+			add_treasury = -1000
+			custom_tooltip = organised_plantations_tooltip
+			random_owned_province = {
+				limit = {
+					has_province_modifier = simple_cultivated_woods
+				}
+				add_permanent_province_modifier = {
+					name = advanced_cultivated_woods
+					duration = -1
+				}
+				remove_province_modifier = simple_cultivated_woods
+			}
+		}
+	}
+	
+	dominate_the_market = {
+		icon = mission_noble_council
+		required_missions = { organised_plantations }
+		provinces_to_highlight = {
+			AND = {
+				continent = feyrealm_continent
+				trade_goods = tropical_wood
+				NOT = { has_province_modifier = advanced_cultivated_woods }
+			}
+		}
+		trigger = {
+			feyrealm_continent = {
+				type = all
+				OR = {
+					AND = {
+						trade_goods = tropical_wood
+						has_province_modifier = advanced_cultivated_woods
+					}
+					NOT = { trade_goods = tropical_wood }
+				}
+				
+			}
+			production_leader = { trade_goods = tropical_wood }
+		}
+		effect = {
+			add_years_of_owned_provinces_production_income = {
+				years = 2
+				trigger = {
+					trade_goods = tropical_wood
+				}
+				#custom_tooltip = EXOTIC_WOOD_PRODUCTION_DESC
+			}
+			custom_tooltip = " "
+			change_price = {
+				trade_goods = tropical_wood
+				key = feyrealm_wood
+				value = 0.5
+				duration = -1
+			}
+			custom_tooltip = " "
+			add_country_modifier = {
+				name = tropical_wood_dominance
+				duration = -1
+			}
+		}
+	}
+	
+}

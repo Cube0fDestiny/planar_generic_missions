@@ -1,0 +1,145 @@
+
+
+seelie_pact_missions = {
+	slot = 1
+	generic = no
+	has_country_shield = yes
+	ai = yes
+	potential = {
+		AND = {
+			religion = seelie_court
+			capital_scope = { continent = feyrealm_continent }
+		}
+	}
+	
+	seelie_appease_the_fey_lords_mission = {
+		icon = mission_indian_stateman
+		required_missions = {  }
+		trigger = {
+			estate_loyalty = {
+				estate = estate_nobles
+				loyalty = 60
+			}
+			treasury = 50
+		}
+		effect = {
+			add_treasury = -50
+			set_estate_privilege = generic_planar_missions_fey_lords_priviledge
+			define_advisor = {
+				type = court_mage
+				skill = 1
+				cost_multiplier = 0.5
+			}
+			hidden_effect = {
+			}
+		}
+	}
+	
+	seelie_work_with_the_fey_lords_mission = {
+		icon = mission_modern_knight_army
+		required_missions = { seelie_appease_the_fey_lords_mission }
+		trigger = {
+			num_of_estate_agendas_completed = {
+				estate = estate_nobles
+				value = 3
+			}
+			num_of_estate_privileges = {
+				estate = estate_nobles
+				value = 5
+			}
+			num_of_owned_provinces_with = {
+				value = 5
+				num_of_times_improved = 1
+				has_province_modifier = fey_lords_normal_modifier
+			}
+		}
+		effect = {
+			add_stability = 1
+			#tooltip = seelie_work_with_the_fey_lords_tooltip_effect
+			hidden_effect = {
+			}
+		}
+	}
+	
+	seelie_fey_lords_conscription_mission = {
+		icon = mission_noble_council
+		required_missions = { seelie_work_with_the_fey_lords_mission }
+		trigger = {
+			has_estate_privilege = estate_nobles_land_rights
+			num_of_owned_provinces_with = {
+				value = 20
+				has_building = barracks
+				has_province_modifier = fey_lords_improved_modifier
+			}
+		}
+		effect = {
+			add_yearly_manpower = 2
+			#tooltip = seelie_fey_lords_conscription_tooltip_effect
+			hidden_effect = {
+			}
+		}
+	}
+	
+	seelie_prosperous_forests_mission = {
+		icon = mission_peasantry
+		required_missions = { seelie_fey_lords_conscription_mission }
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				has_province_modifier = fey_lords_conscription_modifier
+				development = 20
+			}
+			stability = 3
+		}
+		effect = {
+			every_owned_province = {
+				limit = {
+					has_province_modifier = fey_lords_conscription_modifier
+				}
+				add_prosperity = 20
+			}
+			#tooltip = seelie_prosperous_forests_tooltip_effect
+			hidden_effect = {
+			}
+		}
+
+	}
+	
+	seelie_dominant_in_feyrealm_mission = {
+		icon = per_expand_our_influence
+		required_missions = { seelie_prosperous_forests_mission }
+		trigger = {
+			all_known_country = {
+				OR = {
+					AND = {
+						same_continent = ROOT
+						religion = seelie_court
+					}
+					NOT = { same_continent = ROOT }
+				}
+			}
+		}
+		effect = {
+			add_adm_power = 200
+			add_dip_power = 200
+			add_mil_power = 200
+			add_country_modifier = {
+				name = "seelie_court_dominant"
+				duration = -1
+			}
+			hidden_effect = {
+				feyrealm_continent = {
+					type = all
+					limit = {
+						NOT = { religion = unseelie_court }
+					}
+					random = {
+						chance = 60 
+						change_religion = seelie_court
+					}
+				}
+			}
+		}
+	}
+	
+}

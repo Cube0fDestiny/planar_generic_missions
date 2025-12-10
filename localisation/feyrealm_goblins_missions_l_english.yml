@@ -1,0 +1,80 @@
+﻿ l_english:
+ 
+ 
+ #ui stuffs
+ generic_planar_missions_clearcut_wasteland_terrain_tooltip:0 "Terrain: §YIndustrial Wasteland§!\nSupply Limit: §G+10.00§!\nLocal Production Efficiency: §G+20%§!\nPossible Number of Buildings: §G+2§!\nLocal Development Cost: §R+5%§!\nLocal Unrest: §R+2§!\n---------------\nMany forests were cut down to make way for new farms and cities, but this was different, all was ruthlesly destroyed and replaced with organised plantations and great workshops."
+ generic_planar_missions_clearcut_wasteland_button_tooltip:0 "Cut down the fey and their forests!"
+ #planar_build_shadow_railroad_bonus_tt:0 "Terrain will be changed to §YShadow Forest§!, granting the following:\nSupply Limit: §G+4.00§!\nDice Roll for Attacker: §R-1§!\nLocal Development Cost: §R+20%§!"
+ feyrealm_goblins_charcoal_in_cinderglades_button_tooltip:0 "Make use of constantly burning forests to create charcoal."
+ generic_planar_missions_simple_cultivation_tooltip:0 "Cultivate The Local Feywoods."
+ generic_planar_missions_advanced_cultivation_tooltip:0 "Cultivate The Local Feywoods."
+ generic_planar_missions_improved_cultivation_tooltip:0 "Bring this exotic wood plantation up to our standards."
+ feyrealm_goblins_exploit_tropical_wood_button_tooltip:0 "Cut down, pillage and plunder, rid this province of fey's cultivated woods and make way for our plantations, mines and workshops."
+ 
+ #missions
+ feyrealm_goblins_technocratic_coup_mission_title:0 "Technocratic Coup"
+ feyrealm_goblins_technocratic_coup_mission_desc:0 "With growing influence of Artificers old hag coven struggles to maintain control over the country."
+ 
+ feyrealm_goblins_army_of_the_republic_mission_title:0 "Army of the Republic"
+ feyrealm_goblins_army_of_the_republic_mission_desc:0 "Our country is young and surrounded by despotic regimes and fey courts, a great army is needed to safeguard our independence."
+ 
+ feyrealm_goblins_harness_pixie_dust_mission_title:0 "Pixie Dust Usage"
+ feyrealm_goblins_harness_pixie_dust_mission_desc:0 "Why the fey use Pixie Dust as a simple drug, it's magical properties might be harnessed to improve our troops."
+ 
+ feyrealm_goblins_study_the_dragons_mission_title:0 "Study the Dragons"
+ feyrealm_goblins_study_the_dragons_mission_desc:0 "Dragons are trully fascinating creatues, mighty, powerful, with sharp claws and hard scales, unfortunatelly finding one to study is effectively impossible... but kobolds are kinds like dragons, right?"
+ 
+ feyrealm_goblins_artilery_mastery_mission_title:0 "King of the Battles..."
+ feyrealm_goblins_artilery_mastery_mission_desc:0 "...Love of Goblinkind."
+ 
+ feyrealm_goblins_high_income_mission_title:0 "High Income"
+ feyrealm_goblins_high_income_mission_desc:0 "We must increase state income by any means necessary. Money is a requirement for any endeavor of the state, from the daily expenses of the government to the maintenance of armies to invade our enemies."
+ 
+ feyrealm_goblins_early_industrialisation_mission_title:0 "Early Industrialisation"
+ feyrealm_goblins_early_industrialisation_mission_desc:0 "We among all other races are unieually suited for industry, great workshops and manufactories."
+ 
+ feyrealm_goblins_exploit_tropical_wood_mission_title:0 "Exploit Exotic Wood"
+ feyrealm_goblins_exploit_tropical_wood_mission_desc:0 "There exists an abundance of fertile soil and potencial mineable resources in the feyrealm, we need only get rid of this useless wood, and why not make a tidy profit while doing so?"
+ 
+ feyrealm_goblins_clearcut_feywoods_mission_title:0 "Clearcut Feyrealm"
+ feyrealm_goblins_clearcut_feywoods_mission_desc:0 "For decades great ancient forests, protected by magic and hostile fey, have stood in the way of our progress, no more, all will be chopped down, burned and slaughtered."
+ 
+ feyrealm_goblins_charcoal_in_cinderglades_mission_title:0 "Harnessing the Cinderglades"
+ feyrealm_goblins_charcoal_in_cinderglades_mission_desc:0 "While other look at the ethernally burning cinderglades as a tradegy, or a problem to be fixed, we see it as an oportunity, a great oportunity to feed our industrialization."
+ 
+ feyrealm_goblins_masters_of_fire_mission_title:0 "Masters Of Fire"
+ feyrealm_goblins_masters_of_fire_mission_desc:0 "We've tamed the cinderglades, mastered artilery, gunpowder and shot, none can rival our skill."
+ 
+ #modifiers
+ feyrealm_goblins_army_of_the_republic:0 "Army of the Republic"
+ feyrealm_goblins_pixie_dust_usage:0 "Pixie Dust Usage"
+ feyrealm_goblins_pixie_dust_usage_artificers:0 "Pixie Dust Artificery"
+ feyrealm_goblins_integrate_dragons:0 "Integrating Kobolds"
+ feyrealm_goblin_study_dragons:0 "Studied Dragon Scale"
+ feyrealm_goblin_artilery_mastery:0 "Expert Artilery"
+ feyrealm_goblins_early_industrialisation:0 "Early Industrialisation"
+ feyrealm_goblins_charcoal:0 "Cinderglades Charcoal"
+ feyrealm_goblins_charcoal_desc:0 "Charcoal production in the Cinderglades, while innovative, is nowhere near as efficient as regular mining operations."
+ feyrealm_goblins_masters_of_fire:0 "Masters of Fire"
+ feyrealm_goblins_masters_of_fire_artificers:0 "Gunpowerder Artificery"
+ feyrealm_goblins_advanced_industrialisation:0 "Advanced Industrialisation"
+ feyrealm_goblins_exploit_tropical_wood_temp:0 "Exploiting Exotic Wood"
+ feyrealm_goblins_clear_cut_modifier_temp:0 "Clearcutting the Forests"
+ 
+ clear_cut_wasteland:0 "Industrial Wasteland"
+ cleared_ancient_forest_terrain:0 "Cut down Ancient Forest"
+ cleared_forest_terrain:0 "Cut down Forest"
+ cleared_woods_terrain:0 "Cut down Woods"
+ 
+ #events
+ 
+ planar_generic_missions_events.30.t:0 "Question of Faith"
+ planar_generic_missions_events.30.d:0 "With our recent revolution many argue for adandoning our old beliefs."
+ planar_generic_missions_events.30.a:0 "Thigs are right just the way they are."
+ planar_generic_missions_events.30.b:0 "let us embrace the old faith of our ancestors!"
+ planar_generic_missions_events.30.c:0 "Let's abandon those old superstitions, reason and logic will guide us forwards."
+ 
+ 
+ 
+ 
+ 

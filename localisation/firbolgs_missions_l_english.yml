@@ -1,0 +1,32 @@
+﻿ l_english:
+
+ city_of_firbolgs:0 "City of Firbolgs"
+ firbolg_suburbs:0 "Firbolg Suburbs"
+ firbolg_professional_army:0 "Professional Army"
+ expanded_firbolg_city:0 "Great City of Firbolgs"
+ firbolg_united_firbolgs:0 "United Firbolgs"
+ firbolg_city_of_giants:0 "City of Giants"
+ firbolg_imperial_capital:0 "Imperial Firbolg Capital"
+ 
+ firbolg_secure_cities_mission_title:0 "Secure The City"
+ firbolg_secure_cities_mission_desc:0 "The remaining Firbolgs huddle around one of two ancient giant cities, if we are to reclaim our legacy we must take and secure one of them."
+ firbolg_secure_cities_tooltip_trigger:0 "Own and Core one of the Firbolg cities and surrounding provinces."
+ firbolg_secure_cities_tooltip_effect:0 "Every owned Urban Terrain province gets §Y"City of Firbolgs"§! modifier giving:\nLocal Defensiveness: §G+30.0%§!\nLocal Development Cost Modifier: §G-5.0%§!\nLocal Construction Cost: §R+20.0%§!\nLocal Construction Time: §R+10.0%§!\nLocal Production Efficiency: §G+20.0%§!\nLocal Tax Modifier: §G+20.0%§!\n\nEvery neighboring province gets §Y"Firbolg Suburbs"§! modifier giving:\nLocal Manpower: §G+2000§!\nLocal Manpower Modifier: §G+20.0%§!\nLocal Recruitment Cost: §G-25.0%§!\nLocal Recruitment Speed: §G+25%§!\nLocal Tax Modifier: §R-20.0%§!"
+ 
+ firbolg_professional_army_mission_title:0 "Professional Army"
+ firbolg_professional_army_mission_desc:0 "Giants' and Giantkin's attitude towards war is limited, animalistic, brutal, we alone among our kind understand the importance of logictics, discipline and order."
+ 
+ firbolgs_unite_mission_title:0 "Unite the Firbolg"
+ firbolgs_unite_mission_desc:0 "If we are to build a new empire in the feyrealm, we must stand united."
+ firbolgs_unite_tooltip_trigger:0 "Own and Core every city in feyrealm and provinces adjacent to them."
+ firbolgs_unite_tooltip_effect:0 "Every owned Urban Terrain province gets §Y"Great City of Firbolgs"§! modifier giving:\nLocal Defensiveness: §G+40%§!\nLocal Development Cost Modifier: §G-10.0%§!\nLocal Construction Cost: §R+10.0%§!\nLocal Production Efficiency: §G+40.0%§!\nLocal Tax Modifier: §G+40.0%§!\nLocal Trade Power Modifier: §G+50.0%§!\n\nEvery neighboring province gets §Y"Firbolg Suburbs"§! modifier giving:\nLocal Manpower: §G+2000§!\nLocal Manpower Modifier: §G+20.0%§!\nLocal Recruitment Cost: §G-25.0%§!\nLocal Recruitment Speed: §G+25.0%§!\nLocal Tax Modifier: §R-20.0%§!"
+ 
+ firbolg_second_army_reform_mission_title:0 "Great Army Reform"
+ firbolg_second_army_reform_mission_desc:0 "We shall rule the battlefield, not throught brutality and monstrous strength but throught discipline, logiscics and drill."
+ 
+ firbolg_glory_of_giants_mission_title:0 "Glory of Giants"
+ firbolg_glory_of_giants_mission_desc:0 "We have rebuild and expended our great cities, now they even rival the ancient cities of Giants."
+ 
+ generic_planar_missions_firbolg_bottomless_bags:0 "Firbolg Professional Army"
+ generic_planar_missions_firbolg_bottomless_bags_desc:0 "A result of a great military reform, our army is unrivaled when it comes to logictics and discipline."
+ 

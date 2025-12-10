@@ -1,0 +1,144 @@
+
+
+unseelie_pact_missions = {
+	slot = 1
+	generic = no
+	has_country_shield = yes
+	potential = {
+		AND = {
+			religion = unseelie_court
+			capital_scope = { continent = feyrealm_continent }
+		}
+	}
+	
+	unseelie_pact_apease_the_fey_mission = {
+		icon = mission_indian_stateman
+		required_missions = {  }
+		trigger = {
+			treasury = 50
+			#church_power = 50
+		}
+		effect = {
+			add_treasury = -50
+			add_prestige = 50
+			#add_church_power = -50
+			#fey_court_greatly_improve_unseelie_court_relations = yes
+			#fey_court_slightly_improve_seelie_court_relations = yes
+			#fey_court_slightly_improve_unaligned_fey_relations = yes
+			hidden_effect = {
+			}
+		}
+	}
+	
+	unseelie_pact_strengthen_clergy_mission = {
+		icon = mission_modern_knight_army
+		required_missions = { unseelie_pact_apease_the_fey_mission }
+		trigger = {
+			estate_loyalty = {
+				estate = estate_church
+				loyalty = 60
+			}
+			num_of_estate_agendas_completed = {
+				estate = estate_church
+				value = 3
+			}
+			num_of_estate_privileges = {
+				estate = estate_church
+				value = 5
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "fey_court_strengthened_church"
+				duration = -1
+			}
+			add_stability = 1
+			hidden_effect = {
+			}
+		}
+	}
+	
+	unseelie_pact_humiliate_unseelie_mission = {
+		icon = mission_noble_council
+		required_missions = { unseelie_pact_strengthen_clergy_mission }
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = unseelie_pact_humiliate_seelie_tooltip
+				any_rival_country = {
+					religion = seelie_court
+					humiliated_by = ROOT
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = "fey_court_humiliated_religous_enemies"
+				duration = -1
+			}
+			hidden_effect = {
+			}
+		}
+	}
+	
+	unseelie_pact_build_temples_mission = {
+		icon = mission_peasantry
+		required_missions = { unseelie_pact_humiliate_unseelie_mission }
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 25
+				religion = unseelie_court
+				has_building = temple
+			}
+			has_estate_privilege = estate_church_development_of_temples
+		}
+		effect = {
+			add_country_modifier = {
+				name = "fey_court_revitalised_temples_global"
+				duration = -1
+			}
+			every_owned_province = {
+				limit = {
+					religion = unseelie_court
+					has_building = temple
+				}
+				add_province_modifier = {
+					name = "fey_court_revitalised_temples_local"
+					duration = -1
+				}
+			}
+			hidden_effect = {
+			}
+		}
+
+	}
+	
+	unseelie_pact_destroy_unseelie_mission = {
+		icon = per_expand_our_influence
+		required_missions = { unseelie_pact_build_temples_mission }
+		trigger = {
+			all_known_country = {
+				NOT = { religion = seelie_court }
+			}
+		}
+		effect = {
+			add_mil_power = 200
+			add_country_modifier = {
+				name = "fey_court_destroyed_seelie"
+				duration = -1
+			}
+			hidden_effect = {
+				feyrealm_continent = {
+					type = all
+					limit = {
+						religion = seelie_court
+					}
+					random = { 
+						chance = 50 
+						change_religion = unseelie_court
+					}
+				}
+			}
+		}
+	}
+	
+}
