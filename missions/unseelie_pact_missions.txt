@@ -1,6 +1,4 @@
-
-
-unseelie_pact_missions = {
+unseelie_missions = {
 	slot = 1
 	generic = no
 	has_country_shield = yes
@@ -11,134 +9,146 @@ unseelie_pact_missions = {
 		}
 	}
 	
-	unseelie_pact_apease_the_fey_mission = {
+	unseelie_show_of_strength_mission = {
 		icon = mission_indian_stateman
 		required_missions = {  }
 		trigger = {
-			treasury = 50
-			#church_power = 50
+			war_score = 99
 		}
 		effect = {
-			add_treasury = -50
-			add_prestige = 50
-			#add_church_power = -50
-			#fey_court_greatly_improve_unseelie_court_relations = yes
-			#fey_court_slightly_improve_seelie_court_relations = yes
-			#fey_court_slightly_improve_unaligned_fey_relations = yes
-			hidden_effect = {
+			change_estate_land_share = {
+				estate = all
+				share = -5
+			}
+			add_country_modifier = {
+				name = unseelie_display_of_power
+				duration = -1
 			}
 		}
 	}
 	
-	unseelie_pact_strengthen_clergy_mission = {
+	unseelie_ruthless_efficiency_mission = {
 		icon = mission_modern_knight_army
-		required_missions = { unseelie_pact_apease_the_fey_mission }
+		required_missions = { unseelie_show_of_strength_mission }
 		trigger = {
-			estate_loyalty = {
-				estate = estate_church
-				loyalty = 60
-			}
-			num_of_estate_agendas_completed = {
-				estate = estate_church
-				value = 3
-			}
-			num_of_estate_privileges = {
-				estate = estate_church
-				value = 5
-			}
+			overextension_percentage = 1
 		}
 		effect = {
 			add_country_modifier = {
-				name = "fey_court_strengthened_church"
+				name = "unseelie_ruthless_efficiency"
 				duration = -1
 			}
-			add_stability = 1
-			hidden_effect = {
-			}
+			add_adm_power = 100
 		}
 	}
 	
-	unseelie_pact_humiliate_unseelie_mission = {
+	unseelie_aggressive_diplomacy_mission = {
 		icon = mission_noble_council
-		required_missions = { unseelie_pact_strengthen_clergy_mission }
+		required_missions = { unseelie_ruthless_efficiency_mission }
 		trigger = {
+			any_country = { coalition_target = ROOT }
 			custom_trigger_tooltip = {
-				tooltip = unseelie_pact_humiliate_seelie_tooltip
-				any_rival_country = {
-					religion = seelie_court
-					humiliated_by = ROOT
-				}
+				tooltip = unseelie_aggressive_diplomacy_tooltip
+				any_rival_country = { humiliated_by = ROOT }
 			}
 		}
 		effect = {
 			add_country_modifier = {
-				name = "fey_court_humiliated_religous_enemies"
+				name = "unseelie_aggressive_diplomacy"
 				duration = -1
 			}
-			hidden_effect = {
-			}
-		}
-	}
-	
-	unseelie_pact_build_temples_mission = {
-		icon = mission_peasantry
-		required_missions = { unseelie_pact_humiliate_unseelie_mission }
-		trigger = {
-			num_of_owned_provinces_with = {
-				value = 25
-				religion = unseelie_court
-				has_building = temple
-			}
-			has_estate_privilege = estate_church_development_of_temples
-		}
-		effect = {
-			add_country_modifier = {
-				name = "fey_court_revitalised_temples_global"
-				duration = -1
-			}
-			every_owned_province = {
+			every_country = {
 				limit = {
-					religion = unseelie_court
-					has_building = temple
+					capital_scope = { continent = feyrealm_continent }
 				}
-				add_province_modifier = {
-					name = "fey_court_revitalised_temples_local"
-					duration = -1
+				reverse_add_aggressive_expansion = {
+					who = ROOT
+					value = -25
+					apply_calc = no
 				}
-			}
-			hidden_effect = {
 			}
 		}
-
 	}
 	
-	unseelie_pact_destroy_unseelie_mission = {
-		icon = per_expand_our_influence
-		required_missions = { unseelie_pact_build_temples_mission }
+	unseelie_centralize_the_state_mission = {
+		icon = mission_peasantry
+		required_missions = { unseelie_aggressive_diplomacy_mission }
 		trigger = {
-			all_known_country = {
-				NOT = { religion = seelie_court }
+			NOT = {
+				estate_influence = {
+					estate = estate_nobles
+					influence = 50
+				}
+			}
+			NOT = {
+			estate_influence = {
+					estate = estate_church
+					influence = 50
+				}
+			}
+			NOT = {
+				estate_influence = {
+					estate = estate_burghers
+					influence = 50
+				}
+			}
+			crown_land_share = 50
+		}
+		effect = {
+			remove_country_modifier = unseelie_display_of_power
+			add_country_modifier = {
+				name = "unseelie_centralized_state"
+				duration = -1
+			}
+		}
+	}
+	
+	unseelie_dominance_mission = {
+		icon = per_expand_our_influence
+		required_missions = { unseelie_centralize_the_state_mission }
+		trigger = {
+			feyrealm_continent = {
+				type = all
+				owned_by = ROOT
 			}
 		}
 		effect = {
-			add_mil_power = 200
+			add_mil_power = 300
+			add_adm_power = 100
+			add_dip_power = 100
+			remove_country_modifier = unseelie_aggressive_diplomacy
+			remove_country_modifier = unseelie_ruthless_efficiency
 			add_country_modifier = {
-				name = "fey_court_destroyed_seelie"
+				name = "unseelie_ascendant"
 				duration = -1
 			}
 			hidden_effect = {
 				feyrealm_continent = {
 					type = all
-					limit = {
-						religion = seelie_court
-					}
+					limit = { religion = seelie_court }
 					random = { 
-						chance = 50 
+						chance = 60 
 						change_religion = unseelie_court
 					}
 				}
 			}
 		}
 	}
-	
+
+	unseelie_absolute_rule_mission = {
+		icon = per_expand_our_influence
+		required_missions = { unseelie_dominance_mission }
+		trigger = {
+			absolutism = 80
+		}
+		effect = {
+			remove_country_modifier = unseelie_centralized_state
+			add_country_modifier = {
+				name = "unseelie_absolute_rule"
+				duration = -1
+			}
+			hidden_effect = {
+			}
+		}
+	}
 }

@@ -76,3 +76,64 @@ country_event = {
 		change_religion = the_thought
 	}
 }
+
+province_event = {
+	id = planar_generic_missions_events.31
+	title = planar_generic_missions_events.31.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.31.d
+
+	hidden = yes
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	trigger = {
+		has_province_flag = clear_cut_wasteland_terrain
+		NOT = { has_province_modifier = clear_cut_wasteland }
+	}
+
+	option = {
+		name = planar_generic_missions_events.31.a
+		trigger = { has_terrain = ancient_forest }
+		add_province_modifier = {
+			name = cleared_ancient_forest_terrain
+			duration = -1
+			hidden = yes
+		}
+		add_province_modifier = {
+			name = clear_cut_wasteland
+			duration = -1
+			hidden = yes
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.31.b
+		trigger = { has_terrain = forest }
+		add_province_modifier = {
+			name = cleared_forest_terrain
+			duration = -1
+			hidden = yes
+		}
+		add_province_modifier = {
+			name = clear_cut_wasteland
+			duration = -1
+			hidden = yes
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.31.c
+		trigger = { has_terrain = woods }
+		add_province_modifier = {
+			name = cleared_woods_terrain
+			duration = -1
+			hidden = yes
+		}
+		add_province_modifier = {
+			name = clear_cut_wasteland
+			duration = -1
+			hidden = yes
+		}
+	}
+}

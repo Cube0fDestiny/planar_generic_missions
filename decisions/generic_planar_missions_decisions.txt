@@ -1,5 +1,24 @@
 country_decisions = {
 
+#debug
+	own_feyrealm = {
+		potential = {
+			ai = no
+		}
+		allow = {
+			always = yes
+		}
+		effect = {
+			feyrealm_continent = {
+				type = all
+				cede_province = ROOT
+			}
+		}
+		ai_will_do = {
+			factor = 0
+		}
+	}
+
 #ai verions of buttons
 	cultivate_simple = {
 		potential = {

@@ -1,0 +1,40 @@
+﻿ l_english:
+
+ fey_lords_normal_modifier:0 "Influencial Fey Lords"
+ fey_lords_normal_modifier_desc:0 "Local Fey and lesser courts hold great deal of influence in the local forests."
+ fey_lords_improved_modifier:0 "Cooperative Fey Lords"
+ fey_lords_improved_modifier_desc:0 "Throught increased trade and investment, local fey have agreed to cooperate with our state."
+ fey_lords_conscription_modifier:0 "Obedient Fey Lords"
+ fey_lords_conscription_modifier_desc:0 "Local Fey have been stripped of much of their priviledges, their old forests no longer hiding them from the draft."
+ fey_lords_developed_modifier:0 "Integrated Fey Lords"
+ fey_lords_developed_modifier_desc:0 "The woods are cut by roads and studded by bustling towns, the old and wild fey lords completelly subjegated by the state, what little influence they hold, they do only for the benefit of the country."
+
+ seelie_court_dominant:0 "Seelie Court Ascendant"
+ fey_lords_half_dev_woods:0 "Forest Development"
+ fey_lords_half_dev_forest:0 "Forest Development"
+ fey_lords_half_dev_ancient_forest:0 "Forest Development"
+
+ generic_planar_missions_fey_lords_priviledge:0 "Fey Lords"
+ generic_planar_missions_fey_lords_priviledge_desc:0 "Much of our land in the forests and woods is under control od local fey and lesser courts."
+ generic_planar_missions_fey_lords_priviledge_benefits_tooltip:0 "Half Development Cost Penalty in §YForests§!, §YWoods§! and §YAncient Forests§!"
+ generic_planar_missions_fey_lords_priviledge_province_tooltip:0 "Every owned §YForest§!, §YWoods§! and §YAncient Forest§! terrain province will be improved."
+
+ seelie_appease_the_fey_lords_mission_title:0 "Appease The Fey Lords"
+ seelie_appease_the_fey_lords_mission_desc:0 "With much of our lands covered in deep, hard to govern forests we are forced to apease and work with local Fey Lords"
+
+ seelie_improve_modifier_tooltip:0 "Fey Lords modifier will be improved to: "
+
+ seelie_work_with_the_fey_lords_mission_title:0 "Invest in the Forests"
+ seelie_work_with_the_fey_lords_mission_desc:0 "Throught investment in forest trade, roads, and settlements, we can secure the cooperation of the local fey and bring the woods more firmly under our control."
+
+ seelie_fey_lords_conscription_mission_title:0 "Forest Conscription"
+ seelie_fey_lords_conscription_mission_desc:0 "With expanded military infrastructure we can finally properly draft the unrully forest fey."
+
+ seelie_prosperous_forests_mission_title:0 "Prosperous Forests"
+ seelie_prosperous_forests_mission_desc:0 "Our forests are highly developed, the old Fey Lords can no longer escape our country's influence."
+
+ seelie_dominant_in_feyrealm_mission_title:0 "Seelie Court Ascendant"
+ seelie_dominant_in_feyrealm_mission_desc:0 "At last Seelie court has achieved dominance over the feyrealm."
+
+
+

@@ -249,7 +249,6 @@ clear_cut_wasteland = {
 	local_production_efficiency = 0.2
 	local_unrest = 2
 	local_development_cost = 0.05
-	#hidden = yes
 }
 
 cleared_ancient_forest_terrain = {
@@ -331,7 +330,7 @@ firbolg_imperial_capital = {
 
 fey_lords_normal_modifier = {
 	min_local_autonomy = 20
-	local_manpower_modifier = 0.4
+	local_manpower_modifier = 0.1
 	local_unrest = -2
 	local_missionary_strength = 0.02
 }
@@ -352,7 +351,7 @@ fey_lords_half_dev_ancient_forest = {
 
 fey_lords_improved_modifier = {
 	min_local_autonomy = 15
-	local_manpower_modifier = 0.4
+	local_manpower_modifier = 0.2
 	local_unrest = -2
 	local_build_cost = -0.10
 }
@@ -388,4 +387,51 @@ seelie_court_dominant = {
 	same_religion_advisor_cost = -0.2
 	improve_relation_modifier = 0.2
 	diplomatic_reputation = 3
+}
+
+#unseelie
+
+unseelie_display_of_power = {
+	all_estate_loyalty_equilibrium = 0.1
+	loyalty_change_on_revoked = 0.05
+}
+
+unseelie_ruthless_efficiency = {
+	administrative_efficiency = 0.025
+	global_unrest = 2
+	years_of_nationalism = 10
+}
+
+unseelie_aggressive_diplomacy = {
+	ae_impact = 0.05
+	diplomatic_reputation = -2
+	province_warscore_cost = -0.2
+}
+
+unseelie_centralized_state = {
+	all_estate_loyalty_equilibrium = 0.1
+	all_estate_influence_modifier = -0.1
+	loyalty_change_on_revoked = 0.05
+	allow_free_estate_privilege_revocation = yes
+	max_absolutism = 10
+}
+
+unseelie_ascendant = {
+	missionaries = 1
+	administrative_efficiency = 0.05
+	global_unrest = 5
+	ae_impact = 0.10
+	province_warscore_cost = -0.30
+	discipline = 0.05
+	harsh_treatment_cost = -0.4
+}
+
+unseelie_absolute_rule = {
+	all_estate_loyalty_equilibrium = 0.1
+	all_estate_influence_modifier = -0.1
+	loyalty_change_on_revoked = 0.05
+	allow_free_estate_privilege_revocation = yes
+	max_absolutism = 25
+	yearly_absolutism = 1
+	autonomy_change_time = -0.4
 }

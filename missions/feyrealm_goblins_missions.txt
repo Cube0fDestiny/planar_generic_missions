@@ -262,7 +262,7 @@ feyrealm_goblins_economic_missions = {
 					name = feyrealm_goblins_clear_cut_modifier_temp
 					duration = 3650 #10 years
 				}
-				set_province_flag = 
+				set_province_flag = clearcut_by_goblins
 				hidden_effect = {
 					add_province_triggered_modifier = feyrealm_goblins_clear_cut_modifier
 				}

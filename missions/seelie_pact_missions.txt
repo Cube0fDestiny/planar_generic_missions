@@ -30,8 +30,6 @@ seelie_pact_missions = {
 				skill = 1
 				cost_multiplier = 0.5
 			}
-			hidden_effect = {
-			}
 		}
 	}
 	
@@ -39,10 +37,6 @@ seelie_pact_missions = {
 		icon = mission_modern_knight_army
 		required_missions = { seelie_appease_the_fey_lords_mission }
 		trigger = {
-			num_of_estate_agendas_completed = {
-				estate = estate_nobles
-				value = 3
-			}
 			num_of_estate_privileges = {
 				estate = estate_nobles
 				value = 5
@@ -55,8 +49,26 @@ seelie_pact_missions = {
 		}
 		effect = {
 			add_stability = 1
-			#tooltip = seelie_work_with_the_fey_lords_tooltip_effect
+			custom_tooltip = seelie_improve_modifier_tooltip
+			tooltip = {
+				random_owned_province = {
+					add_province_modifier = {
+						name = fey_lords_improved_modifier
+						duration = -1
+					}
+				}
+			}
 			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = fey_lords_normal_modifier
+					}
+					remove_province_modifier = fey_lords_normal_modifier
+					add_province_modifier = {
+						name = fey_lords_improved_modifier
+						duration = -1
+					}
+				}
 			}
 		}
 	}
@@ -74,8 +86,26 @@ seelie_pact_missions = {
 		}
 		effect = {
 			add_yearly_manpower = 2
-			#tooltip = seelie_fey_lords_conscription_tooltip_effect
+			custom_tooltip = seelie_improve_modifier_tooltip
+			tooltip = {
+				random_owned_province = {
+					add_province_modifier = {
+						name = fey_lords_conscription_modifier
+						duration = -1
+					}
+				}
+			}
 			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = fey_lords_improved_modifier
+					}
+					remove_province_modifier = fey_lords_improved_modifier
+					add_province_modifier = {
+						name = fey_lords_conscription_modifier
+						duration = -1
+					}
+				}
 			}
 		}
 	}
@@ -98,8 +128,26 @@ seelie_pact_missions = {
 				}
 				add_prosperity = 20
 			}
-			#tooltip = seelie_prosperous_forests_tooltip_effect
+			custom_tooltip = seelie_improve_modifier_tooltip
+			tooltip = {
+				random_owned_province = {
+					add_province_modifier = {
+						name = fey_lords_developed_modifier
+						duration = -1
+					}
+				}
+			}
 			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_province_modifier = fey_lords_conscription_modifier
+					}
+					remove_province_modifier = fey_lords_conscription_modifier
+					add_province_modifier = {
+						name = fey_lords_developed_modifier
+						duration = -1
+					}
+				}
 			}
 		}
 
@@ -109,14 +157,9 @@ seelie_pact_missions = {
 		icon = per_expand_our_influence
 		required_missions = { seelie_prosperous_forests_mission }
 		trigger = {
-			all_known_country = {
-				OR = {
-					AND = {
-						same_continent = ROOT
-						religion = seelie_court
-					}
-					NOT = { same_continent = ROOT }
-				}
+			feyrealm_continent = {
+				type = all
+				owned_by = ROOT
 			}
 		}
 		effect = {

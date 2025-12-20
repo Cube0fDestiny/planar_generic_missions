@@ -4,39 +4,53 @@ generic_planar_missions_fey_lords_priviledge = {
 	loyalty = 0.05
 	influence = 0.2
 	max_absolutism = -20
+
+	benefits = {
+		tolerance_own = 1
+	}
 	
-	tolerance_own = 1
-	
-	conditional_modifier = { trigger = { mission_completed = seelie_work_with_the_fey_lords_mission } modifier = { max_absolutism = 5 nobles_loyalty_modifier = 0.05 } }
-	conditional_modifier = { trigger = { mission_completed = seelie_fey_lords_conscription_mission } modifier = { max_absolutism = 5 nobles_loyalty_modifier = 0.05 } }
-	conditional_modifier = { trigger = { mission_completed = seelie_prosperous_forests_mission } modifier = { max_absolutism = 10 nobles_influence_modifier = -0.1 } }
-	
-	nobles_privilege_slots = 1
+	conditional_modifier = {
+		trigger = {
+			mission_completed = seelie_work_with_the_fey_lords_mission
+			NOT = { mission_completed = seelie_fey_lords_conscription_mission }
+		}
+		modifier = {
+			max_absolutism = 5
+			nobles_loyalty_modifier = 0.05
+		}
+	}
+	conditional_modifier = {
+		trigger = {
+			mission_completed = seelie_fey_lords_conscription_mission
+			NOT = { mission_completed = seelie_prosperous_forests_mission }
+		}
+		modifier = {
+			max_absolutism = 10
+			nobles_loyalty_modifier = 0.1
+			nobles_privilege_slots = 1
+		}
+	}
+	conditional_modifier = {
+		trigger = { mission_completed = seelie_prosperous_forests_mission }
+		modifier = {
+			max_absolutism = 20
+			nobles_loyalty_modifier = 0.10
+			nobles_influence_modifier = -0.1
+			nobles_privilege_slots = 1
+		}
+	}
 	
 	is_valid = {
-		OR = {
-			religion = seelie_court
-			religion = unseelie_court
-		}
-		NOT = { mission_completed = unseelie_clamp_down_on_fey_lords_mission }
+		religion = seelie_court
 	}
 	can_select = {
-		OR = {
-			mission_completed = unseelie_show_of_power_mission
-			mission_completed = seelie_appease_the_fey_lords_mission
-		}
+		mission_completed = seelie_appease_the_fey_lords_mission
 	}
 	on_granted = {
-		custom_tooltip = "give this thing to all forests:"
-		tooltip = {
-			add_province_modifier = {
-				name = fey_lords_normal_modifier
-				duration = -1
-			}
-		}
+		custom_tooltip = generic_planar_missions_fey_lords_priviledge_province_tooltip
 	}
 	can_revoke = {
-		mission_completed = unseelie_clamp_down_on_fey_lords_mission
+		mission_completed = seelie_prosperous_forests_mission
 	}
 	#on_revoked = { }
 	#on_invalid = { }
@@ -51,27 +65,21 @@ generic_planar_missions_fey_lords_priviledge = {
 				}
 			}
 			if = {
-				limit = {
-					mission_completed = seelie_prosperous_forests_mission
-				}
+				limit = { ROOT = { mission_completed = seelie_prosperous_forests_mission } }
 				add_province_modifier = {
 					name = fey_lords_developed_modifier
 					duration = -1
 				}
 			}
 			else_if = {
-				limit = {
-					mission_completed = seelie_fey_lords_conscription_mission
-				}
+				limit = { ROOT = { mission_completed = seelie_fey_lords_conscription_mission } }
 				add_province_modifier = {
 					name = fey_lords_conscription_modifier
 					duration = -1
 				}
 			}
 			else_if = {
-				limit = {
-					mission_completed = seelie_work_with_the_fey_lords_mission
-				}
+				limit = { ROOT = { mission_completed = seelie_work_with_the_fey_lords_mission } }
 				add_province_modifier = {
 					name = fey_lords_improved_modifier
 					duration = -1
@@ -85,27 +93,21 @@ generic_planar_missions_fey_lords_priviledge = {
 			}
 		}
 		if = {
-			limit = {
-				has_terrain = woods
-			}
+			limit = { has_terrain = woods }
 			add_province_modifier = {
 				name = fey_lords_half_dev_woods
 				duration = -1
 			}
 		}
 		if = {
-			limit = {
-				has_terrain = forest
-			}
+			limit = { has_terrain = forest }
 			add_province_modifier = {
 				name = fey_lords_half_dev_forest
 				duration = -1
 			}
 		}
 		if = {
-			limit = {
-				has_terrain = ancient_forest
-			}
+			limit = { has_terrain = ancient_forest }
 			add_province_modifier = {
 				name = fey_lords_half_dev_ancient_forest
 				duration = -1
