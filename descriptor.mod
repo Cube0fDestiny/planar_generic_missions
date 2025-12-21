@@ -2,7 +2,7 @@ version="1.0"
 tags={
 	"missions"
 }
-name="Generic Missions for PLanes of Anbennar"
+name="Generic Missions for Planes of Anbennar"
 dependencies={
 	"Anbennar: A Fantasy Total Conversion"
 	"Planes of Anbennar - Map Expansion"
