@@ -10,7 +10,7 @@ unseelie_missions = {
 	}
 	
 	unseelie_show_of_strength_mission = {
-		icon = mission_indian_stateman
+		icon = mission_cannons_firing
 		required_missions = {  }
 		trigger = {
 			war_score = 99
@@ -28,7 +28,7 @@ unseelie_missions = {
 	}
 	
 	unseelie_ruthless_efficiency_mission = {
-		icon = mission_modern_knight_army
+		icon = mission_impaled_soldies
 		required_missions = { unseelie_show_of_strength_mission }
 		trigger = {
 			overextension_percentage = 1
@@ -43,7 +43,7 @@ unseelie_missions = {
 	}
 	
 	unseelie_aggressive_diplomacy_mission = {
-		icon = mission_noble_council
+		icon = mission_oceania_assemble_an_army
 		required_missions = { unseelie_ruthless_efficiency_mission }
 		trigger = {
 			any_country = { coalition_target = ROOT }
@@ -71,7 +71,7 @@ unseelie_missions = {
 	}
 	
 	unseelie_centralize_the_state_mission = {
-		icon = mission_peasantry
+		icon = mission_establish_the_prikazy
 		required_missions = { unseelie_aggressive_diplomacy_mission }
 		trigger = {
 			NOT = {
@@ -104,12 +104,12 @@ unseelie_missions = {
 	}
 	
 	unseelie_dominance_mission = {
-		icon = per_expand_our_influence
+		icon = mission_kowtow
 		required_missions = { unseelie_centralize_the_state_mission }
 		trigger = {
-			feyrealm_continent = {
-				type = all
-				owned_by = ROOT
+			num_of_owned_provinces_with = {
+				value = 200
+				continent = feyrealm_continent
 			}
 		}
 		effect = {
@@ -136,7 +136,7 @@ unseelie_missions = {
 	}
 
 	unseelie_absolute_rule_mission = {
-		icon = per_expand_our_influence
+		icon = mission_refine_the_carolean
 		required_missions = { unseelie_dominance_mission }
 		trigger = {
 			absolutism = 80

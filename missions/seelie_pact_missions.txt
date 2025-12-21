@@ -34,7 +34,7 @@ seelie_pact_missions = {
 	}
 	
 	seelie_work_with_the_fey_lords_mission = {
-		icon = mission_modern_knight_army
+		icon = mission_gain_mana
 		required_missions = { seelie_appease_the_fey_lords_mission }
 		trigger = {
 			num_of_estate_privileges = {
@@ -74,7 +74,7 @@ seelie_pact_missions = {
 	}
 	
 	seelie_fey_lords_conscription_mission = {
-		icon = mission_noble_council
+		icon = mission_landsknecht_soldier
 		required_missions = { seelie_work_with_the_fey_lords_mission }
 		trigger = {
 			has_estate_privilege = estate_nobles_land_rights
@@ -111,7 +111,7 @@ seelie_pact_missions = {
 	}
 	
 	seelie_prosperous_forests_mission = {
-		icon = mission_peasantry
+		icon = mission_rice_field
 		required_missions = { seelie_fey_lords_conscription_mission }
 		trigger = {
 			num_of_owned_provinces_with = {
@@ -150,16 +150,15 @@ seelie_pact_missions = {
 				}
 			}
 		}
-
 	}
 	
 	seelie_dominant_in_feyrealm_mission = {
-		icon = per_expand_our_influence
+		icon = give_him_back_his_legions
 		required_missions = { seelie_prosperous_forests_mission }
 		trigger = {
-			feyrealm_continent = {
-				type = all
-				owned_by = ROOT
+			num_of_owned_provinces_with = {
+				value = 200
+				continent = feyrealm_continent
 			}
 		}
 		effect = {
@@ -184,5 +183,4 @@ seelie_pact_missions = {
 			}
 		}
 	}
-	
 }
