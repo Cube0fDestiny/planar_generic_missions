@@ -824,7 +824,7 @@ guiTypes = {
 			
 			guiButtonType = {
 				name = "feyrealm_goblins_clearcut_feywoods_button"
-				position = { x= 449 y = 60 }
+				position = { x= 449 y = 0 }
 				quadTextureSprite ="GFX_feyrealm_goblins_clearcut_feywoods_button"
 				scripted = yes
 			}

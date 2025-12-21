@@ -11,6 +11,12 @@
  create_centers_of_trade_in_feyrealm_efficiently_title:0 "Create a new centre of trade"
  create_centers_of_trade_in_feyrealm_efficiently_desc:0 "Will enough effort and investment some of the potential hubs of commerce may bloom into great marketowns."
  
+ generic_planar_missions_simple_cultivation_tooltip:0 "Tap into feyrealm's potencial for exotic wood production"
+ generic_planar_missions_advanced_cultivation_tooltip:0 "Tap into feyrealm's potencial for exotic wood production"
+ generic_planar_missions_improved_cultivation_tooltip:0 "Improve local plantations to our standard"
+ generic_planar_missions_create_centers_of_trade_button_tooltip:0 "Expand local infrastructure into a proper trade hub"
+ generic_planar_missions_create_centers_of_trade_efficiently_button_tooltip:0 "Expand local infrastructure into a proper trade hub"
+
  planar_hegemony:0 "Planar Hegemon"
  invasion_of_mortal_plane:0 "Invasion of the mortal plane"
  simple_cultivated_woods:0 "Cultivated Woods"
