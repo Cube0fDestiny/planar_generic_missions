@@ -225,7 +225,7 @@ feyrealm_goblins_economic_missions = {
 					name = feyrealm_goblins_exploit_tropical_wood_temp
 					duration = 3650 #10 years
 				}
-				add_province_triggered_modifier = feyrealm_goblins_exploit_tropical_wood
+				hidden_effect = { add_province_triggered_modifier = feyrealm_goblins_exploit_tropical_wood }
 				set_province_flag = exploited_by_goblins
 			}
 		}
@@ -263,9 +263,7 @@ feyrealm_goblins_economic_missions = {
 					duration = 3650 #10 years
 				}
 				set_province_flag = clearcut_by_goblins
-				hidden_effect = {
-					add_province_triggered_modifier = feyrealm_goblins_clear_cut_modifier
-				}
+				hidden_effect = { add_province_triggered_modifier = feyrealm_goblins_clear_cut_modifier }
 				random_list = {
 					40 = {
 						add_unrest = 5

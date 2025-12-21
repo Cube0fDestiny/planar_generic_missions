@@ -1820,7 +1820,6 @@ custom_button = {
 		owner = {
 			mission_completed = expand_trade_hubs
 			ai = no
-			NOT = { mission_completed = invest_in_trade }
 		}
 		continent = feyrealm_continent
 		province_group = feyrealm_potencial_trade_hubs
