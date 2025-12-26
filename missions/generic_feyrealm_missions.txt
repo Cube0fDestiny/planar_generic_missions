@@ -9,7 +9,7 @@ feyrealm_military_missions = {
 		capital_scope = { continent = feyrealm_continent }
 	}
 
-	build_army_mission = {
+	feyrealm_build_army_mission = {
 		icon = mission_build_up_to_force_limit
 		required_missions = {  }
 		trigger = {
@@ -39,9 +39,9 @@ feyrealm_military_missions = {
 		}
 	}
 	
-	expand_country_mission = {
+	feyrealm_expand_country_mission = {
 		icon = mission_conquer_50_development
-		required_missions = { build_army_mission }
+		required_missions = { feyrealm_build_army_mission }
 		trigger = { grown_by_development = 50 }
 		effect = {
 			capital_scope = {
@@ -69,7 +69,7 @@ feyrealm_military_missions = {
 	
 	unite_home_region_feyrealm = {
 		icon = mission_unite_home_region
-		required_missions = { expand_country_mission }
+		required_missions = { feyrealm_expand_country_mission }
 		provinces_to_highlight = {
 			region_for_scope_province = {
 				is_capital_of = ROOT
@@ -190,7 +190,7 @@ feyrealm_diplomatic_missions = {
 		capital_scope = { continent = feyrealm_continent }
 	}
 	
-	building_alliances = {
+	feyrealm_building_alliances = {
 		icon = mission_alliances
 		required_missions = {  } #none
 		trigger = {
@@ -223,9 +223,9 @@ feyrealm_diplomatic_missions = {
 		}
 	}
 	
-	have_two_subjects = {
+	feyrealm_have_two_subjects = {
 		icon = mission_have_two_subjects
-		required_missions = { building_alliances }
+		required_missions = { feyrealm_building_alliances }
 		trigger = { num_of_non_tributary_subjects = 2 }
 		effect = {
 			add_dip_power = 100
@@ -239,7 +239,7 @@ feyrealm_diplomatic_missions = {
 	
 	invest_in_trade = {
 		icon = mission_market_place_with_asian_traders
-		required_missions = { have_two_subjects }
+		required_missions = { feyrealm_have_two_subjects }
 		provinces_to_highlight = {
 			province_group = feyrealm_potencial_trade_hubs
 		}
@@ -328,7 +328,7 @@ feyrealm_administrative_missions = {
 		capital_scope = { continent = feyrealm_continent }
 	}
 	
-	high_income_mission = {
+	feyrealm_high_income_mission = {
 		icon = mission_high_income
 		required_missions = {  } #None
 		trigger = { share_of_starting_income = 1.5 }
@@ -347,9 +347,9 @@ feyrealm_administrative_missions = {
 		}
 	}
 	
-	build_temples = {
+	feyrealm_build_temples = {
 		icon = mission_early_game_buildings
-		required_missions = { high_income_mission }
+		required_missions = { feyrealm_high_income_mission }
 		trigger = {
 			num_of_owned_provinces_with = {
 				has_tax_building_trigger = yes
@@ -371,7 +371,7 @@ feyrealm_administrative_missions = {
 	
 	cultivate_woods = {
 		icon = mission_che_botanical_exports
-		required_missions = { build_temples }
+		required_missions = { feyrealm_build_temples }
 		trigger = {
 			treasury = 200
 			any_owned_province = {

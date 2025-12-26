@@ -1,0 +1,150 @@
+﻿ l_english:
+ 
+ feyrealm_hegemony_title:0 "Feyrealm Dominance"
+ feyrealm_hegemony_desc:0 "At last all of Feyrealm is united under one flag."
+ feyrealm_hegemony_tooltip: "§Y[Root.GetName]§! loses 10 years of separatism in every province on §YFeyrealm§! continent."
+ 
+ planar_generic_missions_events.100.t:0 "Choosing the Administrative Focus"
+ planar_generic_missions_events.100.d:0 "As our realm grows in size and complexity, we ought to decide on governing principle of our state, whether we'll kepp power centralised, or delegate responsibility to local rulers."
+ planar_generic_missions_events.100.a:0 "Focus on centralising our state"
+ planar_generic_missions_events.100.b:0 "Delegate and decentralise"
+
+ planar_generic_missions_events.101.t:0 "Genies offer their service"
+ planar_generic_missions_events.101.desc:0 "A selection of skilled genie advisors offer their service to the crown."
+ planar_generic_missions_events.101.a:0 "The genies will aid our administration"
+ planar_generic_missions_events.101.b:0 "Request their best diplomats"
+ planar_generic_missions_events.101.c:0 "Delegate the managment of the army to the genies"
+ planar_generic_missions_events.101.d:0 "Ivate all of our brothers to the court!"
+
+ planar_generic_missions_events.102.t:0 "Role of Fiends in the Army"
+ planar_generic_missions_events.102.desc:0 "The fiends are formidable warriors, but the question remains, whether to integrate them directly into the armed forces, or to keep them in seperate, independent units."
+ planar_generic_missions_events.102.a:0 "Rely on independent warbands and mecenaries"
+ planar_generic_missions_events.102.b:0 "Spread out fiends among our other troops"
+ planar_generic_missions_events.102.c:0 "Rely on independent warbands and mecenaries"
+ planar_generic_missions_events.102.d:0 "Spread out fiends among our other troops"
+
+ planar_generic_missions_events.103.t:0 "Putting the spirits back to work"
+ planar_generic_missions_events.103.desc:0 "With unruly spirits of the shadow plane subdued and manged properly, we have found ourselves with considerable amount of newly avaliable workforce."
+ planar_generic_missions_events.103.a:0 "Have them aid our administration"
+ planar_generic_missions_events.103.b:0 "Send them to mines and workshops"
+ planar_generic_missions_events.103.c:0 "They'll make fine soldiers"
+ planar_generic_missions_events.103.d:0 "Have them aid our administration"
+ planar_generic_missions_events.103.e:0 "Send them to mines and workshops"
+ planar_generic_missions_events.103.f:0 "They'll make fine soldiers"
+
+ planar_generic_missions_events.104.t:0 "Question of Religion"
+ planar_generic_missions_events.104.desc:0 "Shadow plane is place of many different warring religion, which we shall devote ourselves to?"
+ planar_generic_missions_events.104.a:0 "We should strive for religious tolerance"
+ planar_generic_missions_events.104.b:0 "Glory to the Xhaz!"
+ planar_generic_missions_events.104.c:0 "Glory to the Xhaz!"
+ planar_generic_missions_events.104.d:0 "It's best to align ourselves with the hags."
+ planar_generic_missions_events.104.e:0 "It's best to align ourselves with the hags."
+ planar_generic_missions_events.104.f:0 "Submit to the infernal court"
+ planar_generic_missions_events.104.g:0 "Submit to the infernal court"
+ planar_generic_missions_events.104.h:0 "Continue genie's ancient tradition"
+ planar_generic_missions_events.104.i:0 "Continue genie's ancient tradition"
+ planar_generic_missions_events.104.j:0 "Stay true to regent court"
+ planar_generic_missions_events.104.k:0 "Elevate the Celestial Cult"
+ planar_generic_missions_events.104.l:0 "Elevate the Celestial Cult"
+ planar_generic_missions_events.104.m:0 "Keep cooperating with the reaper"
+
+ planar_generic_missions_events.105.t:0 "Our relation with hags"
+ planar_generic_missions_events.105.d:0 "Our kind has been bound and forced to follow hag's will for generations, shall we continue this arrangement?"
+ planar_generic_missions_events.105.a:0 "Why rebel? cooperation with hags has many boons"
+ planar_generic_missions_events.105.b:0 "Rally arouund §Y[Monarch.GetName]§!"
+ planar_generic_missions_events.105.c:0 "No more kings, be they cyclop or hag!"
+
+ planar_generic_missions_events.106.t:0 "Question of culture"
+ planar_generic_missions_events.106.d:0 "We have came into contact with many diverse peoples of the shadow plane, it is time to decide, whether to tolerate and itegrate or repress and assimilate them."
+ planar_generic_missions_events.106.a:0 "There is streanght in diversity"
+ planar_generic_missions_events.106.b:0 "We must maintain cultular homogeneity"
+
+ planar_generic_missions_events.107.t:0 "Reclaiming the Battlefields"
+ planar_generic_missions_events.107.d:0 "The eternal war lasted so long that the earth of those battlefields is filled with more metal than some of our mines."
+ planar_generic_missions_events.107.a:0 "Organinse the metal extraction"
+ planar_generic_missions_events.107.b:0 "Send out our best scavengers"
+
+ planar_generic_missions_events.108.t:0 "debug event"
+ planar_generic_missions_events.108.d:0 "hmmmm, i don't think you should see this, weird"
+
+ shadow_plane_build_army_mission_title:0 "Build to Force Limit"
+ shadow_plane_build_army_mission_desc:0 "Any growing country must maintain a reasonably sized army. By expanding our forces we can both further our political interests abroad and stimulate our domestic economy."
+
+ shadow_plane_claim_capital_region_tooltip:0 "The claims are permanent if your capital is in the claimed region."
+
+ shadow_plane_claim_sundered_plains_title:0 "Claim Sundered Plains"
+ shadow_plane_claim_sundered_plains_desc:0 "The old battlefields witnessed countless wars, this one will be the last."
+
+ shadow_plane_strike_fugue_demesne_title:0 "Strike at Fugue Demesne"
+ shadow_plane_strike_fugue_demesne_desc:0 "The reaper's army has long been the dominant power in the shadow plain, but now, having expanded our power base at the edges of the plane, we might break their dominance."
+
+ shadow_plane_foreign_trade_title:0 "Foreign Trade"
+ shadow_plane_foreign_trade_desc:0 "To say the trade in shadow plane is underdeveloped would be a gross understatement, each tiny statelet behaves like an island, perhaps throught the treaties with our allies we may ameliorate the situation."
+
+ shadow_plane_invest_in_trade_title:0 "Invest in Trade"
+ shadow_plane_invest_in_trade.tooltip:0 "Gain ability to expand latent trade hubs in the shadow plane into proper centers of trade."
+ shadow_plane_invest_in_trade_desc:0 "While the foreign trade has increased considerably, it is still disorganised and spread out, what our country needs is a centralised centre of trade."
+
+ shadow_plane_flourishing_trade_title:0 "Flourishing Trade"
+ shadow_plane_flourishing_trade_desc:0 "After years of effort and investment shadow plane's economy is finally prosperous and developed, old dsiconnected tribes and villages transformed into great towns joined by busy roads and railways."
+
+ shadow_plane_genie_advisors_title:0 "Genie Advisors"
+ shadow_plane_genie_advisors_desc:0 "Gienies are a queer, ancient race, long since gone from material realm, but still remaining in the shadow plane, their old knowledge could be of great value for our realm."
+
+ shadow_plane_claim_indalkuvera_title:0 "Claim Indalkuvera"
+ shadow_plane_claim_indalkuvera_desc:0 "Let us strike at the ghoulish forests."
+
+ shadow_plane_renovate_crumbling_city_title:0 "Renovate Crumbling City"
+ shadow_plane_renovate_crumbling_city_desc:0 "The crumbling city is fucking crumbling mate, we gotta fix it."
+
+ shadow_plane_solidify_control_title:0 "Solidify Control"
+ shadow_plane_solidify_control.tooltip:0 "Lose 10 years of separatism in every owned shadow plane province"
+ shadow_plane_solidify_control_desc:0 "We have claimed much of shadow plane, now we must conquer and integrate it into our state"
+
+ shadow_plane_invade_material_plane_title:0 "Invade the Material Plane"
+ shadow_plane_invade_material_plane_desc:0 "Having aqcuired a sizeable power base in teh shadow plane, it is time to look beyond it for expansion."
+
+ shadow_plane_extraplanar_trade_title:0 "Extraplanar Trade"
+ shadow_plane_extraplanar_trade_desc:0 "Just as we expand our realm boyond shadow plane, we shall expand out commercial eanterprice."
+
+ shadow_plane_fiendish_recruits_title:0 "Fiendish reqruits"
+ shadow_plane_fiendish_recruits_desc:0 "Fiends are formidable warriors, we ought to make use of them."
+
+ shadow_plane_claim_karhuszal_title:0 "Claim Karhuszal"
+ shadow_plane_claim_karhuszal_desc:0 "The genies are ancient race, their sultanates withstanding centuries, and soon they will fall before us."
+
+ shadow_plane_drain_the_swamp_title:0 "Drain the Swamp"
+ shadow_plane_drain_the_swamp_desc:0 "Swamps are already incondusive to settlement and development, the ones in shadow plane are no different, but just as regular swamps the shadow swamps can be drained and made usefull."
+
+ shadow_plane_adaptability_title:0 "Shadow Plane Adaptations"
+ shadow_plane_adaptability.tooltip:0 "All curently owned or aqcuired in teh future §YFluswastes§!, §YCrumbling City§!, §YShadow Swamp§! and §YExecrated Earthworks§! terrain provinces will be considerably improved."
+ shadow_plane_adaptability_desc:0 "through years or work and development, we have learned to mitigate the downsides of shadow plane's terrain and to harness it's unique potencial."
+
+ shadow_plane_prosperity_title:0 "Prosperous Shadow Plane"
+ shadow_plane_prosperity_desc:0 "Shadow plane used to be a backwater, but today it rivals great industrial powers off the material plane."
+
+ shadow_plane_extraplanar_exports_title:0 "Extraplanar Exports"
+ shadow_plane_extraplanar_exports_desc:0 "There are goods only created in the shadow plane, with the new avenues of trade with material realm the value of them has greatly increased."
+
+ shadow_plane_organise_spirits_title:0 "Organise the Spirits"
+ shadow_plane_organise_spirits_desc:0 "The spirits of shadow plane are infamously unwilling to work and fight, tresonously putting their own desire for rest above their duty to serve the state, a widespread, robust administrative system needs to be created to govern and make proper use of them."
+
+ shadow_plane_claim_fluxwastes_title:0 "Claim Fluxwastes"
+ shadow_plane_claim_fluxwastes_desc:0 "Fluxwastes are the most treacherous region of the shadow plane, covered in hostile terrain and filled with locals accsutomes to making use of it."
+
+ shadow_plane_stabilise_flux_wastes_title:0 "Stabilise the Flux Wastes"
+ shadow_plane_stabilise_flux_wastes_desc:0 "Flux wastes are perhaps the most treacherous and inhospitable parts of shadow plane, still with enough work the volatility can be reduced to tolerable levels."
+
+ shadow_plane_question_of_religion_title:0 "Question of Religion"
+ shadow_plane_question_of_religion_desc:0 "Shadow plane is home to many warring faiths, it is time to commit ourselves to one of them."
+
+ shadow_plane_steal_hag_secrets_title:0 "Steal Hags' Secrets"
+ shadow_plane_steal_hag_secrets_desc:0 "Hags hold great deal of useful knowledge and guard it viciously, yet pwrhaps by working in the shadow, together with the few disobedient cyclop sservants, we can get our hands on that hidden knowledge."
+
+ shadow_plane_cultural_empire_title:0 "Empire of the Shadow Plane"
+ shadow_plane_cultural_empire_desc:0 "All of the peoples of shadow plane are subjects to §Y[Root.GetName]§!, our rule is undisputable."
+
+ shadow_plane_clear_the_battlefields_title:0 "Clear out the Battlefields"
+ shadow_plane_clear_the_battlefields_desc:0 "The Execrated Earthworks, are lands forever scarred by ethernal war, but while we cannot bring it back to it's former form, we can make use of it's current one."
+
+

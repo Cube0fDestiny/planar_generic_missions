@@ -1,0 +1,839 @@
+shadow_plane_branch_1 = {
+	slot = 1
+	generic = yes
+	ai = yes
+
+	potential = {
+		capital_scope = { continent = shadow_plane_continent }
+		NOT = { tag = XXA }
+	}
+
+	shadow_plane_build_army_mission = {
+		icon = mission_build_up_to_force_limit
+		required_missions = {  }
+		trigger = {
+			army_size_percentage = 1
+		}
+		effect = {
+			add_country_modifier = {
+				name = "thriving_arms_industry"
+				duration = 9125 #25 years
+			}
+			custom_tooltip = claim_neighbor_province
+			hidden_effect = {
+				every_owned_province = {
+					every_neighbor_province = {
+						limit = {
+							NOT = { owned_by = ROOT }
+							NOT = { is_permanent_claim = ROOT	}
+							NOT = { is_core = ROOT	}
+						}
+						add_claim = ROOT
+					}
+				}
+			}
+		}
+		ai_weight = {
+			factor = 10
+		}
+	}
+	
+	shadow_plane_claim_sundered_plains = {
+		icon = mission_unite_home_region
+		required_missions = { shadow_plane_build_army_mission }
+		provinces_to_highlight = {
+			region = sundered_plains_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			any_owned_or_non_tributary_subject_province = { region = sundered_plains_region }
+		}
+		effect = {
+			sundered_plains_region = {
+				type = all
+				limit = { NOT = { country_or_non_sovereign_subject_holds = ROOT } }
+				add_claim = ROOT
+			}
+			custom_tooltip = shadow_plane_claim_capital_region_tooltip
+			hidden_effect = {
+				capital_scope = {
+					region = {
+						limit = {
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	shadow_plane_strike_fugue_demesne = {
+		icon = mission_unite_home_region
+		required_missions = { shadow_plane_claim_sundered_plains shadow_plane_claim_indalkuvera shadow_plane_claim_fluxwastes shadow_plane_claim_karhuszal }
+		provinces_to_highlight = {
+			region = crumbling_city_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			any_owned_or_non_tributary_subject_province = { region = crumbling_city_region }
+		}
+		effect = {
+			add_country_modifier = {
+				name = shadow_plane_war_against_red_reapers
+				duration = 9125 #25 years
+			}
+			crumbling_city_region = {
+				type = all
+				limit = { NOT = { country_or_non_sovereign_subject_holds = ROOT } }
+				add_claim = ROOT
+			}
+			custom_tooltip = shadow_plane_claim_capital_region_tooltip
+			hidden_effect = {
+				capital_scope = {
+					region = {
+						limit = {
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	shadow_plane_foreign_trade = {
+		icon = mission_alliances
+		required_missions = {  }
+		trigger = {
+			capital_scope = { has_building = marketplace }
+			custom_trigger_tooltip = {
+				tooltip = building_alliances.tooltip
+				num_of_allies = 2
+				calc_true_if = {
+					all_ally = {
+						has_opinion = {
+							who = ROOT
+							value = 150
+						}
+					}
+					amount = 2
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = shadow_plane_increased_commerce
+				duration = 9125 #25 years
+			}
+			define_advisor = {
+				type = trader
+				skill = 1
+				culture = ROOT
+				religion = ROOT
+				cost_multiplier = 0.5
+			}
+			add_dip_power = 50
+			add_treasury = 50
+			every_ally = { add_dip_power = 50 add_treasury = 50 }
+		}
+	}
+
+	shadow_plane_invest_in_trade = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { shadow_plane_foreign_trade }
+		provinces_to_highlight = {
+			province_group = shadow_plane_potencial_trade_hubs
+		}
+		trigger = {
+			treasury = 400
+			any_owned_province = {
+				development = 20
+				has_building = marketplace
+				NOT = { province_has_center_of_trade_of_level = 1 }
+				province_group = shadow_plane_potencial_trade_hubs
+			}
+		}
+		effect = {
+			add_treasury = -400
+			custom_tooltip = shadow_plane_invest_in_trade.tooltip
+			random_owned_province = {
+				limit = {
+					development = 20
+					has_building = marketplace
+					NOT = { province_has_center_of_trade_of_level = 1 }
+					province_group = shadow_plane_potencial_trade_hubs
+				}
+				center_of_trade = 1
+			}
+		}
+	}
+
+	shadow_plane_flourishing_trade = {
+		icon = mission_war_chest
+		required_missions = { shadow_plane_invest_in_trade }
+		provinces_to_highlight = {
+			AND = {
+				province_group = shadow_plane_potencial_trade_hubs
+				NOT = { province_has_center_of_trade_of_level = 1 }
+			}
+		}
+		trigger = {
+			shadow_plane_potencial_trade_hubs = {
+				type = all
+				AND = {
+					province_has_center_of_trade_of_level = 1
+					owned_by = ROOT
+				}
+			}
+			trader = 3
+		}
+		effect = {
+			add_years_of_income = 10
+			add_country_modifier = {
+				name = shadow_plane_flourishing_trade_modifier
+				duration = -1
+			}
+		}
+	}
+}
+
+shadow_plane_branch_2 = {
+	slot = 2
+	
+	generic = yes
+	ai = yes
+	
+	potential = {
+		capital_scope = { continent = shadow_plane_continent }
+		NOT = { tag = XXA }
+	}
+	
+	shadow_plane_genie_advisors = {
+		icon = mission_alliances
+		required_missions = {  }
+		trigger = {
+			OR = {
+				any_ally = {
+					primary_culture = silat
+					has_opinion = {
+						who = ROOT
+						value = 200
+					}
+				}
+				any_subject_country = {
+					primary_culture = silat
+					has_opinion = {
+						who = ROOT
+						value = 200
+					}
+					NOT = { liberty_desire = 50 }
+				}
+				AND = {
+					NOT = { any_country = { primary_culture = silat } }
+					employed_advisor = { culture = silat }
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = shadow_plane_genie_advisors
+				duration = -1
+			}
+			country_event = { id = planar_generic_missions_events.101 }
+		}
+	}
+
+	shadow_plane_claim_indalkuvera = {
+		icon = mission_unite_home_region
+		required_missions = { shadow_plane_build_army_mission }
+		provinces_to_highlight = {
+			region = indalkuvera_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			any_owned_or_non_tributary_subject_province = { region = indalkuvera_region }
+		}
+		effect = {
+			indalkuvera_region = {
+				type = all
+				limit = { NOT = { country_or_non_sovereign_subject_holds = ROOT } }
+				add_claim = ROOT
+			}
+			custom_tooltip = shadow_plane_claim_capital_region_tooltip
+			hidden_effect = {
+				capital_scope = {
+					region = {
+						limit = {
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	shadow_plane_renovate_crumbling_city = {
+		icon = mission_alliances
+		required_missions = {  }
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				num_of_buildings_in_province = 6
+				has_terrain = shadow_city_terrain
+			}
+		}
+		effect = {
+			if = {
+				limit = { capital_scope = { has_terrain = shadow_city_terrain } }
+				every_owned_province = {
+					limit = { has_terrain = shadow_city_terrain }
+					add_province_modifier = {
+						name = shadow_plane_renovated_crumbling_city
+						duration = 18250 #50 years
+					}
+				}
+			}
+			else = {
+				every_owned_province = {
+					limit = { has_terrain = shadow_city_terrain }
+					add_province_modifier = {
+						name = shadow_plane_renovated_crumbling_city
+						duration = 9125 #25 years
+					}
+				}
+			}
+		}
+	}
+
+	shadow_plane_solidify_control = {
+		icon = mission_monarch_in_throne_room
+		required_missions = { shadow_plane_strike_fugue_demesne }
+		provinces_to_highlight = {
+			continent = shadow_plane_continent
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			num_of_provinces_owned_or_owned_by_non_sovereign_subjects_with = {
+				value = 100
+				continent = shadow_plane_continent
+			}
+		}
+		effect = {
+			add_power_projection = { 
+				type = 10_permanent_power_projection
+				amount = 10
+			}
+			custom_tooltip = shadow_plane_solidify_control.tooltip
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						continent = shadow_plane_continent
+					}
+					add_nationalism = -10
+				}
+			}
+		}
+
+	}
+	
+	shadow_plane_invade_material_plane = {
+		icon = mission_assemble_an_army
+		required_missions = { shadow_plane_solidify_control }
+		provinces_to_highlight = {
+			OR = {
+				province_id = 10180
+				province_id = 10201
+			}
+		}
+		trigger = {
+			army_size = 100
+			OR = {
+				has_great_project = {
+					type = shadow_bone_tunnel
+					tier = 3
+				}
+				has_great_project = {
+					type = shadow_swamp_gateway
+					tier = 3
+				}
+			}
+			
+		}
+		effect = {
+			add_country_modifier = {
+				name = "invasion_of_mortal_plane"
+				duration = -1
+			}
+			shadow_swamp_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+			reapers_coast_region = {
+				limit = {
+					NOT = { owned_by = ROOT }
+					NOT = { is_core = ROOT }
+				}
+				add_permanent_claim = ROOT
+			}
+		}
+	}
+
+	shadow_plane_extraplanar_trade = {
+		icon = mission_assemble_an_army
+		required_missions = { shadow_plane_invade_material_plane shadow_plane_invest_in_trade }
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 25
+				NOT = { continent = shadow_plane_continent }
+				is_owned_by_trade_company = yes
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = shadow_plane_extraplanar_trade_modifier
+				duration = -1
+			}
+			6686 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = 250
+					key = STRONG_MERCHANTS
+				}
+			}
+			1948 = {
+				add_trade_modifier = {
+					who = ROOT
+					duration = -1
+					power = 250
+					key = STRONG_MERCHANTS
+				}
+			}
+		}
+	}
+}
+
+shadow_plane_branch_3 = {
+	slot = 3
+	
+	generic = yes
+	ai = yes
+	
+	potential = {
+		capital_scope = { continent = shadow_plane_continent }
+		NOT = { tag = XXA }
+	}
+	
+	shadow_plane_fiendish_recruits = {
+		icon = mission_alliances
+		required_missions = {  }
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				culture_group = fiend_group
+				has_building = barracks
+			}
+		}
+		effect = {
+			add_owned_provinces_development_manpower = {
+				multiplier = 2
+				age_multiplier = 2
+				trigger = { culture_group = fiend_group }
+			}
+			country_event = { id = planar_generic_missions_events.102 }
+		}
+	}
+
+	shadow_plane_claim_karhuszal = {
+		icon = mission_unite_home_region
+		required_missions = { shadow_plane_build_army_mission }
+		provinces_to_highlight = {
+			region = karhuszal_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			any_owned_or_non_tributary_subject_province = { region = karhuszal_region }
+		}
+		effect = {
+			karhuszal_region = {
+				type = all
+				limit = { NOT = { country_or_non_sovereign_subject_holds = ROOT } }
+				add_claim = ROOT
+			}
+			custom_tooltip = shadow_plane_claim_capital_region_tooltip
+			hidden_effect = {
+				capital_scope = {
+					region = {
+						limit = {
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	shadow_plane_drain_the_swamp = {
+		icon = mission_alliances
+		required_missions = {  }
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				has_building = workshop
+				has_terrain = shadow_swamp_terrain
+				num_of_times_improved_by_owner = 1
+			}
+		}
+		effect = {
+			if = {
+				limit = { primary_culture = hagbound_cyclops }
+				every_owned_province = {
+					limit = { has_terrain = shadow_swamp_terrain }
+					add_base_production = 1
+				}
+			}
+			every_owned_province = {
+				limit = { has_terrain = shadow_swamp_terrain }
+				add_province_modifier = {
+					name = shadow_plane_drained_swamp
+					duration = 9125 #25 years
+				}
+			}
+		}
+	}
+
+	shadow_plane_adaptability = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_drain_the_swamp shadow_plane_stabilise_flux_wastes shadow_plane_clear_the_battlefields shadow_plane_renovate_crumbling_city }
+		trigger = {
+			stability = 3
+		}
+		effect = {
+			custom_tooltip = shadow_plane_adaptability.tooltip
+			set_country_flag = adapted_to_the_sahdow_plane
+			hidden_effect = {
+				every_owned_province = {
+					trigger_switch = {
+						on_trigger = has_terrain
+						shadow_city_terrain = {
+							add_province_modifier = {
+								name = shadow_plane_adaptability_city
+								duration = -1
+							}
+						}
+						shadow_swamp_terrain = {
+							add_province_modifier = {
+								name = shadow_plane_adaptability_swamp
+								duration = -1
+							}
+						}
+						shadow_wall_terrain = {
+							add_province_modifier = {
+								name = shadow_plane_adaptability_battlefields
+								duration = -1
+							}
+						}
+						fluxwastes_terrain = {
+							add_province_modifier = {
+								name = shadow_plane_adaptability_flux_wastes
+								duration = -1
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+	shadow_plane_prosperity = {
+		icon = mission_market_place_with_asian_traders
+		required_missions = { shadow_plane_adaptability }
+		provinces_to_highlight = {
+			owned_by = ROOT
+			is_prosperous = no
+		}
+		trigger = {
+			all_owned_province = {
+				is_prosperous = yes
+			}
+			calc_true_if = {
+				desc = build_manufactories_mission_tooltip
+				all_owned_province = {
+					OR = {
+						has_building = mills
+						has_building = farm_estate
+						has_building = tradecompany
+						has_building = plantations
+						has_building = textile
+						has_building = weapons
+						has_building = wharf
+						has_building = furnace
+					}
+				}
+				amount = 20
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = shadow_plane_prosperity_modifier
+				duration = -1
+			}
+			every_owned_province = {
+				limit = {
+					OR = {
+						has_building = mills
+						has_building = farm_estate
+						has_building = tradecompany
+						has_building = plantations
+						has_building = textile
+						has_building = weapons
+						has_building = wharf
+						has_building = furnace
+					}
+				}
+				add_base_production = 1
+			}
+		}
+	}
+
+	shadow_plane_extraplanar_exports = {
+		icon = mission_war_chest
+		required_missions = { shadow_plane_prosperity shadow_plane_invade_material_plane }
+		trigger = {
+			shadow_plane_continent = {
+				type = all
+				OR = {
+					AND = {
+						NOT = { trade_goods = planetouched_steel }
+						NOT = { trade_goods = dirgesalt }
+					}
+					AND = {
+						trade_goods = planetouched_steel
+						has_building = weapons
+					}
+					AND = {
+						trade_goods = dirgesalt
+						has_building = tradecompany
+					}
+				}
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = shadow_plane_exotic_exports
+				duration = -1
+			}
+			change_price = {
+				trade_goods = planetouched_steel
+				key = shadow_plane_monopoly
+				value = 0.5
+				duration = -1
+			}
+			change_price = {
+				trade_goods = dirgesalt
+				key = shadow_plane_monopoly
+				value = 1
+				duration = -1
+			}
+		}
+	}
+}
+
+shadow_plane_branch_4 = {
+	slot = 4
+	
+	generic = yes
+	ai = yes
+	
+	potential = {
+		capital_scope = { continent = shadow_plane_continent }
+		NOT = { tag = XXA }
+	}
+	
+	shadow_plane_organise_spirits = {
+		icon = mission_alliances
+		required_missions = {  }
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 30
+				culture_group = shadow_plane_group
+				has_building = courthouse
+			}
+		}
+		effect = {
+			add_country_modifier = {
+				name = shadow_plane_governing_spirits
+				duration = -1
+			}
+			country_event = { id = planar_generic_missions_events.103 }
+		}
+	}
+
+	shadow_plane_claim_fluxwastes = {
+		icon = mission_unite_home_region
+		required_missions = { shadow_plane_build_army_mission }
+		provinces_to_highlight = {
+			region = fluxwastes_region
+			NOT = { country_or_non_sovereign_subject_holds = ROOT }
+		}
+		trigger = {
+			any_owned_or_non_tributary_subject_province = { region = fluxwastes_region }
+		}
+		effect = {
+			fluxwastes_region = {
+				type = all
+				limit = { NOT = { country_or_non_sovereign_subject_holds = ROOT } }
+				add_claim = ROOT
+			}
+			custom_tooltip = shadow_plane_claim_capital_region_tooltip
+			hidden_effect = {
+				capital_scope = {
+					region = {
+						limit = {
+							NOT = { country_or_non_sovereign_subject_holds = ROOT }
+						}
+						add_permanent_claim = ROOT
+					}
+				}
+			}
+		}
+	}
+
+	shadow_plane_stabilise_flux_wastes = {
+		icon = mission_alliances
+		required_missions = {  }
+		trigger = {
+			shadow_plane_continent = {
+				type = all
+				OR = {
+					NOT = { has_terrain = fluxwastes_terrain }
+					AND = {
+						has_influencing_fort = yes
+						has_terrain = fluxwastes_terrain
+						owned_by = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = { has_terrain = fluxwastes_terrain }
+				add_province_modifier = {
+					name = shadow_plane_stable_flux_wastes
+					duration = 9125 #25 years
+				}
+				add_random_development = 1
+			}
+		}
+	}
+
+	shadow_plane_question_of_religion = {
+		icon = mission_alliances
+		required_missions = {  }
+		trigger = {
+			stability = 1
+			OR = {
+				theologian = 2
+				inquisitor = 2
+			}
+		}
+		effect = {
+			country_event = { id = planar_generic_missions_events.104 }
+		}
+	}
+}
+
+shadow_plane_branch_5 = {
+	slot = 5
+	
+	generic = yes
+	ai = yes
+	
+	potential = {
+		capital_scope = { continent = shadow_plane_continent }
+		NOT = { tag = XXA }
+	}
+	
+	shadow_plane_steal_hag_secrets = {
+		icon = mission_alliances
+		required_missions = {  }
+		trigger = {
+			OR = {
+				num_of_owned_provinces_with = {
+					value = 10
+					culture = hagbound_cyclops
+				}
+				AND = {
+					NOT = { primary_culture = hagbound_cyclops }
+					any_country = {
+						culture = hagbound_cyclops
+						has_spy_network_from = {
+							who = ROOT
+							value = 75
+						}
+					}
+				}
+			}
+		}
+		effect = {
+			change_innovativeness = 10
+			define_advisor = {
+				skill = 3
+				type = spymaster
+				culture = hagbound_cyclops
+				cost_multiplier = 0.1
+			}
+			if = {
+				limit = { primary_culture = hagbound_cyclops }
+				country_event = { id = planar_generic_missions_events.105 }
+			}
+		}
+	}
+
+	shadow_plane_cultural_empire = {
+		icon = mission_unite_home_region
+		required_missions = { shadow_plane_steal_hag_secrets shadow_plane_genie_advisors shadow_plane_fiendish_recruits shadow_plane_organise_spirits }
+		trigger = {
+			is_great_power = yes
+		}
+		effect = {
+			set_government_rank = 3
+			country_event = { id = planar_generic_missions_events.106 }
+		}
+	}
+
+	shadow_plane_clear_the_battlefields = {
+		icon = mission_alliances
+		required_missions = {  }
+		trigger = {
+			shadow_plane_continent = {
+				type = all
+				OR = {
+					NOT = { has_terrain = shadow_wall_terrain }
+					AND = {
+						infantry_in_province = 2
+						has_terrain = shadow_wall_terrain
+						owned_by = ROOT
+					}
+				}
+			}
+		}
+		effect = {
+			every_owned_province = {
+				limit = { has_terrain = shadow_wall_terrain }
+				add_base_production = 1
+				kill_units = {
+					type = infantry
+					amount = 2
+				}
+			}
+			country_event = { id = planar_generic_missions_events.107 }
+		}
+	}
+}

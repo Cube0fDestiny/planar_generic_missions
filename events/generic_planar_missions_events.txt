@@ -137,3 +137,517 @@ province_event = {
 		}
 	}
 }
+
+#shadow plane
+
+country_event = {
+	id = planar_generic_missions_events.100
+	title = planar_generic_missions_events.100.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.100.d
+
+	is_triggered_only = yes
+
+	trigger = { }
+
+	option = {
+		name = planar_generic_missions_events.100.a
+		add_country_modifier = {
+			name = shadow_plane_centralisation
+			duration = -1
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.100.b
+		add_country_modifier = {
+			name = shadow_plane_decentralisation
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = planar_generic_missions_events.101
+	title = planar_generic_missions_events.101.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.101.desc
+
+	is_triggered_only = yes
+
+	trigger = { }
+
+	option = {
+		name = planar_generic_missions_events.101.a
+		define_advisor = {
+			type = treasurer
+			cost_multiplier = 0.25
+			culture = silat
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.101.b
+		define_advisor = {
+			type = diplomat
+			cost_multiplier = 0.25
+			culture = silat
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.101.c
+		define_advisor = {
+			type = grand_captain
+			cost_multiplier = 0.25
+			culture = silat
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.101.d
+		trigger = { primary_culture = silat }
+		highlight = yes
+		define_advisor = {
+			type = treasurer
+			cost_multiplier = 0.1
+			culture = silat
+		}
+		define_advisor = {
+			type = diplomat
+			cost_multiplier = 0.1
+			culture = silat
+		}
+		define_advisor = {
+			type = grand_captain
+			cost_multiplier = 0.1
+			culture = silat
+		}
+	}
+}
+
+country_event = {
+	id = planar_generic_missions_events.102
+	title = planar_generic_missions_events.102.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.102.desc
+
+	is_triggered_only = yes
+
+	trigger = { }
+
+	option = {
+		name = planar_generic_missions_events.102.a
+		trigger = { NOT = { culture_group = fiend_group } }
+		add_country_modifier = {
+			name = shadow_plane_fiendish_auxiliaries
+			duration = -1
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.102.b
+		trigger = { NOT = { culture_group = fiend_group } }
+		add_country_modifier = {
+			name = shadow_plane_integrated_fiends
+			duration = -1
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.102.c
+		trigger = { culture_group = fiend_group }
+		highlight = yes
+		add_country_modifier = {
+			name = shadow_plane_fiendish_auxiliaries
+			duration = -1
+		}
+		every_owned_province = {
+			limit = { culture_group = fiend_group }
+			add_base_manpower = 1
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.102.d
+		trigger = { culture_group = fiend_group }
+		highlight = yes
+		add_country_modifier = {
+			name = shadow_plane_integrated_fiends
+			duration = -1
+		}
+		every_owned_province = {
+			limit = { culture_group = fiend_group }
+			add_base_manpower = 1
+		}
+	}
+}
+
+country_event = {
+	id = planar_generic_missions_events.103
+	title = planar_generic_missions_events.103.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.103.desc
+
+	is_triggered_only = yes
+
+	trigger = { }
+
+	option = {
+		name = planar_generic_missions_events.103.a
+		trigger = { NOT = { culture_group = shadow_plane_group } }
+		every_owned_province = {
+			limit = { culture_group = shadow_plane_group }
+			add_base_tax = 1
+		}
+		add_adm_power = -100
+	}
+	option = {
+		name = planar_generic_missions_events.103.b
+		trigger = { NOT = { culture_group = shadow_plane_group } }
+		every_owned_province = {
+			limit = { culture_group = shadow_plane_group }
+			add_base_production = 1
+		}
+		add_dip_power = -100
+	}
+	option = {
+		name = planar_generic_missions_events.103.
+		trigger = { NOT = { culture_group = shadow_plane_group } }
+		every_owned_province = {
+			limit = { culture_group = shadow_plane_group }
+			add_base_manpower = 1
+		}
+		add_mil_power = -100
+	}
+	option = {
+		name = planar_generic_missions_events.103.d
+		trigger = { culture_group = shadow_plane_group }
+		highlight = yes
+		every_owned_province = {
+			limit = { culture_group = shadow_plane_group }
+			add_base_tax = 1
+			add_local_autonomy = -25
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.103.e
+		trigger = { culture_group = shadow_plane_group }
+		highlight = yes
+		every_owned_province = {
+			limit = { culture_group = shadow_plane_group }
+			add_base_production = 1
+			add_local_autonomy = -25
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.103.f
+		trigger = { culture_group = shadow_plane_group }
+		highlight = yes
+		every_owned_province = {
+			limit = { culture_group = shadow_plane_group }
+			add_base_manpower = 1
+			add_local_autonomy = -25
+		}
+	}
+}
+
+country_event = {
+	id = planar_generic_missions_events.104
+	title = planar_generic_missions_events.104.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.104.desc
+
+	is_triggered_only = yes
+
+	trigger = { }
+
+	option = { #tolerant option
+		name = planar_generic_missions_events.104.a
+		add_country_modifier = {
+			name = shadow_plane_religious_tolerance
+			duration = -1
+		}
+		set_country_flag = religious_mission_tolerant
+	}
+
+	option = { #xhazobkult
+		name = planar_generic_missions_events.104.b
+		trigger = { religion = xhazobkult }
+		highlight = yes
+		add_stability = 1
+		add_patriarch_authority = 0.2
+		set_country_flag = religious_mission_xhazobkult
+	}
+	option = {
+		name = planar_generic_missions_events.104.c
+		trigger = { NOT = { religion = xhazobkult } }
+		change_religion = xhazobkult
+		set_country_flag = religious_mission_xhazobkult
+	}
+
+	option = { #shadow pact
+		name = planar_generic_missions_events.104.d
+		trigger = { religion = shadow_pact }
+		highlight = yes
+		add_stability = 1
+		add_church_power = 100
+		set_country_flag = religious_mission_shadow_pact
+	}
+	option = {
+		name = planar_generic_missions_events.104.e
+		trigger = { NOT = { religion = shadow_pact } }
+		change_religion = shadow_pact
+		set_country_flag = religious_mission_shadow_pact
+	}
+
+	option = { #infernal court
+		name = planar_generic_missions_events.104.f
+		trigger = { religion = infernal_court }
+		highlight = yes
+		add_stability = 1
+		add_army_tradition = 25
+		set_country_flag = religious_mission_infernal_court
+	}
+	option = {
+		name = planar_generic_missions_events.104.g
+		trigger = { NOT = { religion = infernal_court } }
+		change_religion = infernal_court
+		set_country_flag = religious_mission_infernal_court
+	}
+
+	option = { #genie cult
+		name = planar_generic_missions_events.104.h
+		trigger = { religion = genie_cult }
+		highlight = yes
+		add_stability = 1
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		set_country_flag = religious_mission_genie_cult
+	}
+	option = {
+		name = planar_generic_missions_events.104.i
+		trigger = { NOT = { religion = genie_cult } }
+		change_religion = genie_cult
+		set_country_flag = religious_mission_genie_cult
+	}
+
+	option = { #regent court
+		name = planar_generic_missions_events.104.j
+		trigger = { religion = regent_court }
+		highlight = yes
+		add_stability = 1
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		set_country_flag = religious_mission_regent_court
+	}
+
+	option = { #celestial cult
+		name = planar_generic_missions_events.104.k
+		trigger = { religion = kamnielites }
+		highlight = yes
+		add_stability = 1
+		add_army_tradition = 25
+		set_country_flag = religious_mission_kamnielites
+	}
+	option = {
+		name = planar_generic_missions_events.104.l
+		trigger = { NOT = { religion = kamnielites } }
+		change_religion = kamnielites
+		set_country_flag = religious_mission_kamnielites
+	}
+
+	option = { #reaper's harvest
+		name = planar_generic_missions_events.104.m
+		trigger = { religion = harvest }
+		highlight = yes
+		add_stability = 1
+		add_adm_power = 50
+		add_dip_power = 50
+		add_mil_power = 50
+		set_country_flag = religious_mission_harvest
+	}
+}
+
+country_event = {
+	id = planar_generic_missions_events.105
+	title = planar_generic_missions_events.105.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.105.d
+
+	is_triggered_only = yes
+
+	trigger = { }
+
+	option = {
+		name = planar_generic_missions_events.105.a
+		add_country_modifier = {
+			name = shadow_plane_cyclops_working_with_hags
+			duration = -1
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.105.b
+		change_government = monarchy
+		add_stability = -1
+		add_country_modifier = {
+			name = shadow_plane_cyclops_freed_from_hags
+			duration = -1
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.105.c
+		change_government = republic
+		add_stability = -1
+		add_country_modifier = {
+			name = shadow_plane_cyclops_freed_from_hags
+			duration = -1
+		}
+	}
+}
+
+country_event = {
+	id = planar_generic_missions_events.106
+	title = planar_generic_missions_events.106.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.106.d
+
+	is_triggered_only = yes
+
+	trigger = { }
+
+	option = {
+		name = planar_generic_missions_events.106.a
+		add_country_modifier = {
+			name = shadow_plane_diverse_empire
+			duration = -1
+		}
+		every_owned_province = {
+			limit = { has_owner_culture = no }
+			add_random_development = 1
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.106.b
+		add_country_modifier = {
+			name = shadow_plane_integrated_empire
+			duration = -1
+		}
+		every_owned_province = {
+			limit = { has_owner_culture = yes }
+			add_random_development = 1
+		}
+	}
+}
+
+country_event = {
+	id = planar_generic_missions_events.107
+	title = planar_generic_missions_events.107.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.107.d
+
+	is_triggered_only = yes
+
+	trigger = { }
+
+	option = {
+		name = planar_generic_missions_events.107.a
+		trigger = { NOT = { culture_group = fiend_group } }
+		every_owned_province = {
+			limit = {
+				has_terrain = shadow_wall_terrain
+				NOT = { trade_goods = copper }
+				NOT = { trade_goods = iron }
+				NOT = { trade_goods = dirgesalt }
+			}
+			random_list = {
+				50 = { }
+				5 = { change_trade_goods = planetouched_steel}
+				10 = { change_trade_goods = gold }
+				15 = { change_trade_goods = copper }
+				20 = { change_trade_goods = iron }
+			}
+		}
+	}
+	option = {
+		name = planar_generic_missions_events.107.b
+		trigger = { culture_group = fiend_group }
+		highlight = yes
+		every_owned_province = {
+			limit = {
+				has_terrain = shadow_wall_terrain
+				NOT = { trade_goods = copper }
+				NOT = { trade_goods = iron }
+				NOT = { trade_goods = dirgesalt }
+			}
+			random_list = {
+				10 = { change_trade_goods = planetouched_steel}
+				10 = { change_trade_goods = mithril }
+				15 = { change_trade_goods = gold }
+				25 = { change_trade_goods = copper }
+				40 = { change_trade_goods = iron }
+			}
+		}
+	}
+}
+
+province_event = {
+	id = planar_generic_missions_events.108
+	title = planar_generic_missions_events.108.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.108.d
+
+	hidden = yes
+
+	mean_time_to_happen = {
+		months = 1
+	}
+
+	trigger = {
+		owner = { has_country_flag = adapted_to_the_sahdow_plane }
+		OR = {
+			AND = {
+				has_terrain = shadow_city_terrain
+				NOT = { has_province_modifier = shadow_plane_adaptability_city }
+			}
+			AND = {
+				has_terrain = shadow_swamp_terrain
+				NOT = { has_province_modifier = shadow_plane_adaptability_swamp }
+			}
+			AND = {
+				has_terrain = shadow_wall_terrain
+				NOT = { has_province_modifier = shadow_plane_adaptability_battlefields }
+			}
+			AND = {
+				has_terrain = fluxwastes_terrain
+				NOT = { has_province_modifier = shadow_plane_adaptability_flux_wastes }
+			}
+		}
+	}
+
+	option = {
+		name = planar_generic_missions_events.108.a
+		trigger_switch = {
+			on_trigger = has_terrain
+			shadow_city_terrain = {
+				add_province_modifier = {
+					name = shadow_plane_adaptability_city
+					duration = -1
+				}
+			}
+			shadow_swamp_terrain = {
+				add_province_modifier = {
+					name = shadow_plane_adaptability_swamp
+					duration = -1
+				}
+			}
+			shadow_wall_terrain = {
+				add_province_modifier = {
+					name = shadow_plane_adaptability_battlefields
+					duration = -1
+				}
+			}
+			fluxwastes_terrain = {
+				add_province_modifier = {
+					name = shadow_plane_adaptability_flux_wastes
+					duration = -1
+				}
+			}
+		}
+	}
+}
