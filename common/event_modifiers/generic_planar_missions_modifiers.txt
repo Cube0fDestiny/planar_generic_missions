@@ -504,7 +504,7 @@ shadow_plane_drained_swamp = {
 	local_development_cost = -0.3
 	supply_limit = 2
 	local_production_efficiency = 0.1
-	local_build_cost = 0.1
+	local_build_cost = -0.1
 }
 
 shadow_plane_adaptability_swamp = {
@@ -602,4 +602,176 @@ shadow_plane_diverse_empire = {
 	promote_culture_cost = -0.25
 	development_cost = -0.05
 	global_unrest = -2
+}
+
+#shadow plane religion
+
+#tolerant
+shadow_plane_tolerant_laws = {
+	tolerance_of_heretics_capacity = 1
+	tolerance_of_heathens_capacity = 1
+	years_of_nationalism = -5
+}
+
+shadow_plane_prosperous_minority = {
+	local_unrest = -2
+	local_tax_modifier = 0.2
+	local_production_efficiency = 0.2
+	local_manpower_modifier = 0.2
+}
+
+shadow_plane_tolerant_society_modifier = {
+	tolerance_of_heretics_capacity = 2
+	tolerance_of_heathens_capacity = 2
+	tolerance_heretic = 3
+	tolerance_heathen = 3
+	years_of_nationalism = -10
+	global_missionary_strength = -0.02
+	yearly_innovativeness = 0.24
+}
+
+#xhazobkult
+shadow_plane_looting_sacrifices = {
+	yearly_patriarch_authority = 0.005
+	loot_amount = 0.5
+	available_province_loot = 1
+}
+
+shadow_plane_power_of_shadowroot = {
+	missionaries = 1
+	global_missionary_strength = 0.02
+	tolerance_own = 2
+	monarch_lifespan = 0.25
+	monarch_military_power = 1
+}
+
+#shadow pact
+shadow_plane_shadow_pact_grand_festival_modifier = {
+	church_power_modifier = 0.5
+	global_missionary_strength = 0.02
+	global_unrest = -2
+}
+
+shadow_plane_shadow_pact_grand_temple_modifier = {
+	church_power_modifier = 0.5
+	missionaries = 1
+	global_missionary_strength = 0.03
+	local_tax_modifier = 1
+	local_development_cost_modifier = -0.1
+	global_unrest = -2
+}
+
+#infernal court
+
+shadow_plane_infernal_court_dominate_weak_modifier = {
+	land_morale = 0.1
+	tolerance_own = 2
+	accept_vassalization_reasons = 10
+}
+
+shadow_plane_infernal_convertions = {
+	global_missionary_strength = 0.03
+	tolerance_own = 2
+	tolerance_heathen = -2
+	tolerance_heretic = -2
+}
+
+shadow_plane_temple_to_kazraiel = {
+	missionaries = 1
+	global_missionary_strength = 0.03
+	local_tax_modifier = 1
+	morale_damage = 0.1
+	infantry_fire = 0.15
+	artillery_fire = 0.25
+	leader_land_fire = 2
+}
+
+shadow_plane_temple_to_mesner = {
+	missionaries = 1
+	global_missionary_strength = 0.03
+	local_tax_modifier = 1
+	defensiveness = 0.25
+	fort_level = 3
+	local_fort_maintenance_modifier = -0.5
+	all_power_cost = -0.025
+}
+
+shadow_plane_temple_to_ildran = {
+	missionaries = 1
+	global_missionary_strength = 0.03
+	local_tax_modifier = 1
+	local_development_cost_modifier = -0.15
+	administrative_efficiency = 0.05
+	adm_advisor_cost = -0.15
+}
+
+shadow_plane_temple_to_hedine = {
+	missionaries = 1
+	global_missionary_strength = 0.03
+	local_tax_modifier = 1
+	improve_relation_modifier = 0.25
+	accept_vassalization_reasons = 25
+	diplomatic_annexation_cost = -0.1
+}
+
+shadow_plane_temple_to_ibberal = {
+	missionaries = 1
+	global_missionary_strength = 0.03
+	local_tax_modifier = 1
+	local_production_efficiency = 0.5
+	global_trade_goods_size = 0.25
+	loot_amount = 0.5
+}
+
+shadow_plane_temple_to_canturian = {
+	missionaries = 1
+	global_missionary_strength = 0.03
+	local_tax_modifier = 1
+	siege_ability = 0.25
+	diplomats = 1
+	spy_action_cost_modifier = -0.5
+	global_spy_defence = 1
+}
+
+shadow_plane_temple_to_forsara = {
+	missionaries = 1
+	global_missionary_strength = 0.03
+	local_tax_modifier = 1
+	local_defender_dice_roll_bonus = 1
+	merchants = 1
+	infantry_shock = 0.2
+	cavalry_shock = 0.25
+	leader_land_shock = 2
+}
+
+#genie cult
+
+shadow_plane_genie_religious_integration = {
+	tolerance_own = 2
+	global_missionary_strength = 0.02
+	manpower_in_accepted_culture_provinces = 0.25
+}
+
+shadow_pact_genie_temple = {
+	local_development_cost = -0.1
+	tax_income = 12
+	local_build_cost = -0.2
+	tolerance_own = 0.05
+	global_tax_modifier = 0.025
+}
+
+shadow_pact_genie_dominant = {
+	missionaries = 1
+	global_missionary_strength = 0.01
+	tolerance_own = 3
+	same_religion_advisor_cost = -0.1
+}
+
+#generic
+
+shadow_pact_generic_dominant_religion = {
+	missionaries = 1
+	global_missionary_strength = 0.02
+	tolerance_own = 2
+	same_religion_advisor_cost = -0.15
 }

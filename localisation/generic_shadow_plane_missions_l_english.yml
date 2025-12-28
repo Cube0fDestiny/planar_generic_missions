@@ -1,9 +1,5 @@
 ﻿ l_english:
  
- feyrealm_hegemony_title:0 "Feyrealm Dominance"
- feyrealm_hegemony_desc:0 "At last all of Feyrealm is united under one flag."
- feyrealm_hegemony_tooltip: "§Y[Root.GetName]§! loses 10 years of separatism in every province on §YFeyrealm§! continent."
- 
  planar_generic_missions_events.100.t:0 "Choosing the Administrative Focus"
  planar_generic_missions_events.100.d:0 "As our realm grows in size and complexity, we ought to decide on governing principle of our state, whether we'll kepp power centralised, or delegate responsibility to local rulers."
  planar_generic_missions_events.100.a:0 "Focus on centralising our state"
@@ -102,7 +98,7 @@
  shadow_plane_solidify_control_desc:0 "We have claimed much of shadow plane, now we must conquer and integrate it into our state"
 
  shadow_plane_invade_material_plane_title:0 "Invade the Material Plane"
- shadow_plane_invade_material_plane_desc:0 "Having aqcuired a sizeable power base in teh shadow plane, it is time to look beyond it for expansion."
+ shadow_plane_invade_material_plane_desc:0 "Having acquired a sizeable power base in the shadow plane, it is time to look beyond it for expansion."
 
  shadow_plane_extraplanar_trade_title:0 "Extraplanar Trade"
  shadow_plane_extraplanar_trade_desc:0 "Just as we expand our realm boyond shadow plane, we shall expand out commercial eanterprice."
@@ -117,7 +113,7 @@
  shadow_plane_drain_the_swamp_desc:0 "Swamps are already incondusive to settlement and development, the ones in shadow plane are no different, but just as regular swamps the shadow swamps can be drained and made usefull."
 
  shadow_plane_adaptability_title:0 "Shadow Plane Adaptations"
- shadow_plane_adaptability.tooltip:0 "All curently owned or aqcuired in teh future §YFluswastes§!, §YCrumbling City§!, §YShadow Swamp§! and §YExecrated Earthworks§! terrain provinces will be considerably improved."
+ shadow_plane_adaptability.tooltip:0 "All curently owned or acquired in the future §YFluswastes§!, §YCrumbling City§!, §YShadow Swamp§! and §YExecrated Earthworks§! terrain provinces will be considerably improved."
  shadow_plane_adaptability_desc:0 "through years or work and development, we have learned to mitigate the downsides of shadow plane's terrain and to harness it's unique potencial."
 
  shadow_plane_prosperity_title:0 "Prosperous Shadow Plane"
@@ -147,4 +143,29 @@
  shadow_plane_clear_the_battlefields_title:0 "Clear out the Battlefields"
  shadow_plane_clear_the_battlefields_desc:0 "The Execrated Earthworks, are lands forever scarred by ethernal war, but while we cannot bring it back to it's former form, we can make use of it's current one."
 
+ shadow_plane_war_against_red_reapers:0 "War against Red Reapers"
+ shadow_plane_centralisation:0 "Centralised State"
+ shadow_plane_decentralisation:0 "Decentralised State"
+ shadow_plane_genie_advisors:0 "Genie Advisors"
+ shadow_plane_renovated_crumbling_city:0 "Renovated Crumbling City"
+ shadow_plane_increased_commerce:0 "Increased Commerce"
+ shadow_plane_flourishing_trade_modifier:0 "Flourishing Trade"
+ shadow_plane_extraplanar_trade_modifier:0 "Extraplanar Trade"
+ shadow_plane_fiendish_auxiliaries:0 "Fiendish Auxiliaries"
+ shadow_plane_integrated_fiends:0 "Integrated Fiendish Troops"
+ shadow_plane_drained_swamp:0 "Drained Swamp"
+ shadow_plane_adaptability_swamp:0 "Shadow Plane Adaptations"
+ shadow_plane_adaptability_city:0 "Shadow Plane Adaptations"
+ shadow_plane_adaptability_flux_wastes:0 "Shadow Plane Adaptations"
+ shadow_plane_adaptability_battlefields:0 "Shadow Plane Adaptations"
+ shadow_plane_prosperity_modifier:0 "Prosperous Shadow Plane"
+ shadow_plane_exotic_exports:0 "Exotic Exports"
+ shadow_plane_governing_spirits:0 "Governing Spirits"
+ shadow_plane_stable_flux_wastes:0 "Stabilised Flux Wastes"
+ shadow_plane_religious_tolerance:0 "Religious Tolerance"
+ shadow_plane_cyclops_working_with_hags:0 "Cooperation with Hags"
+ shadow_plane_cyclops_freed_from_hags:0 "Freedom from Hags"
+ shadow_plane_integrated_empire:0 "Singular Empirial Culture"
+ shadow_plane_diverse_empire:0 "Empire of Many Peoples"
 
+ shadow_plane_potencial_trade_hubs:0 "Potencial Centers of Trade in the Shadow Plane"

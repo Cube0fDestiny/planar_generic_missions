@@ -362,6 +362,7 @@ country_event = {
 			duration = -1
 		}
 		set_country_flag = religious_mission_tolerant
+		swap_non_generic_missions = yes
 	}
 
 	option = { #xhazobkult
@@ -371,12 +372,14 @@ country_event = {
 		add_stability = 1
 		add_patriarch_authority = 0.2
 		set_country_flag = religious_mission_xhazobkult
+		swap_non_generic_missions = yes
 	}
 	option = {
 		name = planar_generic_missions_events.104.c
 		trigger = { NOT = { religion = xhazobkult } }
 		change_religion = xhazobkult
 		set_country_flag = religious_mission_xhazobkult
+		swap_non_generic_missions = yes
 	}
 
 	option = { #shadow pact
@@ -386,12 +389,14 @@ country_event = {
 		add_stability = 1
 		add_church_power = 100
 		set_country_flag = religious_mission_shadow_pact
+		swap_non_generic_missions = yes
 	}
 	option = {
 		name = planar_generic_missions_events.104.e
 		trigger = { NOT = { religion = shadow_pact } }
 		change_religion = shadow_pact
 		set_country_flag = religious_mission_shadow_pact
+		swap_non_generic_missions = yes
 	}
 
 	option = { #infernal court
@@ -401,12 +406,14 @@ country_event = {
 		add_stability = 1
 		add_army_tradition = 25
 		set_country_flag = religious_mission_infernal_court
+		swap_non_generic_missions = yes
 	}
 	option = {
 		name = planar_generic_missions_events.104.g
 		trigger = { NOT = { religion = infernal_court } }
 		change_religion = infernal_court
 		set_country_flag = religious_mission_infernal_court
+		swap_non_generic_missions = yes
 	}
 
 	option = { #genie cult
@@ -418,12 +425,14 @@ country_event = {
 		add_dip_power = 50
 		add_mil_power = 50
 		set_country_flag = religious_mission_genie_cult
+		swap_non_generic_missions = yes
 	}
 	option = {
 		name = planar_generic_missions_events.104.i
 		trigger = { NOT = { religion = genie_cult } }
 		change_religion = genie_cult
 		set_country_flag = religious_mission_genie_cult
+		swap_non_generic_missions = yes
 	}
 
 	option = { #regent court
@@ -434,7 +443,9 @@ country_event = {
 		add_adm_power = 50
 		add_dip_power = 50
 		add_mil_power = 50
-		set_country_flag = religious_mission_regent_court
+		#set_country_flag = religious_mission_regent_court
+		set_country_flag = religious_mission_generic
+		swap_non_generic_missions = yes
 	}
 
 	option = { #celestial cult
@@ -443,14 +454,17 @@ country_event = {
 		highlight = yes
 		add_stability = 1
 		add_army_tradition = 25
-		set_country_flag = religious_mission_kamnielites
+		#set_country_flag = religious_mission_kamnielites
+		set_country_flag = religious_mission_generic
+		swap_non_generic_missions = yes
 	}
-	option = {
-		name = planar_generic_missions_events.104.l
-		trigger = { NOT = { religion = kamnielites } }
-		change_religion = kamnielites
-		set_country_flag = religious_mission_kamnielites
-	}
+	#option = {
+	#	name = planar_generic_missions_events.104.l
+	#	trigger = { NOT = { religion = kamnielites } }
+	#	change_religion = kamnielites
+	#	set_country_flag = religious_mission_kamnielites
+	#	swap_non_generic_missions = yes
+	#}
 
 	option = { #reaper's harvest
 		name = planar_generic_missions_events.104.m
@@ -460,7 +474,9 @@ country_event = {
 		add_adm_power = 50
 		add_dip_power = 50
 		add_mil_power = 50
-		set_country_flag = religious_mission_harvest
+		#set_country_flag = religious_mission_harvest
+		set_country_flag = religious_mission_generic
+		swap_non_generic_missions = yes
 	}
 }
 
@@ -649,5 +665,86 @@ province_event = {
 				}
 			}
 		}
+	}
+}
+
+province_event = {
+	id = planar_generic_missions_events.109
+	title = planar_generic_missions_events.109.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.109.d
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	trigger = {
+		owner = {
+			mission_completed = shadow_plane_venerate_varied_dieties
+			NOT = { has_country_flag = hidden_prosperous_minority_events }
+		}
+		has_owner_religion = no
+		NOT = { has_province_flag = shadow_plane_prosperous_minority_flag }
+		is_state = yes
+	}
+
+	option = {
+		name = planar_generic_missions_events.109.a
+		add_province_modifier = {
+			name = shadow_plane_prosperous_minority
+			duration = 9125 
+		}
+		add_base_tax = 1
+		add_base_production = 1
+		add_base_manpower = 1
+		set_province_flag = shadow_plane_prosperous_minority_flag
+	}
+
+	option = {
+		name = planar_generic_missions_events.109.b
+		owner = { set_country_flag = hidden_prosperous_minority_events }
+		add_province_modifier = {
+			name = shadow_plane_prosperous_minority
+			duration = 9125 
+		}
+		add_base_tax = 1
+		add_base_production = 1
+		add_base_manpower = 1
+		set_province_flag = shadow_plane_prosperous_minority_flag
+	}
+}
+
+province_event = {
+	id = planar_generic_missions_events.110
+	title = planar_generic_missions_events.110.t
+	picture = PRAYING_eventPicture
+	desc = planar_generic_missions_events.110.d
+
+	mean_time_to_happen = {
+		months = 240
+	}
+
+	trigger = {
+		owner = {
+			mission_completed = shadow_plane_venerate_varied_dieties
+			has_country_flag = hidden_prosperous_minority_events
+		}
+		has_owner_religion = no
+		NOT = { has_province_flag = shadow_plane_prosperous_minority_flag }
+		is_state = yes
+	}
+
+	hidden = yes
+
+	option = {
+		name = planar_generic_missions_events.110.a
+		add_province_modifier = {
+			name = shadow_plane_prosperous_minority
+			duration = 9125 
+		}
+		add_base_tax = 1
+		add_base_production = 1
+		add_base_manpower = 1
+		set_province_flag = shadow_plane_prosperous_minority_flag
 	}
 }

@@ -1,0 +1,628 @@
+
+shadow_plane_tolerant_branch = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		has_country_flag = religious_mission_tolerant
+	}
+
+	shadow_plane_protect_religious_minorities = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_question_of_religion }
+		position = 5
+		trigger = {
+			has_estate_privilege = estate_burghers_enforced_interfaith_dialogue
+			government_reform_progress = 50
+		}
+		effect = {
+			change_government_reform_progress = -50
+			add_country_modifier = {
+				name = shadow_plane_tolerant_laws
+				duration = -1
+			}
+		}
+	}
+
+	shadow_plane_venerate_varied_dieties = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_protect_religious_minorities }
+		position = 6
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 25
+				has_building = temple
+				has_owner_religion = no
+			}
+		}
+		effect = {
+			custom_tooltip = shadow_plane_venerate_varied_dieties.tooltip
+			tooltip = {
+				random_owned_province = {
+					limit = {
+						has_building = temple
+						has_owner_religion = no
+					}
+					remove_building = temple
+					add_building = cathedral
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_building = temple
+						has_owner_religion = no
+					}
+					remove_building = temple
+					add_building = cathedral
+				}
+			}
+		}
+	}
+
+	shadow_plane_tolerant_society = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_venerate_varied_dieties }
+		position = 7
+		trigger = {
+			num_of_different_religions_in_court = 4
+			theologian = 5
+		}
+		effect = {
+			change_adm = 1
+			change_dip = 1
+			add_ruler_personality = tolerant_personality
+			remove_country_modifier = shadow_plane_religious_tolerance
+			remove_country_modifier = shadow_plane_tolerant_laws
+			add_country_modifier = {
+				name = shadow_plane_tolerant_society_modifier
+				duration = -1
+			}
+		}
+	}
+}
+
+shadow_plane_xhazobkult_branch = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		has_country_flag = religious_mission_xhazobkult
+	}
+
+	shadow_plane_acquire_more_sacrifices = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_question_of_religion }
+		position = 5
+		trigger = {
+			num_of_times_used_pillage_capital = 5
+			is_at_war = yes
+		}
+		effect = {
+			custom_tooltip = shadow_plane_acquire_more_sacrifices.tooltip
+			tooltip = {
+				random_war_enemy_country = {
+					random_owned_province = {
+						remove_loot = {
+							who = ROOT
+							amount = 5
+						}
+					}
+				}
+			}
+			hidden_effect = {
+				every_war_enemy_country = {
+					every_owned_province = {
+						remove_loot = {
+							who = ROOT
+							amount = 5
+						}
+					}
+				}
+			}
+			add_country_modifier = {
+				name = shadow_plane_looting_sacrifices
+				duration = 9125
+			}
+		}
+	}
+
+	shadow_plane_spread_xhazobkult = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_acquire_more_sacrifices }
+		position = 6
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 25
+				has_building = temple
+				has_state_patriach = yes
+			}
+		}
+		effect = {
+			custom_tooltip = shadow_plane_spread_xhazobkult.tooltip
+			tooltip = {
+				random_owned_province = {
+					limit = {
+						has_building = temple
+						has_state_patriach = yes
+					}
+					remove_building = temple
+					add_building = cathedral
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_building = temple
+						has_state_patriach = yes
+					}
+					remove_building = temple
+					add_building = cathedral
+				}
+			}
+			define_advisor = {
+				type = inquisitor
+				skill = 3
+				cost_multiplier = 0.1
+			}
+		}
+	}
+
+	shadow_plane_font_of_power = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_spread_xhazobkult }
+		provinces_to_highlight = { province_id = 6690 }
+		position = 7
+		trigger = {
+			has_great_project = {
+				type = shadowroot_matriarch
+				tier = 2
+			}
+		}
+		effect = {
+			add_great_project_tier = {
+				type = shadowroot_matriarch
+				tier = 1
+			}
+			add_patriarch_authority = 0.5
+			add_country_modifier = {
+				name = shadow_plane_power_of_shadowroot
+				duration = -1
+			}
+		}
+	}
+}
+
+shadow_plane_shadow_pact_branch = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		has_country_flag = religious_mission_shadow_pact
+	}
+
+	shadow_plane_swamp_temples = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_question_of_religion }
+		position = 5
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 10
+				has_terrain = shadow_swamp_terrain
+				has_building = temple
+			}
+		}
+		effect = {
+			custom_tooltip = shadow_plane_swamp_temples.tooltip
+			tooltip = {
+				random_owned_province = {
+					limit = {
+						has_building = temple
+						has_terrain = shadow_swamp_terrain
+					}
+					remove_building = temple
+					add_building = cathedral
+					add_random_development = 1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_building = temple
+						has_terrain = shadow_swamp_terrain
+					}
+					remove_building = temple
+					add_building = cathedral
+					add_random_development = 1
+				}
+			}
+		}
+	}
+
+	shadow_plane_shadow_pact_grand_festival = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_swamp_temples }
+		position = 6
+		trigger = {
+			church_power = 200
+			treasury = 500
+		}
+		effect = {
+			add_church_power = -200
+			add_treasury = -500
+			add_stability = 3
+			add_country_modifier = {
+				name = shadow_plane_shadow_pact_grand_festival_modifier
+				duration = 3650
+			}
+		}
+	}
+
+	shadow_plane_shadow_pact_grand_temple = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_shadow_pact_grand_festival }
+		position = 7
+		trigger = {
+			OR = {
+				capital_scope = {
+					has_building = temple
+					base_tax = 15
+				}
+				capital_scope = { has_building = cathedral }
+			}
+			
+		}
+		effect = {
+			capital_scope = {
+				remove_building = temple
+				add_building = cathedral
+				add_province_modifier = {
+					name = shadow_plane_shadow_pact_grand_temple_modifier
+					duration = -1
+				}
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+			}
+		}
+	}
+}
+
+shadow_plane_infernal_court_branch = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		has_country_flag = religious_mission_infernal_court
+	}
+
+	shadow_plane_infernal_court_dominate_weak = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_question_of_religion }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = shadow_plane_infernal_court_dominate_weak.tooltip
+				any_rival_country = {
+					humiliated_by = ROOT
+				}
+			}
+		}
+		effect = {
+			add_prestige = 50
+			add_country_modifier = {
+				name = shadow_plane_infernal_court_dominate_weak_modifier
+				duration = 9125
+			}
+		}
+	}
+
+	shadow_plane_infernal_court_spread_faith = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_infernal_court_dominate_weak }
+		position = 6
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = shadow_plane_infernal_court_spread_faith.tooltip
+				check_variable = { which = num_converted_religion value = 20 }
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = inquisitor
+				skill = 3
+				cost_multiplier = 0.1
+			}
+			add_country_modifier = {
+				name = shadow_plane_infernal_convertions
+				duration = -1
+			}
+		}
+	}
+
+	shadow_plane_infernal_court_grand_temple = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_infernal_court_spread_faith }
+		position = 7
+		trigger = {
+			OR = {
+				capital_scope = {
+					has_building = temple
+					base_tax = 15
+				}
+				capital_scope = { has_building = cathedral }
+			}
+			
+		}
+		effect = {
+			capital_scope = {
+				remove_building = temple
+				add_building = cathedral
+				add_base_tax = 3
+				add_base_production = 3
+				add_base_manpower = 3
+				if = {
+					limit = { ROOT = { has_infernal_deity = { deity = kazraiel } } }
+					add_province_modifier = {
+						name = shadow_plane_temple_to_kazraiel
+						duration = -1
+					}
+				}
+				if = {
+					limit = { ROOT = { has_infernal_deity = { deity = mesner } } }
+					add_province_modifier = {
+						name = shadow_plane_temple_to_mesner
+						duration = -1
+					}
+				}
+				if = {
+					limit = { ROOT = { has_infernal_deity = { deity = ildran } } }
+					add_province_modifier = {
+						name = shadow_plane_temple_to_ildran
+						duration = -1
+					}
+				}
+				if = {
+					limit = { ROOT = { has_infernal_deity = { deity = hedine } } }
+					add_province_modifier = {
+						name = shadow_plane_temple_to_hedine
+						duration = -1
+					}
+				}
+				if = {
+					limit = { ROOT = { has_infernal_deity = { deity = ibberal } } }
+					add_province_modifier = {
+						name = shadow_plane_temple_to_ibberal
+						duration = -1
+					}
+				}
+				if = {
+					limit = { ROOT = { has_infernal_deity = { deity = canturian } } }
+					add_province_modifier = {
+						name = shadow_plane_temple_to_canturian
+						duration = -1
+					}
+				}
+				if = {
+					limit = { ROOT = { has_infernal_deity = { deity = forsara } } }
+					add_province_modifier = {
+						name = shadow_plane_temple_to_forsara
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+
+shadow_plane_genie_cult_branch = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		has_country_flag = religious_mission_genie_cult
+	}
+
+	shadow_plane_genie_cult_spread_faith = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_question_of_religion }
+		position = 5
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				has_owner_culture = no
+				has_owner_religion = yes
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = inquisitor
+				skill = 3
+				cost_multiplier = 0.1
+			}
+			add_country_modifier = {
+				name = shadow_plane_genie_religious_integration
+				duration = 9125
+			}
+		}
+	}
+
+	shadow_plane_genie_cult_build_temples = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_genie_cult_spread_faith }
+		position = 6
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				development = 30
+				OR = {
+					has_building = cathedral
+					has_building = temple
+				}
+			}
+			has_estate_privilege = estate_church_development_of_temples
+		}
+		effect = {
+			custom_tooltip = shadow_plane_genie_cult_build_temples.tooltip
+			tooltip = {
+				random_owned_province = {
+					limit = {
+						development = 30
+						OR = {
+							has_building = cathedral
+							has_building = temple
+						}
+					}
+					add_province_modifier = {
+						name = shadow_pact_genie_temple
+						duration = -1
+					}
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						development = 30
+						OR = {
+							has_building = cathedral
+							has_building = temple
+						}
+					}
+					add_province_modifier = {
+						name = shadow_pact_genie_temple
+						duration = -1
+					}
+				}
+			}
+		}
+	}
+
+	shadow_plane_genie_cult_dominant = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_genie_cult_build_temples }
+		position = 7
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 100
+				has_owner_religion = yes
+			}
+		}
+		effect = {
+			add_prestige = 50
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_country_modifier = {
+				name = shadow_pact_genie_dominant
+				duration = -1
+			}
+		}
+	}
+}
+
+shadow_plane_generic_branch = {
+	slot = 4
+	generic = no
+	ai = yes
+	has_country_shield = yes
+	
+	potential = {
+		has_country_flag = religious_mission_generic
+	}
+
+	shadow_plane_generic_spread_faith = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_question_of_religion }
+		position = 5
+		trigger = {
+			custom_trigger_tooltip = {
+				tooltip = shadow_plane_generic_spread_faith.tooltip
+				check_variable = { which = num_converted_religion value = 20 }
+			}
+		}
+		effect = {
+			define_advisor = {
+				type = inquisitor
+				skill = 3
+				cost_multiplier = 0.1
+			}
+			add_adm_power = 200
+		}
+	}
+
+	shadow_plane_generic_build_temples = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_generic_spread_faith }
+		position = 6
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 20
+				has_owner_religion = yes
+				OR = {
+					has_building = cathedral
+					has_building = temple
+				}
+			}
+		}
+		effect = {
+			add_stability = 1
+			custom_tooltip = shadow_plane_generic_build_temples.tooltip
+			tooltip = {
+				random_owned_province = {
+					limit = {
+						has_owner_religion = yes
+						OR = {
+							has_building = cathedral
+							has_building = temple
+						}
+					}
+					add_random_development = 1
+				}
+			}
+			hidden_effect = {
+				every_owned_province = {
+					limit = {
+						has_owner_religion = yes
+						OR = {
+							has_building = cathedral
+							has_building = temple
+						}
+					}
+					add_random_development = 1
+				}
+			}
+		}
+	}
+
+	shadow_plane_generic_dominant = {
+		icon = mission_alliances
+		required_missions = { shadow_plane_generic_build_temples }
+		position = 7
+		trigger = {
+			num_of_owned_provinces_with = {
+				value = 100
+				has_owner_religion = yes
+			}
+		}
+		effect = {
+			add_adm_power = 100
+			add_dip_power = 100
+			add_mil_power = 100
+			add_country_modifier = {
+				name = shadow_pact_generic_dominant_religion
+				duration = -1
+			}
+		}
+	}
+}

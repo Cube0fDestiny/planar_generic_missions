@@ -211,7 +211,8 @@ shadow_plane_branch_2 = {
 	
 	shadow_plane_genie_advisors = {
 		icon = mission_alliances
-		required_missions = {  }
+		required_missions = { }
+		provinces_to_highlight = { culture = silat }
 		trigger = {
 			OR = {
 				any_ally = {
@@ -230,7 +231,10 @@ shadow_plane_branch_2 = {
 					NOT = { liberty_desire = 50 }
 				}
 				AND = {
-					NOT = { any_country = { primary_culture = silat } }
+					num_of_owned_provinces_with = {
+						value = 10
+						culture = silat
+					}
 					employed_advisor = { culture = silat }
 				}
 			}
@@ -276,12 +280,19 @@ shadow_plane_branch_2 = {
 
 	shadow_plane_renovate_crumbling_city = {
 		icon = mission_alliances
-		required_missions = {  }
+		required_missions = { }
+		provinces_to_highlight = { has_terrain = shadow_city_terrain }
 		trigger = {
-			num_of_owned_provinces_with = {
-				value = 10
-				num_of_buildings_in_province = 6
-				has_terrain = shadow_city_terrain
+			shadow_plane_continent = {
+				type = all
+				OR = {
+					NOT = { has_terrain = shadow_city_terrain }
+					AND = {
+						num_of_buildings_in_province = 6
+						has_terrain = shadow_city_terrain
+						owned_by = ROOT
+					}
+				}
 			}
 		}
 		effect = {
@@ -431,7 +442,8 @@ shadow_plane_branch_3 = {
 	
 	shadow_plane_fiendish_recruits = {
 		icon = mission_alliances
-		required_missions = {  }
+		required_missions = { }
+		provinces_to_highlight = { culture_group = fiend_group }
 		trigger = {
 			num_of_owned_provinces_with = {
 				value = 10
@@ -441,8 +453,8 @@ shadow_plane_branch_3 = {
 		}
 		effect = {
 			add_owned_provinces_development_manpower = {
-				multiplier = 2
-				age_multiplier = 2
+				multiplier = 1
+				age_multiplier = 1
 				trigger = { culture_group = fiend_group }
 			}
 			country_event = { id = planar_generic_missions_events.102 }
@@ -481,7 +493,11 @@ shadow_plane_branch_3 = {
 
 	shadow_plane_drain_the_swamp = {
 		icon = mission_alliances
-		required_missions = {  }
+		required_missions = { }
+		provinces_to_highlight = {
+			has_terrain = shadow_swamp_terrain
+			continent = shadow_plane_continent
+		}
 		trigger = {
 			num_of_owned_provinces_with = {
 				value = 10
@@ -658,7 +674,9 @@ shadow_plane_branch_4 = {
 	
 	shadow_plane_organise_spirits = {
 		icon = mission_alliances
-		required_missions = {  }
+		required_missions = { }
+		provinces_to_highlight = { culture_group = shadow_plane_group }
+		position = 1
 		trigger = {
 			num_of_owned_provinces_with = {
 				value = 30
@@ -682,6 +700,7 @@ shadow_plane_branch_4 = {
 			region = fluxwastes_region
 			NOT = { country_or_non_sovereign_subject_holds = ROOT }
 		}
+		position = 2
 		trigger = {
 			any_owned_or_non_tributary_subject_province = { region = fluxwastes_region }
 		}
@@ -707,7 +726,15 @@ shadow_plane_branch_4 = {
 
 	shadow_plane_stabilise_flux_wastes = {
 		icon = mission_alliances
-		required_missions = {  }
+		required_missions = { }
+		provinces_to_highlight = {
+			has_terrain = fluxwastes_terrain
+			OR = {
+				has_influencing_fort = no
+				NOT = { owned_by = ROOT }
+			}
+		}
+		position = 3
 		trigger = {
 			shadow_plane_continent = {
 				type = all
@@ -735,12 +762,13 @@ shadow_plane_branch_4 = {
 
 	shadow_plane_question_of_religion = {
 		icon = mission_alliances
-		required_missions = {  }
+		required_missions = { }
+		position = 4
 		trigger = {
 			stability = 1
 			OR = {
-				theologian = 2
-				inquisitor = 2
+				advisor = theologian
+				advisor = inquisitor
 			}
 		}
 		effect = {
@@ -762,7 +790,8 @@ shadow_plane_branch_5 = {
 	
 	shadow_plane_steal_hag_secrets = {
 		icon = mission_alliances
-		required_missions = {  }
+		required_missions = { }
+		provinces_to_highlight = { culture = hagbound_cyclops }
 		trigger = {
 			OR = {
 				num_of_owned_provinces_with = {

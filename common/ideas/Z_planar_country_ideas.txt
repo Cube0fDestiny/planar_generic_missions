@@ -1,0 +1,886 @@
+XXA_ideas = {
+	start = {
+		institution_spread_from_true_faith = 0.20
+		possible_policy = 1
+	}
+	bonus = {
+		advisor_pool = 1
+	}
+
+	trigger = {
+		OR = {
+			tag = XBQ
+			tag = XXA
+		}
+	}
+	free = yes
+
+	XXA_ideas_1 = {
+		stability_cost_modifier = -0.25
+	}
+	XXA_ideas_2 = {
+		unjustified_demands = -0.15
+	}
+	XXA_ideas_3 = {
+		global_spy_defence = 0.20
+	}
+	XXA_ideas_4 = {
+		prestige_per_development_from_conversion = 0.5
+	}
+	XXA_ideas_5 = {
+		expand_administration_cost = -0.10
+	}
+	XXA_ideas_6 = {
+		morale_damage = 0.05
+	}
+	XXA_ideas_7 = {
+		development_cost_in_primary_culture = -0.10
+	}
+}
+
+Deepcity_Goblin_ideas = {
+	start = {
+		garrison_damage = 0.20
+		assault_fort_ability = 0.15
+	}
+	bonus = {
+		global_monthly_devastation = -0.1
+	}
+
+	trigger = {
+		OR = {
+			tag = XXP
+			tag = XXQ
+			tag = XXR
+		}
+	}
+	free = yes
+
+	Deepcity_Goblin_1 = {
+		backrow_artillery_damage = 0.10
+	}
+	Deepcity_Goblin_2 = {
+		fort_maintenance_modifier = -0.15
+	}
+	Deepcity_Goblin_3 = {
+		attack_bonus_in_capital_terrain = 1
+	}
+	Deepcity_Goblin_4 = {
+		prestige_decay = -0.02
+	}
+	Deepcity_Goblin_5 = {
+		production_efficiency = 0.20
+	}
+	Deepcity_Goblin_6 = {
+		admiral_cost = -0.33
+	}
+	Deepcity_Goblin_7 = {
+		harsh_treatment_cost = -0.25
+	}
+}
+
+XZV_ideas = {
+	start = {
+		diplomatic_upkeep = 1
+		national_focus_years = -3
+	}
+	bonus = {
+		advisor_pool = 1
+	}
+
+	trigger = {
+		tag = XZV
+	}
+	free = yes
+
+	XZV_1 = {
+		adm_advisor_cost = -0.20
+	}
+	XZV_2 = {
+		free_policy = 1
+	}
+	XZV_3 = {
+		monthly_favor_modifier = 0.33
+	}
+	XZV_4 = {
+		global_institution_spread = 0.25
+	}
+	XZV_5 = {
+		innovativeness_gain = 0.5
+	}
+	XZV_6 = {
+		garrison_size = 0.33
+	}
+	XZV_7 = {
+		prestige_decay = -0.02
+	}
+}
+
+
+
+
+ 	
+XZS_ideas = {
+	start = {
+		max_general_maneuver = 1
+		loot_amount = 0.20
+	}
+	bonus = {
+		general_cost = -0.20
+	}
+
+	trigger = {
+		tag = XZS
+	}
+	free = yes
+
+	XZS_1 = {
+	}
+	XZS_2 = {
+		global_trade_goods_size_modifier = 0.10
+	}
+	XZS_3 = {
+		movement_speed = 0.20
+	}
+	XZS_4 = {
+		same_religion_advisor_cost = -0.15
+	}
+	XZS_5 = {
+		power_projection_from_insults = 0.33
+	}
+	XZS_6 = {
+		global_rebel_suppression_efficiency = -0.25
+	}
+	XZS_7 = {
+		spy_offence = 0.10
+	}
+}
+
+minotaur_ideas = {
+	start = {
+		global_garrison_growth = 0.25
+		reserves_organisation = 0.10
+	}
+	bonus = {
+		yearly_army_professionalism = 0.02
+	}
+
+	trigger = {
+		culture_group = minotaur
+		NOT = { tag = XAT }
+	}
+	free = yes
+
+	minotaur_1 = {
+		development_cost_in_primary_culture = -0.20
+	}
+	minotaur_2 = {
+		trade_steering = 0.15
+	}
+	minotaur_3 = {
+		defensiveness = 0.15
+	}
+	minotaur_4 = {
+		global_unrest = -1
+	}
+	minotaur_5 = {
+		promote_culture_cost = -0.33
+	}
+	minotaur_6 = {
+		shock_damage_received = -0.10
+	}
+	minotaur_7 = {
+		leader_naval_manuever = 1
+	}
+}
+
+orisha_ideas = {
+	start = {
+		possible_policy = 1
+		monthly_reform_progress_modifier = 0.15
+	}
+	bonus = {
+		governing_capacity_modifier = 0.10
+	}
+
+	trigger = {
+		primary_culture = orisha
+	}
+
+	free = yes
+
+	orisha_ideas_1 = {
+		global_prosperity_growth = 0.05
+	}
+	orisha_ideas_2 = {
+		defensiveness = 0.10
+	}
+	orisha_ideas_3 = {
+		same_culture_advisor_cost = -0.20
+	}
+	orisha_ideas_4 = {
+		fire_damage_received = -0.10
+	}
+	orisha_ideas_5 = {
+		expand_administration_cost = -0.25
+	}
+	orisha_ideas_6 = {
+		global_missionary_strength = 0.02
+	}
+	orisha_ideas_7 = {
+		diplomatic_upkeep = 1
+	}
+}
+
+silat_ideas = {
+	start = {
+		num_accepted_cultures = 1
+		relation_with_same_culture_group = 5
+	}
+	bonus = {
+		all_estate_loyalty_equilibrium = 0.1
+	}
+
+	trigger = {
+		primary_culture = silat
+	}
+	free = yes
+
+	silat_ideas_1 = {
+		tolerance_own = 1
+	}
+	silat_ideas_2 = {
+		dip_advisor_cost = -0.15
+	}
+	silat_ideas_3 = {
+		fire_damage_received = -0.10
+	}
+	silat_ideas_4 = {
+		yearly_corruption = -0.1
+	}
+	silat_ideas_5 = {
+		core_creation = -0.20
+	}
+	silat_ideas_6 = {
+		improve_relation_modifier = 0.25
+	}
+	silat_ideas_7 = {
+		build_time = -0.15
+	}
+}
+
+kantharos_ideas = {
+	start = {
+		num_accepted_cultures = 1
+		placed_merchant_power_modifier = 0.20
+	}
+	bonus = {
+		caravan_power = 0.25
+	}
+
+	trigger = {
+		primary_culture = kantharos_culture
+	}
+	free = yes
+
+	kantharos_ideas_1 = {
+		movement_speed = 0.10
+	}
+	kantharos_ideas_2 = {
+		centralize_state_cost = -0.20
+	}
+	kantharos_ideas_3 = {
+		build_cost = -0.15
+	}
+	kantharos_ideas_4 = {
+		prestige_per_development_from_conversion = 0.5
+	}
+	kantharos_ideas_5 = {
+		missionary_maintenance_cost = -0.25
+	}
+	kantharos_ideas_6 = {
+		diplomatic_reputation = 1
+	}
+	kantharos_ideas_7 = {
+		global_foreign_trade_power = 0.20
+	}
+}
+
+shadow_lich_ideas = {
+	start = {
+		defensiveness = 0.10
+		development_cost = -0.15
+	}
+	bonus = {
+		rival_border_fort_maintenance = -0.33
+	}
+
+	trigger = {
+		OR = {
+			AND = {
+				culture_group = shadow_plane_group
+				NOT = { tag = XBQ }
+				NOT = { tag = XXA }
+			}
+			primary_culture = shadow_lich
+		}
+	}
+	free = yes
+
+	shadow_lich_ideas_1 = {
+		drill_gain_modifier = 0.10
+	}
+	shadow_lich_ideas_2 = {
+		land_attrition = -0.20
+	}
+	shadow_lich_ideas_3 = {
+		global_trade_goods_size_modifier = 0.15
+	}
+	shadow_lich_ideas_4 = {
+		fabricate_claims_cost = -0.25
+	}
+	shadow_lich_ideas_5 = {
+		shock_damage_received = -0.10
+	}
+	shadow_lich_ideas_6 = {
+		manpower_in_culture_group_provinces = 0.20
+	}
+	shadow_lich_ideas_7 = {
+		manpower_recovery_speed = 0.15
+	}
+}
+
+XYS_ideas = {
+	start = {
+		monthly_splendor = 1
+		global_heathen_missionary_strength = 0.01
+	}
+	bonus = {
+		religious_unity = 0.33
+	}
+
+	trigger = {
+		tag = XYS
+	}
+
+	free = yes
+
+	XYS_ideas_1 = {
+		annexation_relations_impact = -0.33
+	}
+	XYS_ideas_2 = {
+		global_unrest = -1
+	}
+	XYS_ideas_3 = {
+		reverse_relation_with_heathen_religion = 10
+	}
+	XYS_ideas_4 = {
+		idea_cost = -0.15
+	}
+	XYS_ideas_5 = {
+		army_tradition_decay = -0.02
+	}
+	XYS_ideas_6 = {
+		own_territory_dice_roll_bonus = 1
+	}
+	XYS_ideas_7 = {
+		reduced_liberty_desire_on_other_continent = 10
+	}
+}
+
+XYU_ideas = {
+	start = {
+		diplomatic_reputation = 1
+		reinforce_speed = 0.25
+	}
+	bonus = {
+		tolerance_heathen = 1
+	}
+
+	trigger = {
+		tag = XYU
+	}
+
+	free = yes
+
+	XYU_ideas_1 = {
+		monthly_favor_modifier = 0.1
+	}
+	XYU_ideas_2 = {
+		production_efficiency = 0.10
+	}
+	XYU_ideas_3 = {
+		global_prosperity_growth = 0.1
+	}
+	XYU_ideas_4 = {
+		reverse_relation_with_same_religion = 10
+	}
+	XYU_ideas_5 = {
+		leader_land_shock = 1
+	}
+	XYU_ideas_6 = {
+		army_tradition_decay = -0.02
+	}
+	XYU_ideas_7 = {
+		idea_cost = -0.10
+	}
+}
+
+XZG_ideas = {
+	start = {
+		build_time = -0.20
+		religious_unity = 0.15
+	}
+	bonus = {
+		institution_spread_from_true_faith = 0.33
+	}
+
+	trigger = {
+		tag = XZG
+	}
+
+	free = yes
+
+	XZG_ideas_1 = {
+		global_prosperity_growth = 0.05
+	}
+	XZG_ideas_2 = {
+		cavalry_flanking = 0.10
+	}
+	XZG_ideas_3 = {
+		global_monthly_devastation = -0.10
+	}
+	XZG_ideas_4 = {
+		innovativeness_gain = 0.25
+	}
+	XZG_ideas_5 = {
+		drill_gain_modifier = 0.20
+	}
+	XZG_ideas_6 = {
+		diplomatic_reputation = 1
+	}
+	XZG_ideas_7 = {
+		advisor_pool = 1
+	}
+}
+
+
+XYR_ideas = {
+	start = {
+		mercenary_manpower = 0.15
+		manpower_in_accepted_culture_provinces = 0.20
+	}
+	bonus = {
+		years_of_nationalism = -3
+	}
+
+	trigger = {
+		tag = XYR
+	}
+
+	free = yes
+
+	XYR_ideas_1 = {
+		stability_cost_modifier = -0.20
+	}
+	XYR_ideas_2 = {
+		core_creation = -0.15
+	}
+	XYR_ideas_3 = {
+		ae_impact = -0.20
+	}
+	XYR_ideas_4 = {
+		diplomatic_reputation = 1
+	}
+	XYR_ideas_5 = {
+		missionary_maintenance_cost = -0.25
+	}
+	XYR_ideas_6 = {
+		global_prosperity_growth = 0.05
+	}
+	XYR_ideas_7 = {
+		merc_maintenance_modifier = -0.20
+	}
+}
+
+Cyclope_ideas = {
+	start = {
+		defensiveness = 0.10
+		drill_decay_modifier = -0.20
+	}
+	bonus = {
+		infantry_power = 0.10
+	}
+
+	trigger = {
+		OR = {
+			primary_culture = flametear_cyclops
+			primary_culture = hagbound_cyclops
+		}
+	}
+
+	free = yes
+
+	Cyclope_ideas_1 = {
+		morale_damage_received = -0.05
+	}
+	Cyclope_ideas_2 = {
+		fort_maintenance_modifier = -0.20
+	}
+	Cyclope_ideas_3 = {
+		army_tradition_from_battle = 0.25
+	}
+	Cyclope_ideas_4 = {
+		land_attrition = -0.15
+	}
+	Cyclope_ideas_5 = {
+		garrison_size = 0.33
+	}
+	Cyclope_ideas_6 = {
+		global_trade_goods_size_modifier = 0.20
+	}
+	Cyclope_ideas_7 = {
+		global_heathen_missionary_strength = 0.02
+	}
+}
+
+XZT_ideas = {
+	start = {
+		movement_speed = 0.15
+		max_general_maneuver = 1
+	}
+	bonus = {
+		assault_fort_cost_modifier = -0.25
+	}
+
+	trigger = {
+		tag = XZT
+	}
+
+	free = yes
+
+	XZT_ideas_1 = {
+		yearly_corruption = -0.05
+	}
+	XZT_ideas_2 = {
+		mercenary_discipline = 0.10
+	}
+	XZT_ideas_3 = {
+		envoy_travel_time = -0.33
+	}
+	XZT_ideas_4 = {
+		siege_ability = 0.15
+	}
+	XZT_ideas_5 = {
+		same_religion_advisor_cost = -0.20
+	}
+	XZT_ideas_6 = {
+		leader_land_manuever = 1
+	}
+	XZT_ideas_7 = {
+		war_exhaustion_cost = -0.25
+	}
+}
+
+Green_Hag_ideas = {
+	start = {
+		claim_duration = 0.20
+		religious_unity = 0.25
+	}
+	bonus = {
+		discovered_relations_impact = -0.33
+	}
+
+	trigger = {
+		has_reform = hag_domain_reform
+		NOT = { primary_culture = hagbound_cyclops }
+	}
+
+	free = yes
+
+	Green_Hag_ideas_1 = {
+		fire_damage = 0.10
+	}
+	Green_Hag_ideas_2 = {
+		spy_action_cost_modifier = -0.15
+	}
+	Green_Hag_ideas_3 = {
+		leader_land_shock = 1
+	}
+	Green_Hag_ideas_4 = {
+		rebel_support_efficiency = 0.5
+	}
+	Green_Hag_ideas_5 = {
+		tolerance_own = 1
+	}
+	Green_Hag_ideas_6 = {
+		prestige_decay = -0.02
+	}
+	Green_Hag_ideas_7 = {
+		culture_conversion_cost = -0.25
+	}
+}
+
+XBL_ideas = {
+	start = {
+		defensiveness = 0.15
+		manpower_in_true_faith_provinces= 0.20
+	}
+	bonus = {
+		fire_damage = 0.10
+	}
+
+	trigger = {
+		tag = XBL
+	}
+
+	free = yes
+
+	XBL_ideas_1 = {
+		prestige_decay = -0.02
+	}
+	XBL_ideas_2 = {
+		shock_damage_received = -0.10
+	}
+	XBL_ideas_3 = {
+		diplomatic_upkeep = 1
+	}
+	XBL_ideas_4 = {
+		land_forcelimit_modifier = 0.25
+	}
+	XBL_ideas_5 = {
+		global_spy_defence = 0.33
+	}
+	XBL_ideas_6 = {
+		production_efficiency = 0.10
+	}
+	XBL_ideas_7 = {
+		all_estate_loyalty_equilibrium = 0.1
+	}
+}
+
+Fairy_ideas = {
+	start = {
+		global_trade_goods_size_modifier = 0.15
+		cav_to_inf_ratio = 0.20
+	}
+	bonus = {
+		trade_steering = 0.33
+	}
+
+	trigger = {
+		primary_culture = fairy
+	}
+
+	free = yes
+
+	Fairy_ideas_1 = {
+		autonomy_change_time = -0.15
+	}
+	Fairy_ideas_2 = {
+		monthly_favor_modifier = 0.33
+	}
+	Fairy_ideas_3 = {
+		cavalry_power = 0.10
+	}
+	Fairy_ideas_4 = {
+		diplomatic_reputation = 1
+	}
+	Fairy_ideas_5 = {
+		morale_damage = 0.05
+	}
+	Fairy_ideas_6 = {
+		global_unrest = -1
+	}
+	Fairy_ideas_7 = {
+		global_manpower_modifier = 0.20
+	}
+}
+
+Korbarid_ideas = {
+	start = {
+		morale_damage_received = -0.025
+	}
+	bonus = {
+		recover_army_morale_speed = 0.20
+	}
+
+	trigger = {
+		primary_culture = korbarid
+	}
+
+	free = yes
+
+	Korbarid_ideas_1 = {
+		global_spy_defence = 15
+	}
+	Korbarid_ideas_2 = {
+		land_attrition = -0.25
+	}
+	Korbarid_ideas_3 = {
+		available_province_loot = 0.33
+	}
+	Korbarid_ideas_4 = {
+		same_culture_advisor_cost = -0.20
+	}
+	Korbarid_ideas_5 = {
+		hostile_attrition = 1
+	}
+	Korbarid_ideas_6 = {
+		shock_damage_received = -0.10
+	}
+	Korbarid_ideas_7 = {
+		envoy_travel_time = -0.33
+	}
+}
+
+Fey_ideas = {
+	start = {
+		discovered_relations_impact = -0.33
+		religious_unity = 0.15
+	}
+	bonus = {
+		tolerance_heathen = 1
+	}
+
+	trigger = {
+		OR = {
+			culture_group = nature_fey_group
+			culture_group = emotion_fey_group
+		}
+	}
+	free = yes
+
+	Fey_ideas_1 = {
+		improve_relation_modifier = 0.20
+	}
+	Fey_ideas_2 = {
+		monthly_favor_modifier = 0.25
+	}
+	Fey_ideas_3 = {
+		merc_leader_army_tradition = 0.33
+	}
+	Fey_ideas_4 = {
+		unjustified_demands = -0.15
+	}
+	Fey_ideas_5 = {
+		rival_change_cost = -0.50
+	}
+	Fey_ideas_6 = {
+		spy_offence = 0.10
+	}
+	Fey_ideas_7 = {
+		movement_speed = 0.20
+	}
+}
+
+XBD_ideas = {
+	start = {
+		institution_spread_from_true_faith = 0.10
+		idea_cost = -0.15
+	}
+	bonus = {
+		build_time = -0.25
+	}
+
+	trigger = {
+		tag = XBD
+	}
+	free = yes
+
+	XBD_ideas_1 = {
+		recover_army_morale_speed = 0.25
+	}
+	XBD_ideas_2 = {
+		land_attrition = -0.20
+	}
+	XBD_ideas_3 = {
+		leader_land_fire = 1
+	}
+	XBD_ideas_4 = {
+		backrow_artillery_damage = 0.15
+	}
+	XBD_ideas_5 = {
+ 		global_monthly_devastation = -0.1
+	}
+	XBD_ideas_6 = {
+		innovativeness_gain = 0.50
+	}
+	XBD_ideas_7 = {
+		ae_impact = -0.15
+	}
+}
+
+XBD_ideas = {
+	start = {
+		institution_spread_from_true_faith = 0.10
+		idea_cost = -0.15
+	}
+	bonus = {
+		build_time = -0.25
+	}
+
+	trigger = {
+		tag = XBD
+	}
+	free = yes
+
+	XBD_ideas_1 = {
+		recover_army_morale_speed = 0.25
+	}
+	XBD_ideas_2 = {
+		land_attrition = -0.20
+	}
+	XBD_ideas_3 = {
+		leader_land_fire = 1
+	}
+	XBD_ideas_4 = {
+		backrow_artillery_damage = 0.15
+	}
+	XBD_ideas_5 = {
+ 		global_monthly_devastation = -0.1
+	}
+	XBD_ideas_6 = {
+		innovativeness_gain = 0.50
+	}
+	XBD_ideas_7 = {
+		ae_impact = -0.15
+	}
+}
+
+XAT_ideas = {
+	start = {
+		tolerance_own = 1
+		manpower_in_true_faith_provinces= 0.10
+	}
+	bonus = {
+		monarch_military_power = 1
+	}
+
+	trigger = {
+		tag = XAT
+	}
+	free = yes
+
+	XAT_1 = {
+		land_morale = 0.10
+	}
+	XAT_2 = {
+		development_cost = -0.1
+	}
+	XAT_3 = {
+		power_projection_from_insults = 0.50
+	}
+	XAT_4 = {
+		global_missionary_strength = 0.02
+	}
+	XAT_5 = {
+		fire_damage = 0.10
+	}
+	XAT_6 = {
+		reform_progress_growth = 0.20
+	}
+	XAT_7 = {
+		unjustified_demands = -0.25
+	}
+}
